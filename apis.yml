@@ -8,11 +8,11 @@ description: >-
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - Video Packaging
-  - Live Streaming
-  - VOD
-  - Media
   - AWS
+  - Live Streaming
+  - Media
+  - Video Packaging
+  - VOD
 url: >-
   https://raw.githubusercontent.com/api-evangelist/amazon-mediapackage/refs/heads/main/apis.yml
 created: '2026-03-16'
@@ -28,8 +28,8 @@ apis:
     humanURL: https://aws.amazon.com/mediapackage/
     baseURL: https://mediapackage.amazonaws.com
     tags:
-      - Video Packaging
       - Live Streaming
+      - Video Packaging
       - VOD
     properties:
       - type: Documentation
