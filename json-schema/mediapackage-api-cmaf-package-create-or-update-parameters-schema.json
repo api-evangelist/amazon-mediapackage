@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediapackage/refs/heads/main/json-schema/mediapackage-api-cmaf-package-create-or-update-parameters-schema.json",
+  "title": "CmafPackageCreateOrUpdateParameters",
+  "description": "A Common Media Application Format (CMAF) packaging configuration.",
+  "type": "object",
+  "properties": {
+    "Encryption": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CmafEncryption"
+        },
+        {
+          "xml": {
+            "name": "encryption"
+          }
+        }
+      ]
+    },
+    "HlsManifests": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__listOfHlsManifestCreateOrUpdateParameters"
+        },
+        {
+          "xml": {
+            "name": "hlsManifests"
+          },
+          "description": "A list of HLS manifest configurations"
+        }
+      ]
+    },
+    "SegmentDurationSeconds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__integer"
+        },
+        {
+          "xml": {
+            "name": "segmentDurationSeconds"
+          },
+          "description": "Duration (in seconds) of each segment. Actual segments will be\nrounded to the nearest multiple of the source segment duration.\n"
+        }
+      ]
+    },
+    "SegmentPrefix": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "segmentPrefix"
+          },
+          "description": "An optional custom string that is prepended to the name of each segment. If not specified, it defaults to the ChannelId."
+        }
+      ]
+    },
+    "StreamSelection": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StreamSelection"
+        },
+        {
+          "xml": {
+            "name": "streamSelection"
+          }
+        }
+      ]
+    }
+  }
+}

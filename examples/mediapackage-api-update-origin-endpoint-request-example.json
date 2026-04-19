@@ -1,0 +1,13 @@
+{
+  "Authorization": "example-value",
+  "CmafPackage": "example-value",
+  "DashPackage": "example-value",
+  "Description": "example-value",
+  "HlsPackage": "example-value",
+  "ManifestName": "example-resource",
+  "MssPackage": "example-value",
+  "Origination": "example-value",
+  "StartoverWindowSeconds": "example-value",
+  "TimeDelaySeconds": "example-value",
+  "Whitelist": "example-value"
+}

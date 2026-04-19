@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediapackage/refs/heads/main/json-schema/mediapackage-api-create-channel-request-schema.json",
+  "title": "CreateChannelRequest",
+  "description": "A new Channel configuration.",
+  "type": "object",
+  "properties": {
+    "Description": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "description"
+          },
+          "description": "A short text description of the Channel."
+        }
+      ]
+    },
+    "Id": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "id"
+          },
+          "description": "The ID of the Channel. The ID must be unique within the region and it\ncannot be changed after a Channel is created.\n"
+        }
+      ]
+    },
+    "Tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Tags"
+        },
+        {
+          "xml": {
+            "name": "tags"
+          }
+        }
+      ]
+    }
+  },
+  "required": [
+    "Id"
+  ]
+}

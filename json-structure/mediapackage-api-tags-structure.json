@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediapackage/refs/heads/main/json-structure/mediapackage-api-tags-structure.json",
+  "name": "Tags",
+  "type": "object",
+  "description": "A collection of tags associated with a resource",
+  "additionalProperties": {
+    "$ref": "#/components/schemas/__string"
+  }
+}

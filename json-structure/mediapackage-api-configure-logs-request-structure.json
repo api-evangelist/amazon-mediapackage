@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediapackage/refs/heads/main/json-structure/mediapackage-api-configure-logs-request-structure.json",
+  "name": "ConfigureLogsRequest",
+  "type": "object",
+  "description": "the option to configure log subscription.",
+  "properties": {
+    "EgressAccessLogs": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EgressAccessLogs"
+        },
+        {
+          "xml": {
+            "name": "egressAccessLogs"
+          }
+        }
+      ]
+    },
+    "IngressAccessLogs": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IngressAccessLogs"
+        },
+        {
+          "xml": {
+            "name": "ingressAccessLogs"
+          }
+        }
+      ]
+    }
+  }
+}

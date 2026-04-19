@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediapackage/refs/heads/main/json-structure/mediapackage-api-preset-speke20-audio-structure.json",
+  "name": "PresetSpeke20Audio",
+  "type": "string",
+  "description": "PresetSpeke20Audio schema from Amazon MediaPackage API",
+  "enum": [
+    "PRESET-AUDIO-1",
+    "PRESET-AUDIO-2",
+    "PRESET-AUDIO-3",
+    "SHARED",
+    "UNENCRYPTED"
+  ]
+}

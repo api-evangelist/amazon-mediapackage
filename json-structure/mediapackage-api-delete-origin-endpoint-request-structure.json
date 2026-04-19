@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediapackage/refs/heads/main/json-structure/mediapackage-api-delete-origin-endpoint-request-structure.json",
+  "name": "DeleteOriginEndpointRequest",
+  "type": "object",
+  "description": "DeleteOriginEndpointRequest schema from Amazon MediaPackage API",
+  "properties": {}
+}

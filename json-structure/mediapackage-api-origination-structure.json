@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediapackage/refs/heads/main/json-structure/mediapackage-api-origination-structure.json",
+  "name": "Origination",
+  "type": "string",
+  "description": "Origination schema from Amazon MediaPackage API",
+  "enum": [
+    "ALLOW",
+    "DENY"
+  ]
+}

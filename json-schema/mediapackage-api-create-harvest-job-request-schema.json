@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediapackage/refs/heads/main/json-schema/mediapackage-api-create-harvest-job-request-schema.json",
+  "title": "CreateHarvestJobRequest",
+  "description": "Configuration parameters used to create a new HarvestJob.",
+  "type": "object",
+  "properties": {
+    "EndTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "endTime"
+          },
+          "description": "The end of the time-window which will be harvested\n"
+        }
+      ]
+    },
+    "Id": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "id"
+          },
+          "description": "The ID of the HarvestJob. The ID must be unique within the region\nand it cannot be changed after the HarvestJob is submitted\n"
+        }
+      ]
+    },
+    "OriginEndpointId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "originEndpointId"
+          },
+          "description": "The ID of the OriginEndpoint that the HarvestJob will harvest from.\nThis cannot be changed after the HarvestJob is submitted.\n"
+        }
+      ]
+    },
+    "S3Destination": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/S3Destination"
+        },
+        {
+          "xml": {
+            "name": "s3Destination"
+          }
+        }
+      ]
+    },
+    "StartTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "startTime"
+          },
+          "description": "The start of the time-window which will be harvested\n"
+        }
+      ]
+    }
+  },
+  "required": [
+    "S3Destination",
+    "EndTime",
+    "OriginEndpointId",
+    "StartTime",
+    "Id"
+  ]
+}

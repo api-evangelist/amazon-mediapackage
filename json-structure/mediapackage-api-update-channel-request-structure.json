@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediapackage/refs/heads/main/json-structure/mediapackage-api-update-channel-request-structure.json",
+  "name": "UpdateChannelRequest",
+  "type": "object",
+  "description": "Configuration parameters used to update the Channel.",
+  "properties": {
+    "Description": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "description"
+          },
+          "description": "A short text description of the Channel."
+        }
+      ]
+    }
+  }
+}

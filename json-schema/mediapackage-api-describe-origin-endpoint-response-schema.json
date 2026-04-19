@@ -1,0 +1,224 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediapackage/refs/heads/main/json-schema/mediapackage-api-describe-origin-endpoint-response-schema.json",
+  "title": "DescribeOriginEndpointResponse",
+  "description": "DescribeOriginEndpointResponse schema from Amazon MediaPackage API",
+  "type": "object",
+  "properties": {
+    "Arn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "arn"
+          },
+          "description": "The Amazon Resource Name (ARN) assigned to the OriginEndpoint."
+        }
+      ]
+    },
+    "Authorization": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Authorization"
+        },
+        {
+          "xml": {
+            "name": "authorization"
+          }
+        }
+      ]
+    },
+    "ChannelId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "channelId"
+          },
+          "description": "The ID of the Channel the OriginEndpoint is associated with."
+        }
+      ]
+    },
+    "CmafPackage": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CmafPackage"
+        },
+        {
+          "xml": {
+            "name": "cmafPackage"
+          }
+        }
+      ]
+    },
+    "CreatedAt": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "createdAt"
+          },
+          "description": "The date and time the OriginEndpoint was created."
+        }
+      ]
+    },
+    "DashPackage": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DashPackage"
+        },
+        {
+          "xml": {
+            "name": "dashPackage"
+          }
+        }
+      ]
+    },
+    "Description": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "description"
+          },
+          "description": "A short text description of the OriginEndpoint."
+        }
+      ]
+    },
+    "HlsPackage": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/HlsPackage"
+        },
+        {
+          "xml": {
+            "name": "hlsPackage"
+          }
+        }
+      ]
+    },
+    "Id": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "id"
+          },
+          "description": "The ID of the OriginEndpoint."
+        }
+      ]
+    },
+    "ManifestName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "manifestName"
+          },
+          "description": "A short string appended to the end of the OriginEndpoint URL."
+        }
+      ]
+    },
+    "MssPackage": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MssPackage"
+        },
+        {
+          "xml": {
+            "name": "mssPackage"
+          }
+        }
+      ]
+    },
+    "Origination": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Origination"
+        },
+        {
+          "xml": {
+            "name": "origination"
+          },
+          "description": "Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint\nmay by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be\nrequested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination\n"
+        }
+      ]
+    },
+    "StartoverWindowSeconds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__integer"
+        },
+        {
+          "xml": {
+            "name": "startoverWindowSeconds"
+          },
+          "description": "Maximum duration (seconds) of content to retain for startover playback.\nIf not specified, startover playback will be disabled for the OriginEndpoint.\n"
+        }
+      ]
+    },
+    "Tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Tags"
+        },
+        {
+          "xml": {
+            "name": "tags"
+          }
+        }
+      ]
+    },
+    "TimeDelaySeconds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__integer"
+        },
+        {
+          "xml": {
+            "name": "timeDelaySeconds"
+          },
+          "description": "Amount of delay (seconds) to enforce on the playback of live content.\nIf not specified, there will be no time delay in effect for the OriginEndpoint.\n"
+        }
+      ]
+    },
+    "Url": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "url"
+          },
+          "description": "The URL of the packaged OriginEndpoint for consumption."
+        }
+      ]
+    },
+    "Whitelist": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__listOf__string"
+        },
+        {
+          "xml": {
+            "name": "whitelist"
+          },
+          "description": "A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint."
+        }
+      ]
+    }
+  }
+}

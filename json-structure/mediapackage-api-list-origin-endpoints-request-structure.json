@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediapackage/refs/heads/main/json-structure/mediapackage-api-list-origin-endpoints-request-structure.json",
+  "name": "ListOriginEndpointsRequest",
+  "type": "object",
+  "description": "ListOriginEndpointsRequest schema from Amazon MediaPackage API",
+  "properties": {}
+}

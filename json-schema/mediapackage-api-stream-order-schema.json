@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediapackage/refs/heads/main/json-schema/mediapackage-api-stream-order-schema.json",
+  "title": "StreamOrder",
+  "description": "StreamOrder schema from Amazon MediaPackage API",
+  "type": "string",
+  "enum": [
+    "ORIGINAL",
+    "VIDEO_BITRATE_ASCENDING",
+    "VIDEO_BITRATE_DESCENDING"
+  ]
+}

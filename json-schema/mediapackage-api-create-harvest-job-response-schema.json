@@ -1,0 +1,125 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediapackage/refs/heads/main/json-schema/mediapackage-api-create-harvest-job-response-schema.json",
+  "title": "CreateHarvestJobResponse",
+  "description": "CreateHarvestJobResponse schema from Amazon MediaPackage API",
+  "type": "object",
+  "properties": {
+    "Arn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "arn"
+          },
+          "description": "The Amazon Resource Name (ARN) assigned to the HarvestJob.\n"
+        }
+      ]
+    },
+    "ChannelId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "channelId"
+          },
+          "description": "The ID of the Channel that the HarvestJob will harvest from.\n"
+        }
+      ]
+    },
+    "CreatedAt": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "createdAt"
+          },
+          "description": "The date and time the HarvestJob was submitted.\n"
+        }
+      ]
+    },
+    "EndTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "endTime"
+          },
+          "description": "The end of the time-window which will be harvested.\n"
+        }
+      ]
+    },
+    "Id": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "id"
+          },
+          "description": "The ID of the HarvestJob. The ID must be unique within the region\nand it cannot be changed after the HarvestJob is submitted.\n"
+        }
+      ]
+    },
+    "OriginEndpointId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "originEndpointId"
+          },
+          "description": "The ID of the OriginEndpoint that the HarvestJob will harvest from.\nThis cannot be changed after the HarvestJob is submitted.\n"
+        }
+      ]
+    },
+    "S3Destination": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/S3Destination"
+        },
+        {
+          "xml": {
+            "name": "s3Destination"
+          }
+        }
+      ]
+    },
+    "StartTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "startTime"
+          },
+          "description": "The start of the time-window which will be harvested.\n"
+        }
+      ]
+    },
+    "Status": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Status"
+        },
+        {
+          "xml": {
+            "name": "status"
+          },
+          "description": "The current status of the HarvestJob. Consider setting up a CloudWatch Event to listen for\nHarvestJobs as they succeed or fail. In the event of failure, the CloudWatch Event will\ninclude an explanation of why the HarvestJob failed.\n"
+        }
+      ]
+    }
+  }
+}

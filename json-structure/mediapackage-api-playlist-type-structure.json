@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediapackage/refs/heads/main/json-structure/mediapackage-api-playlist-type-structure.json",
+  "name": "PlaylistType",
+  "type": "string",
+  "description": "PlaylistType schema from Amazon MediaPackage API",
+  "enum": [
+    "NONE",
+    "EVENT",
+    "VOD"
+  ]
+}

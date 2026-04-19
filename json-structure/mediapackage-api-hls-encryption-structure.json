@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediapackage/refs/heads/main/json-structure/mediapackage-api-hls-encryption-structure.json",
+  "name": "HlsEncryption",
+  "type": "object",
+  "description": "An HTTP Live Streaming (HLS) encryption configuration.",
+  "properties": {
+    "ConstantInitializationVector": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "constantInitializationVector"
+          },
+          "description": "A constant initialization vector for encryption (optional).\nWhen not specified the initialization vector will be periodically rotated.\n"
+        }
+      ]
+    },
+    "EncryptionMethod": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EncryptionMethod"
+        },
+        {
+          "xml": {
+            "name": "encryptionMethod"
+          },
+          "description": "The encryption method to use."
+        }
+      ]
+    },
+    "KeyRotationIntervalSeconds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__integer"
+        },
+        {
+          "xml": {
+            "name": "keyRotationIntervalSeconds"
+          },
+          "description": "Interval (in seconds) between each encryption key rotation."
+        }
+      ]
+    },
+    "RepeatExtXKey": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__boolean"
+        },
+        {
+          "xml": {
+            "name": "repeatExtXKey"
+          },
+          "description": "When enabled, the EXT-X-KEY tag will be repeated in output manifests."
+        }
+      ]
+    },
+    "SpekeKeyProvider": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SpekeKeyProvider"
+        },
+        {
+          "xml": {
+            "name": "spekeKeyProvider"
+          }
+        }
+      ]
+    }
+  },
+  "required": [
+    "SpekeKeyProvider"
+  ]
+}

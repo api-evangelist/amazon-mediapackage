@@ -1,0 +1,16 @@
+{
+  "Authorization": "example-value",
+  "ChannelId": "id-abc123",
+  "CmafPackage": "example-value",
+  "DashPackage": "example-value",
+  "Description": "example-value",
+  "HlsPackage": "example-value",
+  "Id": "id-abc123",
+  "ManifestName": "example-resource",
+  "MssPackage": "example-value",
+  "Origination": "example-value",
+  "StartoverWindowSeconds": "example-value",
+  "Tags": "example-value",
+  "TimeDelaySeconds": "example-value",
+  "Whitelist": "example-value"
+}

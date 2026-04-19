@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediapackage/refs/heads/main/json-schema/mediapackage-api-egress-access-logs-schema.json",
+  "title": "EgressAccessLogs",
+  "description": "Configure egress access logging.",
+  "type": "object",
+  "properties": {
+    "LogGroupName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "logGroupName"
+          },
+          "description": "Customize the log group name."
+        }
+      ]
+    }
+  }
+}

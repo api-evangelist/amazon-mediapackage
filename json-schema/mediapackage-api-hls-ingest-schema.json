@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediapackage/refs/heads/main/json-schema/mediapackage-api-hls-ingest-schema.json",
+  "title": "HlsIngest",
+  "description": "An HTTP Live Streaming (HLS) ingest resource configuration.",
+  "type": "object",
+  "properties": {
+    "IngestEndpoints": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__listOfIngestEndpoint"
+        },
+        {
+          "xml": {
+            "name": "ingestEndpoints"
+          },
+          "description": "A list of endpoints to which the source stream should be sent."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediapackage/refs/heads/main/json-structure/mediapackage-api-stream-selection-structure.json",
+  "name": "StreamSelection",
+  "type": "object",
+  "description": "A StreamSelection configuration.",
+  "properties": {
+    "MaxVideoBitsPerSecond": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__integer"
+        },
+        {
+          "xml": {
+            "name": "maxVideoBitsPerSecond"
+          },
+          "description": "The maximum video bitrate (bps) to include in output."
+        }
+      ]
+    },
+    "MinVideoBitsPerSecond": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__integer"
+        },
+        {
+          "xml": {
+            "name": "minVideoBitsPerSecond"
+          },
+          "description": "The minimum video bitrate (bps) to include in output."
+        }
+      ]
+    },
+    "StreamOrder": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StreamOrder"
+        },
+        {
+          "xml": {
+            "name": "streamOrder"
+          },
+          "description": "A directive that determines the order of streams in the output."
+        }
+      ]
+    }
+  }
+}

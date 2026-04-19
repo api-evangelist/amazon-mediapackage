@@ -1,0 +1,127 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediapackage/refs/heads/main/json-schema/mediapackage-api-hls-manifest-create-or-update-parameters-schema.json",
+  "title": "HlsManifestCreateOrUpdateParameters",
+  "description": "A HTTP Live Streaming (HLS) manifest configuration.",
+  "type": "object",
+  "properties": {
+    "AdMarkers": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AdMarkers"
+        },
+        {
+          "xml": {
+            "name": "adMarkers"
+          },
+          "description": "This setting controls how ad markers are included in the packaged OriginEndpoint.\n\"NONE\" will omit all SCTE-35 ad markers from the output.\n\"PASSTHROUGH\" causes the manifest to contain a copy of the SCTE-35 ad\nmarkers (comments) taken directly from the input HTTP Live Streaming (HLS) manifest.\n\"SCTE35_ENHANCED\" generates ad markers and blackout tags based on SCTE-35\nmessages in the input source.\n\"DATERANGE\" inserts EXT-X-DATERANGE tags to signal ad and program transition events \nin HLS and CMAF manifests. For this option, you must set a programDateTimeIntervalSeconds value \nthat is greater than 0.\n"
+        }
+      ]
+    },
+    "AdTriggers": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AdTriggers"
+        },
+        {
+          "xml": {
+            "name": "adTriggers"
+          }
+        }
+      ]
+    },
+    "AdsOnDeliveryRestrictions": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AdsOnDeliveryRestrictions"
+        },
+        {
+          "xml": {
+            "name": "adsOnDeliveryRestrictions"
+          }
+        }
+      ]
+    },
+    "Id": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "id"
+          },
+          "description": "The ID of the manifest. The ID must be unique within the OriginEndpoint and it cannot be changed after it is created."
+        }
+      ]
+    },
+    "IncludeIframeOnlyStream": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__boolean"
+        },
+        {
+          "xml": {
+            "name": "includeIframeOnlyStream"
+          },
+          "description": "When enabled, an I-Frame only stream will be included in the output."
+        }
+      ]
+    },
+    "ManifestName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "manifestName"
+          },
+          "description": "An optional short string appended to the end of the OriginEndpoint URL. If not specified, defaults to the manifestName for the OriginEndpoint."
+        }
+      ]
+    },
+    "PlaylistType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PlaylistType"
+        },
+        {
+          "xml": {
+            "name": "playlistType"
+          },
+          "description": "The HTTP Live Streaming (HLS) playlist type.\nWhen either \"EVENT\" or \"VOD\" is specified, a corresponding EXT-X-PLAYLIST-TYPE\nentry will be included in the media playlist.\n"
+        }
+      ]
+    },
+    "PlaylistWindowSeconds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__integer"
+        },
+        {
+          "xml": {
+            "name": "playlistWindowSeconds"
+          },
+          "description": "Time window (in seconds) contained in each parent manifest."
+        }
+      ]
+    },
+    "ProgramDateTimeIntervalSeconds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__integer"
+        },
+        {
+          "xml": {
+            "name": "programDateTimeIntervalSeconds"
+          },
+          "description": "The interval (in seconds) between each EXT-X-PROGRAM-DATE-TIME tag\ninserted into manifests. Additionally, when an interval is specified\nID3Timed Metadata messages will be generated every 5 seconds using the\ningest time of the content.\nIf the interval is not specified, or set to 0, then\nno EXT-X-PROGRAM-DATE-TIME tags will be inserted into manifests and no\nID3Timed Metadata messages will be generated. Note that irrespective\nof this parameter, if any ID3 Timed Metadata is found in HTTP Live Streaming (HLS) input,\nit will be passed through to HLS output.\n"
+        }
+      ]
+    }
+  },
+  "required": [
+    "Id"
+  ]
+}

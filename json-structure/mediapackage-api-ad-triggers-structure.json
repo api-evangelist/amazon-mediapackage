@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediapackage/refs/heads/main/json-structure/mediapackage-api-ad-triggers-structure.json",
+  "name": "AdTriggers",
+  "type": "array",
+  "description": "A list of SCTE-35 message types that are treated as ad markers in the output.  If empty, no\nad markers are output.  Specify multiple items to create ad markers for all of the included\nmessage types.\n",
+  "items": {
+    "$ref": "#/components/schemas/__AdTriggersElement"
+  }
+}

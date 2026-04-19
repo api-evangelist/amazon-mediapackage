@@ -1,0 +1,183 @@
+vocabulary: 1.0.0
+info:
+  provider: Amazon MediaPackage
+  description: Unified vocabulary for Amazon MediaPackage APIs and capabilities.
+  created: '2026-04-19'
+  modified: '2026-04-19'
+operational:
+  apis:
+  - name: Amazon MediaPackage API
+    namespace: mediapackage
+    version: '2018-11-14'
+    baseUrl: http://mediapackage.{region}.amazonaws.com
+    status: active
+  resources:
+  - name: channels
+    api: Amazon MediaPackage API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  - name: configure_logs
+    api: Amazon MediaPackage API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  - name: harvest_jobs
+    api: Amazon MediaPackage API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  - name: origin_endpoints
+    api: Amazon MediaPackage API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  - name: tags
+    api: Amazon MediaPackage API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  - name: credentials
+    api: Amazon MediaPackage API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  - name: ingest_endpoints
+    api: Amazon MediaPackage API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  actions:
+  - name: list
+    httpMethod: GET
+    pattern: read
+  - name: get
+    httpMethod: GET
+    pattern: read
+  - name: create
+    httpMethod: POST
+    pattern: write
+  - name: update
+    httpMethod: PUT
+    pattern: write
+  - name: delete
+    httpMethod: DELETE
+    pattern: write
+  schemas:
+    core:
+    - ConfigureLogsResponse
+    - CreateChannelResponse
+    - CreateHarvestJobResponse
+    - CreateOriginEndpointResponse
+    - CmafEncryption
+    - StreamSelection
+  parameters:
+    pagination:
+    - name: nextToken
+      description: Pagination token
+    - name: maxResults
+      description: Max results per page
+  authentication:
+    schemes:
+    - type: awsSigV4
+      description: AWS Signature Version 4
+capability:
+  workflows:
+  - name: Amazon MediaPackage Workflow
+    file: capabilities/amazon-mediapackage-media-workflow.yaml
+    description: Amazon MediaPackage media processing workflow
+    personas:
+    - Broadcast Engineer
+    - Media Developer
+    domains:
+    - Media Processing
+  personas:
+  - id: broadcast-engineer
+    name: Broadcast Engineer
+    description: Engineer managing broadcast media workflows
+    workflows:
+    - Amazon MediaPackage Workflow
+  - id: media-developer
+    name: Media Developer
+    description: Developer building media processing applications
+    workflows:
+    - Amazon MediaPackage Workflow
+  domains:
+  - name: Media Processing
+    description: AWS media processing and delivery
+  namespaces:
+  - name: mediapackage
+    type: consumed
+  - name: mediapackage-workflow-api
+    type: rest
+    port: 8080
+  - name: mediapackage-workflow-mcp
+    type: mcp
+    port: 9090
+  binds:
+  - name: AWS_ACCESS_KEY_ID
+  - name: AWS_SECRET_ACCESS_KEY
+crossReference:
+- resource: channels
+  api: Amazon MediaPackage API
+  workflows:
+  - Amazon MediaPackage Workflow
+  personas:
+  - Broadcast Engineer
+- resource: configure_logs
+  api: Amazon MediaPackage API
+  workflows:
+  - Amazon MediaPackage Workflow
+  personas:
+  - Broadcast Engineer
+- resource: harvest_jobs
+  api: Amazon MediaPackage API
+  workflows:
+  - Amazon MediaPackage Workflow
+  personas:
+  - Broadcast Engineer
+- resource: origin_endpoints
+  api: Amazon MediaPackage API
+  workflows:
+  - Amazon MediaPackage Workflow
+  personas:
+  - Broadcast Engineer
+- resource: tags
+  api: Amazon MediaPackage API
+  workflows:
+  - Amazon MediaPackage Workflow
+  personas:
+  - Broadcast Engineer
+- resource: credentials
+  api: Amazon MediaPackage API
+  workflows:
+  - Amazon MediaPackage Workflow
+  personas:
+  - Broadcast Engineer
+- resource: ingest_endpoints
+  api: Amazon MediaPackage API
+  workflows:
+  - Amazon MediaPackage Workflow
+  personas:
+  - Broadcast Engineer

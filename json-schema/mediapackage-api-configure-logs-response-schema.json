@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediapackage/refs/heads/main/json-schema/mediapackage-api-configure-logs-response-schema.json",
+  "title": "ConfigureLogsResponse",
+  "description": "ConfigureLogsResponse schema from Amazon MediaPackage API",
+  "type": "object",
+  "properties": {
+    "Arn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "arn"
+          },
+          "description": "The Amazon Resource Name (ARN) assigned to the Channel."
+        }
+      ]
+    },
+    "CreatedAt": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "createdAt"
+          },
+          "description": "The date and time the Channel was created."
+        }
+      ]
+    },
+    "Description": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "description"
+          },
+          "description": "A short text description of the Channel."
+        }
+      ]
+    },
+    "EgressAccessLogs": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EgressAccessLogs"
+        },
+        {
+          "xml": {
+            "name": "egressAccessLogs"
+          }
+        }
+      ]
+    },
+    "HlsIngest": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/HlsIngest"
+        },
+        {
+          "xml": {
+            "name": "hlsIngest"
+          }
+        }
+      ]
+    },
+    "Id": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "id"
+          },
+          "description": "The ID of the Channel."
+        }
+      ]
+    },
+    "IngressAccessLogs": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IngressAccessLogs"
+        },
+        {
+          "xml": {
+            "name": "ingressAccessLogs"
+          }
+        }
+      ]
+    },
+    "Tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Tags"
+        },
+        {
+          "xml": {
+            "name": "tags"
+          }
+        }
+      ]
+    }
+  }
+}

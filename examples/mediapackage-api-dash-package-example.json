@@ -1,0 +1,18 @@
+{
+  "AdTriggers": "example-value",
+  "AdsOnDeliveryRestrictions": "example-value",
+  "Encryption": "example-value",
+  "IncludeIframeOnlyStream": "example-value",
+  "ManifestLayout": "example-value",
+  "ManifestWindowSeconds": "example-value",
+  "MinBufferTimeSeconds": "example-value",
+  "MinUpdatePeriodSeconds": "example-value",
+  "PeriodTriggers": "example-value",
+  "Profile": "example-value",
+  "SegmentDurationSeconds": "example-value",
+  "SegmentTemplateFormat": "example-value",
+  "StreamSelection": "example-value",
+  "SuggestedPresentationDelaySeconds": "example-value",
+  "UtcTiming": "example-value",
+  "UtcTimingUri": "example-value"
+}

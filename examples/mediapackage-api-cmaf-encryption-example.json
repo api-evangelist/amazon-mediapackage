@@ -1,0 +1,6 @@
+{
+  "ConstantInitializationVector": "example-value",
+  "EncryptionMethod": "example-value",
+  "KeyRotationIntervalSeconds": "example-value",
+  "SpekeKeyProvider": "id-abc123"
+}

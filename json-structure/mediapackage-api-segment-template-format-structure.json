@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediapackage/refs/heads/main/json-structure/mediapackage-api-segment-template-format-structure.json",
+  "name": "SegmentTemplateFormat",
+  "type": "string",
+  "description": "SegmentTemplateFormat schema from Amazon MediaPackage API",
+  "enum": [
+    "NUMBER_WITH_TIMELINE",
+    "TIME_WITH_TIMELINE",
+    "NUMBER_WITH_DURATION"
+  ]
+}

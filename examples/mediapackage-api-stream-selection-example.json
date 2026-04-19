@@ -1,0 +1,5 @@
+{
+  "MaxVideoBitsPerSecond": "id-abc123",
+  "MinVideoBitsPerSecond": "id-abc123",
+  "StreamOrder": "example-value"
+}

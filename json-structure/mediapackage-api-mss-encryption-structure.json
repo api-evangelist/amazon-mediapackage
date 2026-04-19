@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediapackage/refs/heads/main/json-structure/mediapackage-api-mss-encryption-structure.json",
+  "name": "MssEncryption",
+  "type": "object",
+  "description": "A Microsoft Smooth Streaming (MSS) encryption configuration.",
+  "properties": {
+    "SpekeKeyProvider": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SpekeKeyProvider"
+        },
+        {
+          "xml": {
+            "name": "spekeKeyProvider"
+          }
+        }
+      ]
+    }
+  },
+  "required": [
+    "SpekeKeyProvider"
+  ]
+}

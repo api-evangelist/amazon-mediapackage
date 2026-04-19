@@ -1,0 +1,6 @@
+{
+  "Encryption": "example-value",
+  "ManifestWindowSeconds": "example-value",
+  "SegmentDurationSeconds": "example-value",
+  "StreamSelection": "example-value"
+}

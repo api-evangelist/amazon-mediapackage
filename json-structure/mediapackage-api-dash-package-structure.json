@@ -1,0 +1,213 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediapackage/refs/heads/main/json-structure/mediapackage-api-dash-package-structure.json",
+  "name": "DashPackage",
+  "type": "object",
+  "description": "A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.",
+  "properties": {
+    "AdTriggers": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AdTriggers"
+        },
+        {
+          "xml": {
+            "name": "adTriggers"
+          }
+        }
+      ]
+    },
+    "AdsOnDeliveryRestrictions": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AdsOnDeliveryRestrictions"
+        },
+        {
+          "xml": {
+            "name": "adsOnDeliveryRestrictions"
+          }
+        }
+      ]
+    },
+    "Encryption": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DashEncryption"
+        },
+        {
+          "xml": {
+            "name": "encryption"
+          }
+        }
+      ]
+    },
+    "IncludeIframeOnlyStream": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__boolean"
+        },
+        {
+          "xml": {
+            "name": "includeIframeOnlyStream"
+          },
+          "description": "When enabled, an I-Frame only stream will be included in the output."
+        }
+      ]
+    },
+    "ManifestLayout": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ManifestLayout"
+        },
+        {
+          "xml": {
+            "name": "manifestLayout"
+          },
+          "description": "Determines the position of some tags in the Media Presentation Description (MPD).  When set to FULL, elements like SegmentTemplate and ContentProtection are included in each Representation.  When set to COMPACT, duplicate elements are combined and presented at the AdaptationSet level."
+        }
+      ]
+    },
+    "ManifestWindowSeconds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__integer"
+        },
+        {
+          "xml": {
+            "name": "manifestWindowSeconds"
+          },
+          "description": "Time window (in seconds) contained in each manifest."
+        }
+      ]
+    },
+    "MinBufferTimeSeconds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__integer"
+        },
+        {
+          "xml": {
+            "name": "minBufferTimeSeconds"
+          },
+          "description": "Minimum duration (in seconds) that a player will buffer media before starting the presentation."
+        }
+      ]
+    },
+    "MinUpdatePeriodSeconds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__integer"
+        },
+        {
+          "xml": {
+            "name": "minUpdatePeriodSeconds"
+          },
+          "description": "Minimum duration (in seconds) between potential changes to the Dynamic Adaptive Streaming over HTTP (DASH) Media Presentation Description (MPD)."
+        }
+      ]
+    },
+    "PeriodTriggers": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__listOf__PeriodTriggersElement"
+        },
+        {
+          "xml": {
+            "name": "periodTriggers"
+          },
+          "description": "A list of triggers that controls when the outgoing Dynamic Adaptive Streaming over HTTP (DASH)\nMedia Presentation Description (MPD) will be partitioned into multiple periods. If empty, the content will not\nbe partitioned into more than one period. If the list contains \"ADS\", new periods will be created where\nthe Channel source contains SCTE-35 ad markers.\n"
+        }
+      ]
+    },
+    "Profile": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Profile"
+        },
+        {
+          "xml": {
+            "name": "profile"
+          },
+          "description": "The Dynamic Adaptive Streaming over HTTP (DASH) profile type.  When set to \"HBBTV_1_5\", HbbTV 1.5 compliant output is enabled. When set to \"DVB-DASH_2014\", DVB-DASH 2014 compliant output is enabled."
+        }
+      ]
+    },
+    "SegmentDurationSeconds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__integer"
+        },
+        {
+          "xml": {
+            "name": "segmentDurationSeconds"
+          },
+          "description": "Duration (in seconds) of each segment. Actual segments will be\nrounded to the nearest multiple of the source segment duration.\n"
+        }
+      ]
+    },
+    "SegmentTemplateFormat": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SegmentTemplateFormat"
+        },
+        {
+          "xml": {
+            "name": "segmentTemplateFormat"
+          },
+          "description": "Determines the type of SegmentTemplate included in the Media Presentation Description (MPD).  When set to NUMBER_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Number$ media URLs.  When set to TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Time$ media URLs. When set to NUMBER_WITH_DURATION, only a duration is included in each SegmentTemplate, with $Number$ media URLs."
+        }
+      ]
+    },
+    "StreamSelection": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StreamSelection"
+        },
+        {
+          "xml": {
+            "name": "streamSelection"
+          }
+        }
+      ]
+    },
+    "SuggestedPresentationDelaySeconds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__integer"
+        },
+        {
+          "xml": {
+            "name": "suggestedPresentationDelaySeconds"
+          },
+          "description": "Duration (in seconds) to delay live content before presentation."
+        }
+      ]
+    },
+    "UtcTiming": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/UtcTiming"
+        },
+        {
+          "xml": {
+            "name": "utcTiming"
+          },
+          "description": "Determines the type of UTCTiming included in the Media Presentation Description (MPD)"
+        }
+      ]
+    },
+    "UtcTimingUri": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "utcTimingUri"
+          },
+          "description": "Specifies the value attribute of the UTCTiming field when utcTiming is set to HTTP-ISO, HTTP-HEAD or HTTP-XSDATE"
+        }
+      ]
+    }
+  }
+}

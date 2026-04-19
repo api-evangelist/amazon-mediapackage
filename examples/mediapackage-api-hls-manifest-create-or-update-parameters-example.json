@@ -1,0 +1,11 @@
+{
+  "AdMarkers": "example-value",
+  "AdTriggers": "example-value",
+  "AdsOnDeliveryRestrictions": "example-value",
+  "Id": "id-abc123",
+  "IncludeIframeOnlyStream": "example-value",
+  "ManifestName": "example-resource",
+  "PlaylistType": "STANDARD",
+  "PlaylistWindowSeconds": "example-value",
+  "ProgramDateTimeIntervalSeconds": "example-value"
+}

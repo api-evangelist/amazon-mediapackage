@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediapackage/refs/heads/main/json-structure/mediapackage-api-ad-markers-structure.json",
+  "name": "AdMarkers",
+  "type": "string",
+  "description": "AdMarkers schema from Amazon MediaPackage API",
+  "enum": [
+    "NONE",
+    "SCTE35_ENHANCED",
+    "PASSTHROUGH",
+    "DATERANGE"
+  ]
+}

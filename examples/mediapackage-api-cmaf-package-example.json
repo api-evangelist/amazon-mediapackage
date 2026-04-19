@@ -1,0 +1,7 @@
+{
+  "Encryption": "example-value",
+  "HlsManifests": "example-value",
+  "SegmentDurationSeconds": "example-value",
+  "SegmentPrefix": "example-value",
+  "StreamSelection": "example-value"
+}

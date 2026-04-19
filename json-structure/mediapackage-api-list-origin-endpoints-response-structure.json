@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediapackage/refs/heads/main/json-structure/mediapackage-api-list-origin-endpoints-response-structure.json",
+  "name": "ListOriginEndpointsResponse",
+  "type": "object",
+  "description": "ListOriginEndpointsResponse schema from Amazon MediaPackage API",
+  "properties": {
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "nextToken"
+          },
+          "description": "A token that can be used to resume pagination from the end of the collection."
+        }
+      ]
+    },
+    "OriginEndpoints": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__listOfOriginEndpoint"
+        },
+        {
+          "xml": {
+            "name": "originEndpoints"
+          },
+          "description": "A list of OriginEndpoint records."
+        }
+      ]
+    }
+  }
+}

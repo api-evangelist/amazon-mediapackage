@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediapackage/refs/heads/main/json-structure/mediapackage-api-list-tags-for-resource-response-structure.json",
+  "name": "ListTagsForResourceResponse",
+  "type": "object",
+  "description": "ListTagsForResourceResponse schema from Amazon MediaPackage API",
+  "properties": {
+    "Tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__mapOf__string"
+        },
+        {
+          "xml": {
+            "name": "tags"
+          }
+        }
+      ]
+    }
+  }
+}

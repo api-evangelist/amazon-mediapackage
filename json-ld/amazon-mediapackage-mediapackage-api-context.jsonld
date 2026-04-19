@@ -1,0 +1,380 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "pan": "https://pan.dev/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "ListTagsForResourceRequest": "pan:ListTagsForResourceRequest",
+    "AdMarkers": "pan:AdMarkers",
+    "ConfigureLogsResponse": "pan:ConfigureLogsResponse",
+    "IngestEndpoint": "pan:IngestEndpoint",
+    "DescribeOriginEndpointRequest": "pan:DescribeOriginEndpointRequest",
+    "HlsPackage": "pan:HlsPackage",
+    "CmafEncryption": "pan:CmafEncryption",
+    "HlsManifest": "pan:HlsManifest",
+    "UpdateChannelRequest": "pan:UpdateChannelRequest",
+    "Authorization": "pan:Authorization",
+    "RotateIngestEndpointCredentialsResponse": "pan:RotateIngestEndpointCredentialsResponse",
+    "ListChannelsResponse": "pan:ListChannelsResponse",
+    "DescribeHarvestJobResponse": "pan:DescribeHarvestJobResponse",
+    "CmafPackage": "pan:CmafPackage",
+    "Channel": "pan:Channel",
+    "AdsOnDeliveryRestrictions": "pan:AdsOnDeliveryRestrictions",
+    "CmafPackageCreateOrUpdateParameters": "pan:CmafPackageCreateOrUpdateParameters",
+    "DescribeChannelRequest": "pan:DescribeChannelRequest",
+    "MaxResults": "pan:MaxResults",
+    "MssEncryption": "pan:MssEncryption",
+    "DeleteOriginEndpointRequest": "pan:DeleteOriginEndpointRequest",
+    "SpekeKeyProvider": "pan:SpekeKeyProvider",
+    "CreateOriginEndpointResponse": "pan:CreateOriginEndpointResponse",
+    "DeleteChannelResponse": "pan:DeleteChannelResponse",
+    "Status": "pan:Status",
+    "UpdateChannelResponse": "pan:UpdateChannelResponse",
+    "StreamSelection": "pan:StreamSelection",
+    "HarvestJob": "pan:HarvestJob",
+    "DeleteOriginEndpointResponse": "pan:DeleteOriginEndpointResponse",
+    "CmafEncryptionMethod": "pan:CmafEncryptionMethod",
+    "StreamOrder": "pan:StreamOrder",
+    "ListChannelsRequest": "pan:ListChannelsRequest",
+    "CreateChannelRequest": "pan:CreateChannelRequest",
+    "IngressAccessLogs": "pan:IngressAccessLogs",
+    "ListTagsForResourceResponse": "pan:ListTagsForResourceResponse",
+    "CreateHarvestJobResponse": "pan:CreateHarvestJobResponse",
+    "UntagResourceRequest": "pan:UntagResourceRequest",
+    "Profile": "pan:Profile",
+    "HlsIngest": "pan:HlsIngest",
+    "ListOriginEndpointsResponse": "pan:ListOriginEndpointsResponse",
+    "UpdateOriginEndpointResponse": "pan:UpdateOriginEndpointResponse",
+    "CreateOriginEndpointRequest": "pan:CreateOriginEndpointRequest",
+    "ListHarvestJobsResponse": "pan:ListHarvestJobsResponse",
+    "DashEncryption": "pan:DashEncryption",
+    "CreateHarvestJobRequest": "pan:CreateHarvestJobRequest",
+    "TagResourceRequest": "pan:TagResourceRequest",
+    "AdTriggers": "pan:AdTriggers",
+    "EncryptionContractConfiguration": "pan:EncryptionContractConfiguration",
+    "DescribeHarvestJobRequest": "pan:DescribeHarvestJobRequest",
+    "CreateChannelResponse": "pan:CreateChannelResponse",
+    "DescribeChannelResponse": "pan:DescribeChannelResponse",
+    "ListOriginEndpointsRequest": "pan:ListOriginEndpointsRequest",
+    "PresetSpeke20Audio": "pan:PresetSpeke20Audio",
+    "S3Destination": "pan:S3Destination",
+    "UpdateOriginEndpointRequest": "pan:UpdateOriginEndpointRequest",
+    "MssPackage": "pan:MssPackage",
+    "SegmentTemplateFormat": "pan:SegmentTemplateFormat",
+    "RotateIngestEndpointCredentialsRequest": "pan:RotateIngestEndpointCredentialsRequest",
+    "ConfigureLogsRequest": "pan:ConfigureLogsRequest",
+    "DashPackage": "pan:DashPackage",
+    "ManifestLayout": "pan:ManifestLayout",
+    "OriginEndpoint": "pan:OriginEndpoint",
+    "DeleteChannelRequest": "pan:DeleteChannelRequest",
+    "PlaylistType": "pan:PlaylistType",
+    "EncryptionMethod": "pan:EncryptionMethod",
+    "RotateChannelCredentialsRequest": "pan:RotateChannelCredentialsRequest",
+    "UtcTiming": "pan:UtcTiming",
+    "PresetSpeke20Video": "pan:PresetSpeke20Video",
+    "RotateChannelCredentialsResponse": "pan:RotateChannelCredentialsResponse",
+    "Tags": "pan:Tags",
+    "DescribeOriginEndpointResponse": "pan:DescribeOriginEndpointResponse",
+    "HlsManifestCreateOrUpdateParameters": "pan:HlsManifestCreateOrUpdateParameters",
+    "Origination": "pan:Origination",
+    "HlsEncryption": "pan:HlsEncryption",
+    "EgressAccessLogs": "pan:EgressAccessLogs",
+    "ListHarvestJobsRequest": "pan:ListHarvestJobsRequest",
+    "arn": {
+      "@id": "pan:arn",
+      "@type": "xsd:string"
+    },
+    "createdAt": "schema:dateCreated",
+    "description": "schema:description",
+    "egressAccessLogs": {
+      "@id": "pan:egress_access_logs",
+      "@type": "xsd:string"
+    },
+    "hlsIngest": {
+      "@id": "pan:hls_ingest",
+      "@type": "xsd:string"
+    },
+    "id": {
+      "@id": "pan:id",
+      "@type": "xsd:string"
+    },
+    "ingressAccessLogs": {
+      "@id": "pan:ingress_access_logs",
+      "@type": "xsd:string"
+    },
+    "tags": {
+      "@id": "pan:tags",
+      "@type": "xsd:string"
+    },
+    "password": {
+      "@id": "pan:password",
+      "@type": "xsd:string"
+    },
+    "url": "schema:url",
+    "username": {
+      "@id": "pan:username",
+      "@type": "xsd:string"
+    },
+    "adMarkers": {
+      "@id": "pan:ad_markers",
+      "@type": "xsd:string"
+    },
+    "adTriggers": {
+      "@id": "pan:ad_triggers",
+      "@type": "xsd:string"
+    },
+    "adsOnDeliveryRestrictions": {
+      "@id": "pan:ads_on_delivery_restrictions",
+      "@type": "xsd:string"
+    },
+    "encryption": {
+      "@id": "pan:encryption",
+      "@type": "xsd:string"
+    },
+    "includeDvbSubtitles": {
+      "@id": "pan:include_dvb_subtitles",
+      "@type": "xsd:string"
+    },
+    "includeIframeOnlyStream": {
+      "@id": "pan:include_iframe_only_stream",
+      "@type": "xsd:string"
+    },
+    "playlistType": {
+      "@id": "pan:playlist_type",
+      "@type": "xsd:string"
+    },
+    "playlistWindowSeconds": {
+      "@id": "pan:playlist_window_seconds",
+      "@type": "xsd:string"
+    },
+    "programDateTimeIntervalSeconds": {
+      "@id": "pan:program_date_time_interval_seconds",
+      "@type": "xsd:string"
+    },
+    "segmentDurationSeconds": {
+      "@id": "pan:segment_duration_seconds",
+      "@type": "xsd:string"
+    },
+    "streamSelection": {
+      "@id": "pan:stream_selection",
+      "@type": "xsd:string"
+    },
+    "useAudioRenditionGroup": {
+      "@id": "pan:use_audio_rendition_group",
+      "@type": "xsd:string"
+    },
+    "constantInitializationVector": {
+      "@id": "pan:constant_initialization_vector",
+      "@type": "xsd:string"
+    },
+    "encryptionMethod": {
+      "@id": "pan:encryption_method",
+      "@type": "xsd:string"
+    },
+    "keyRotationIntervalSeconds": {
+      "@id": "pan:key_rotation_interval_seconds",
+      "@type": "xsd:string"
+    },
+    "spekeKeyProvider": {
+      "@id": "pan:speke_key_provider",
+      "@type": "xsd:string"
+    },
+    "manifestName": {
+      "@id": "pan:manifest_name",
+      "@type": "xsd:string"
+    },
+    "cdnIdentifierSecret": {
+      "@id": "pan:cdn_identifier_secret",
+      "@type": "xsd:string"
+    },
+    "secretsRoleArn": {
+      "@id": "pan:secrets_role_arn",
+      "@type": "xsd:string"
+    },
+    "channels": {
+      "@id": "pan:channels",
+      "@type": "xsd:string"
+    },
+    "nextToken": {
+      "@id": "pan:next_token",
+      "@type": "xsd:string"
+    },
+    "channelId": {
+      "@id": "pan:channel_id",
+      "@type": "xsd:string"
+    },
+    "endTime": {
+      "@id": "pan:end_time",
+      "@type": "xsd:string"
+    },
+    "originEndpointId": {
+      "@id": "pan:origin_endpoint_id",
+      "@type": "xsd:string"
+    },
+    "s3Destination": {
+      "@id": "pan:s3_destination",
+      "@type": "xsd:string"
+    },
+    "startTime": {
+      "@id": "pan:start_time",
+      "@type": "xsd:string"
+    },
+    "status": {
+      "@id": "pan:status",
+      "@type": "xsd:string"
+    },
+    "hlsManifests": {
+      "@id": "pan:hls_manifests",
+      "@type": "xsd:string"
+    },
+    "segmentPrefix": {
+      "@id": "pan:segment_prefix",
+      "@type": "xsd:string"
+    },
+    "certificateArn": {
+      "@id": "pan:certificate_arn",
+      "@type": "xsd:string"
+    },
+    "encryptionContractConfiguration": {
+      "@id": "pan:encryption_contract_configuration",
+      "@type": "xsd:string"
+    },
+    "resourceId": {
+      "@id": "pan:resource_id",
+      "@type": "xsd:string"
+    },
+    "roleArn": {
+      "@id": "pan:role_arn",
+      "@type": "xsd:string"
+    },
+    "systemIds": {
+      "@id": "pan:system_ids",
+      "@type": "xsd:string"
+    },
+    "authorization": {
+      "@id": "pan:authorization",
+      "@type": "xsd:string"
+    },
+    "cmafPackage": {
+      "@id": "pan:cmaf_package",
+      "@type": "xsd:string"
+    },
+    "dashPackage": {
+      "@id": "pan:dash_package",
+      "@type": "xsd:string"
+    },
+    "hlsPackage": {
+      "@id": "pan:hls_package",
+      "@type": "xsd:string"
+    },
+    "mssPackage": {
+      "@id": "pan:mss_package",
+      "@type": "xsd:string"
+    },
+    "origination": {
+      "@id": "pan:origination",
+      "@type": "xsd:string"
+    },
+    "startoverWindowSeconds": {
+      "@id": "pan:startover_window_seconds",
+      "@type": "xsd:string"
+    },
+    "timeDelaySeconds": {
+      "@id": "pan:time_delay_seconds",
+      "@type": "xsd:string"
+    },
+    "whitelist": {
+      "@id": "pan:whitelist",
+      "@type": "xsd:string"
+    },
+    "maxVideoBitsPerSecond": {
+      "@id": "pan:max_video_bits_per_second",
+      "@type": "xsd:string"
+    },
+    "minVideoBitsPerSecond": {
+      "@id": "pan:min_video_bits_per_second",
+      "@type": "xsd:string"
+    },
+    "streamOrder": {
+      "@id": "pan:stream_order",
+      "@type": "xsd:string"
+    },
+    "logGroupName": {
+      "@id": "pan:log_group_name",
+      "@type": "xsd:string"
+    },
+    "ingestEndpoints": {
+      "@id": "pan:ingest_endpoints",
+      "@type": "xsd:string"
+    },
+    "originEndpoints": {
+      "@id": "pan:origin_endpoints",
+      "@type": "xsd:string"
+    },
+    "harvestJobs": {
+      "@id": "pan:harvest_jobs",
+      "@type": "xsd:string"
+    },
+    "presetSpeke20Audio": {
+      "@id": "pan:preset_speke20_audio",
+      "@type": "xsd:string"
+    },
+    "presetSpeke20Video": {
+      "@id": "pan:preset_speke20_video",
+      "@type": "xsd:string"
+    },
+    "bucketName": {
+      "@id": "pan:bucket_name",
+      "@type": "xsd:string"
+    },
+    "manifestKey": {
+      "@id": "pan:manifest_key",
+      "@type": "xsd:string"
+    },
+    "manifestWindowSeconds": {
+      "@id": "pan:manifest_window_seconds",
+      "@type": "xsd:string"
+    },
+    "manifestLayout": {
+      "@id": "pan:manifest_layout",
+      "@type": "xsd:string"
+    },
+    "minBufferTimeSeconds": {
+      "@id": "pan:min_buffer_time_seconds",
+      "@type": "xsd:string"
+    },
+    "minUpdatePeriodSeconds": {
+      "@id": "pan:min_update_period_seconds",
+      "@type": "xsd:string"
+    },
+    "periodTriggers": {
+      "@id": "pan:period_triggers",
+      "@type": "xsd:string"
+    },
+    "profile": {
+      "@id": "pan:profile",
+      "@type": "xsd:string"
+    },
+    "segmentTemplateFormat": {
+      "@id": "pan:segment_template_format",
+      "@type": "xsd:string"
+    },
+    "suggestedPresentationDelaySeconds": {
+      "@id": "pan:suggested_presentation_delay_seconds",
+      "@type": "xsd:string"
+    },
+    "utcTiming": {
+      "@id": "pan:utc_timing",
+      "@type": "xsd:string"
+    },
+    "utcTimingUri": {
+      "@id": "pan:utc_timing_uri",
+      "@type": "xsd:string"
+    },
+    "repeatExtXKey": {
+      "@id": "pan:repeat_ext_x_key",
+      "@type": "xsd:string"
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediapackage/refs/heads/main/json-structure/mediapackage-api-cmaf-encryption-structure.json",
+  "name": "CmafEncryption",
+  "type": "object",
+  "description": "A Common Media Application Format (CMAF) encryption configuration.",
+  "properties": {
+    "ConstantInitializationVector": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "constantInitializationVector"
+          },
+          "description": "An optional 128-bit, 16-byte hex value represented by a 32-character string, used in conjunction with the key for encrypting blocks. If you don't specify a value, then MediaPackage creates the constant initialization vector (IV)."
+        }
+      ]
+    },
+    "EncryptionMethod": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CmafEncryptionMethod"
+        },
+        {
+          "xml": {
+            "name": "encryptionMethod"
+          }
+        }
+      ]
+    },
+    "KeyRotationIntervalSeconds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__integer"
+        },
+        {
+          "xml": {
+            "name": "keyRotationIntervalSeconds"
+          },
+          "description": "Time (in seconds) between each encryption key rotation."
+        }
+      ]
+    },
+    "SpekeKeyProvider": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SpekeKeyProvider"
+        },
+        {
+          "xml": {
+            "name": "spekeKeyProvider"
+          }
+        }
+      ]
+    }
+  },
+  "required": [
+    "SpekeKeyProvider"
+  ]
+}

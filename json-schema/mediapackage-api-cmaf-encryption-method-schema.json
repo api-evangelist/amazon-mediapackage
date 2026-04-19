@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediapackage/refs/heads/main/json-schema/mediapackage-api-cmaf-encryption-method-schema.json",
+  "title": "CmafEncryptionMethod",
+  "description": "The encryption method to use.",
+  "type": "string",
+  "enum": [
+    "SAMPLE_AES",
+    "AES_CTR"
+  ]
+}

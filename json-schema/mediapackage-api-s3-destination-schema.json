@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediapackage/refs/heads/main/json-schema/mediapackage-api-s3-destination-schema.json",
+  "title": "S3Destination",
+  "description": "Configuration parameters for where in an S3 bucket to place the harvested content\n",
+  "type": "object",
+  "properties": {
+    "BucketName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "bucketName"
+          },
+          "description": "The name of an S3 bucket within which harvested content will be exported\n"
+        }
+      ]
+    },
+    "ManifestKey": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "manifestKey"
+          },
+          "description": "The key in the specified S3 bucket where the harvested top-level manifest will be placed.\n"
+        }
+      ]
+    },
+    "RoleArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "roleArn"
+          },
+          "description": "The IAM role used to write to the specified S3 bucket\n"
+        }
+      ]
+    }
+  },
+  "required": [
+    "ManifestKey",
+    "BucketName",
+    "RoleArn"
+  ]
+}

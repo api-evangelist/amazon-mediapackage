@@ -1,0 +1,7 @@
+{
+  "EndTime": "example-value",
+  "Id": "id-abc123",
+  "OriginEndpointId": "id-abc123",
+  "S3Destination": "example-value",
+  "StartTime": "example-value"
+}

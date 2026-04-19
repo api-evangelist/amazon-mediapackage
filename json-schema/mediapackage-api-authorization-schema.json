@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediapackage/refs/heads/main/json-schema/mediapackage-api-authorization-schema.json",
+  "title": "Authorization",
+  "description": "CDN Authorization credentials",
+  "type": "object",
+  "properties": {
+    "CdnIdentifierSecret": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "cdnIdentifierSecret"
+          },
+          "description": "The Amazon Resource Name (ARN) for the secret in Secrets Manager that your Content Distribution Network (CDN) uses for authorization to access your endpoint.\n"
+        }
+      ]
+    },
+    "SecretsRoleArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "secretsRoleArn"
+          },
+          "description": "The Amazon Resource Name (ARN) for the IAM role that allows MediaPackage to communicate with AWS Secrets Manager.\n"
+        }
+      ]
+    }
+  },
+  "required": [
+    "SecretsRoleArn",
+    "CdnIdentifierSecret"
+  ]
+}

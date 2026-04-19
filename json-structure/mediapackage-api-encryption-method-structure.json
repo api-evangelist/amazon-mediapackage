@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediapackage/refs/heads/main/json-structure/mediapackage-api-encryption-method-structure.json",
+  "name": "EncryptionMethod",
+  "type": "string",
+  "description": "EncryptionMethod schema from Amazon MediaPackage API",
+  "enum": [
+    "AES_128",
+    "SAMPLE_AES"
+  ]
+}

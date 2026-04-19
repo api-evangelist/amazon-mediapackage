@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediapackage/refs/heads/main/json-structure/mediapackage-api-list-channels-request-structure.json",
+  "name": "ListChannelsRequest",
+  "type": "object",
+  "description": "ListChannelsRequest schema from Amazon MediaPackage API",
+  "properties": {}
+}

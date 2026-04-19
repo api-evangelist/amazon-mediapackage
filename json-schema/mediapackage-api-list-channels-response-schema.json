@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediapackage/refs/heads/main/json-schema/mediapackage-api-list-channels-response-schema.json",
+  "title": "ListChannelsResponse",
+  "description": "ListChannelsResponse schema from Amazon MediaPackage API",
+  "type": "object",
+  "properties": {
+    "Channels": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__listOfChannel"
+        },
+        {
+          "xml": {
+            "name": "channels"
+          },
+          "description": "A list of Channel records."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "nextToken"
+          },
+          "description": "A token that can be used to resume pagination from the end of the collection."
+        }
+      ]
+    }
+  }
+}

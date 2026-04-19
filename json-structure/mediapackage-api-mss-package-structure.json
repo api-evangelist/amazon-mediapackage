@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediapackage/refs/heads/main/json-structure/mediapackage-api-mss-package-structure.json",
+  "name": "MssPackage",
+  "type": "object",
+  "description": "A Microsoft Smooth Streaming (MSS) packaging configuration.",
+  "properties": {
+    "Encryption": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MssEncryption"
+        },
+        {
+          "xml": {
+            "name": "encryption"
+          }
+        }
+      ]
+    },
+    "ManifestWindowSeconds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__integer"
+        },
+        {
+          "xml": {
+            "name": "manifestWindowSeconds"
+          },
+          "description": "The time window (in seconds) contained in each manifest."
+        }
+      ]
+    },
+    "SegmentDurationSeconds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__integer"
+        },
+        {
+          "xml": {
+            "name": "segmentDurationSeconds"
+          },
+          "description": "The duration (in seconds) of each segment."
+        }
+      ]
+    },
+    "StreamSelection": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StreamSelection"
+        },
+        {
+          "xml": {
+            "name": "streamSelection"
+          }
+        }
+      ]
+    }
+  }
+}

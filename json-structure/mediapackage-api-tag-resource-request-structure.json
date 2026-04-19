@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediapackage/refs/heads/main/json-structure/mediapackage-api-tag-resource-request-structure.json",
+  "name": "TagResourceRequest",
+  "type": "object",
+  "description": "TagResourceRequest schema from Amazon MediaPackage API",
+  "properties": {
+    "Tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__mapOf__string"
+        },
+        {
+          "xml": {
+            "name": "tags"
+          }
+        }
+      ]
+    }
+  },
+  "required": [
+    "Tags"
+  ]
+}

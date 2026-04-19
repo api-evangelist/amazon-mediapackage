@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediapackage/refs/heads/main/json-schema/mediapackage-api-origination-schema.json",
+  "title": "Origination",
+  "description": "Origination schema from Amazon MediaPackage API",
+  "type": "string",
+  "enum": [
+    "ALLOW",
+    "DENY"
+  ]
+}

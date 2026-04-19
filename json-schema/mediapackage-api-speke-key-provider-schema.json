@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediapackage/refs/heads/main/json-schema/mediapackage-api-speke-key-provider-schema.json",
+  "title": "SpekeKeyProvider",
+  "description": "A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.",
+  "type": "object",
+  "properties": {
+    "CertificateArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "certificateArn"
+          },
+          "description": "An Amazon Resource Name (ARN) of a Certificate Manager certificate\nthat MediaPackage will use for enforcing secure end-to-end data\ntransfer with the key provider service.\n"
+        }
+      ]
+    },
+    "EncryptionContractConfiguration": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EncryptionContractConfiguration"
+        },
+        {
+          "xml": {
+            "name": "encryptionContractConfiguration"
+          }
+        }
+      ]
+    },
+    "ResourceId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "resourceId"
+          },
+          "description": "The resource ID to include in key requests."
+        }
+      ]
+    },
+    "RoleArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "roleArn"
+          },
+          "description": "An Amazon Resource Name (ARN) of an IAM role that AWS Elemental\nMediaPackage will assume when accessing the key provider service.\n"
+        }
+      ]
+    },
+    "SystemIds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__listOf__string"
+        },
+        {
+          "xml": {
+            "name": "systemIds"
+          },
+          "description": "The system IDs to include in key requests."
+        }
+      ]
+    },
+    "Url": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "url"
+          },
+          "description": "The URL of the external key provider service."
+        }
+      ]
+    }
+  },
+  "required": [
+    "ResourceId",
+    "SystemIds",
+    "Url",
+    "RoleArn"
+  ]
+}

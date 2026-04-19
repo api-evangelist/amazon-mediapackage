@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediapackage/refs/heads/main/json-structure/mediapackage-api-delete-channel-request-structure.json",
+  "name": "DeleteChannelRequest",
+  "type": "object",
+  "description": "DeleteChannelRequest schema from Amazon MediaPackage API",
+  "properties": {}
+}

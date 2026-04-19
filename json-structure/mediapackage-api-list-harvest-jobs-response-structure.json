@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediapackage/refs/heads/main/json-structure/mediapackage-api-list-harvest-jobs-response-structure.json",
+  "name": "ListHarvestJobsResponse",
+  "type": "object",
+  "description": "ListHarvestJobsResponse schema from Amazon MediaPackage API",
+  "properties": {
+    "HarvestJobs": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__listOfHarvestJob"
+        },
+        {
+          "xml": {
+            "name": "harvestJobs"
+          },
+          "description": "A list of HarvestJob records."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "nextToken"
+          },
+          "description": "A token that can be used to resume pagination from the end of the collection."
+        }
+      ]
+    }
+  }
+}

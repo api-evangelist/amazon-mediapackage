@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediapackage/refs/heads/main/json-schema/mediapackage-api-status-schema.json",
+  "title": "Status",
+  "description": "Status schema from Amazon MediaPackage API",
+  "type": "string",
+  "enum": [
+    "IN_PROGRESS",
+    "SUCCEEDED",
+    "FAILED"
+  ]
+}

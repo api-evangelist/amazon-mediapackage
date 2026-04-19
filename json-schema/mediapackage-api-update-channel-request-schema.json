@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediapackage/refs/heads/main/json-schema/mediapackage-api-update-channel-request-schema.json",
+  "title": "UpdateChannelRequest",
+  "description": "Configuration parameters used to update the Channel.",
+  "type": "object",
+  "properties": {
+    "Description": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/__string"
+        },
+        {
+          "xml": {
+            "name": "description"
+          },
+          "description": "A short text description of the Channel."
+        }
+      ]
+    }
+  }
+}

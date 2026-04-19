@@ -1,0 +1,10 @@
+{
+  "Arn": "arn:aws:service:us-east-1:123456789012:resource/example",
+  "CreatedAt": "example-value",
+  "Description": "example-value",
+  "EgressAccessLogs": "example-value",
+  "HlsIngest": "example-value",
+  "Id": "id-abc123",
+  "IngressAccessLogs": "example-value",
+  "Tags": "example-value"
+}

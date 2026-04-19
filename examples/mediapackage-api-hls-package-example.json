@@ -1,0 +1,14 @@
+{
+  "AdMarkers": "example-value",
+  "AdTriggers": "example-value",
+  "AdsOnDeliveryRestrictions": "example-value",
+  "Encryption": "example-value",
+  "IncludeDvbSubtitles": "example-value",
+  "IncludeIframeOnlyStream": "example-value",
+  "PlaylistType": "STANDARD",
+  "PlaylistWindowSeconds": "example-value",
+  "ProgramDateTimeIntervalSeconds": "example-value",
+  "SegmentDurationSeconds": "example-value",
+  "StreamSelection": "example-value",
+  "UseAudioRenditionGroup": "example-value"
+}

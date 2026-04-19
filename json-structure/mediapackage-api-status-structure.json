@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-mediapackage/refs/heads/main/json-structure/mediapackage-api-status-structure.json",
+  "name": "Status",
+  "type": "string",
+  "description": "Status schema from Amazon MediaPackage API",
+  "enum": [
+    "IN_PROGRESS",
+    "SUCCEEDED",
+    "FAILED"
+  ]
+}
