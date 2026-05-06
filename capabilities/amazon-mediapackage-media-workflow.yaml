@@ -1,4 +1,4 @@
-naftiko: 1.0.0-alpha1
+naftiko: 1.0.0-alpha2
 info:
   label: Amazon MediaPackage Workflow
   description: Workflow capability for Amazon MediaPackage media processing operations for broadcast engineers and media developers.
@@ -8,7 +8,7 @@ info:
   - Broadcasting
   - Workflow
   created: '2026-04-19'
-  modified: '2026-04-19'
+  modified: '2026-05-06'
 binds:
 - namespace: env
   keys:
@@ -17,8 +17,365 @@ binds:
     AWS_REGION: AWS_REGION
 capability:
   consumes:
-  - import: mediapackage
-    location: ./shared/mediapackage.yaml
+  - type: http
+    namespace: mediapackage
+    baseUri: http://mediapackage.{region}.amazonaws.com
+    description: Amazon MediaPackage REST API
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{AWS_ACCESS_KEY_ID}}'
+      placement: header
+    resources:
+    - name: default
+      path: /
+      description: Amazon MediaPackage resources
+      operations:
+      - name: configure-logs
+        method: PUT
+        description: ConfigureLogs
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: id
+          in: path
+          type: string
+          required: true
+          description: The ID of the channel to log subscription.
+        body:
+          type: json
+          data: {}
+      - name: list-channels
+        method: GET
+        description: ListChannels
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: maxResults
+          in: query
+          type: integer
+          required: false
+          description: Upper bound on number of records to return.
+        - name: nextToken
+          in: query
+          type: string
+          required: false
+          description: A token used to resume pagination from the end of a previous request.
+        - name: MaxResults
+          in: query
+          type: string
+          required: false
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          required: false
+          description: Pagination token
+      - name: create-channel
+        method: POST
+        description: CreateChannel
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        body:
+          type: json
+          data: {}
+      - name: list-harvest-jobs
+        method: GET
+        description: ListHarvestJobs
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: includeChannelId
+          in: query
+          type: string
+          required: false
+          description: When specified, the request will return only HarvestJobs associated with the given Channel ID.
+        - name: includeStatus
+          in: query
+          type: string
+          required: false
+          description: When specified, the request will return only HarvestJobs in the given status.
+        - name: maxResults
+          in: query
+          type: integer
+          required: false
+          description: The upper bound on the number of records to return.
+        - name: nextToken
+          in: query
+          type: string
+          required: false
+          description: A token used to resume pagination from the end of a previous request.
+        - name: MaxResults
+          in: query
+          type: string
+          required: false
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          required: false
+          description: Pagination token
+      - name: create-harvest-job
+        method: POST
+        description: CreateHarvestJob
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        body:
+          type: json
+          data: {}
+      - name: list-origin-endpoints
+        method: GET
+        description: ListOriginEndpoints
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: channelId
+          in: query
+          type: string
+          required: false
+          description: When specified, the request will return only OriginEndpoints associated with the given Channel ID.
+        - name: maxResults
+          in: query
+          type: integer
+          required: false
+          description: The upper bound on the number of records to return.
+        - name: nextToken
+          in: query
+          type: string
+          required: false
+          description: A token used to resume pagination from the end of a previous request.
+        - name: MaxResults
+          in: query
+          type: string
+          required: false
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          required: false
+          description: Pagination token
+      - name: create-origin-endpoint
+        method: POST
+        description: CreateOriginEndpoint
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        body:
+          type: json
+          data: {}
+      - name: describe-channel
+        method: GET
+        description: DescribeChannel
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: id
+          in: path
+          type: string
+          required: true
+          description: The ID of a Channel.
+      - name: update-channel
+        method: PUT
+        description: UpdateChannel
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: id
+          in: path
+          type: string
+          required: true
+          description: The ID of the Channel to update.
+        body:
+          type: json
+          data: {}
+      - name: delete-channel
+        method: DELETE
+        description: DeleteChannel
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: id
+          in: path
+          type: string
+          required: true
+          description: The ID of the Channel to delete.
+      - name: describe-origin-endpoint
+        method: GET
+        description: DescribeOriginEndpoint
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: id
+          in: path
+          type: string
+          required: true
+          description: The ID of the OriginEndpoint.
+      - name: update-origin-endpoint
+        method: PUT
+        description: UpdateOriginEndpoint
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: id
+          in: path
+          type: string
+          required: true
+          description: The ID of the OriginEndpoint to update.
+        body:
+          type: json
+          data: {}
+      - name: delete-origin-endpoint
+        method: DELETE
+        description: DeleteOriginEndpoint
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: id
+          in: path
+          type: string
+          required: true
+          description: The ID of the OriginEndpoint to delete.
+      - name: describe-harvest-job
+        method: GET
+        description: DescribeHarvestJob
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: id
+          in: path
+          type: string
+          required: true
+          description: The ID of the HarvestJob.
+      - name: list-tags-for-resource
+        method: GET
+        description: ListTagsForResource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: resource-arn
+          in: path
+          type: string
+          required: true
+          description: ''
+      - name: tag-resource
+        method: POST
+        description: TagResource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: resource-arn
+          in: path
+          type: string
+          required: true
+          description: ''
+        body:
+          type: json
+          data: {}
+      - name: rotate-channel-credentials
+        method: PUT
+        description: RotateChannelCredentials
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: id
+          in: path
+          type: string
+          required: true
+          description: The ID of the channel to update.
+        body:
+          type: json
+          data: {}
+      - name: rotate-ingest-endpoint-credentials
+        method: PUT
+        description: RotateIngestEndpointCredentials
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: id
+          in: path
+          type: string
+          required: true
+          description: The ID of the channel the IngestEndpoint is on.
+        - name: ingest_endpoint_id
+          in: path
+          type: string
+          required: true
+          description: The id of the IngestEndpoint whose credentials should be rotated
+        body:
+          type: json
+          data: {}
+      - name: untag-resource
+        method: DELETE
+        description: UntagResource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: resource-arn
+          in: path
+          type: string
+          required: true
+          description: ''
+        - name: tagKeys
+          in: query
+          type: array
+          required: true
+          description: The key(s) of tag to be deleted
   exposes:
   - type: rest
     port: 8080
