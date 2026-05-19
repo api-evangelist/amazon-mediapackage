@@ -1,7 +1,7 @@
 aid: amazon-mediapackage
 name: Amazon MediaPackage
-description: AWS Elemental MediaPackage is a video origination and just-in-time packaging service that reliably prepares and protects video for delivery over the internet, creating multiple output 
-  formats from a single video input.
+description: AWS Elemental MediaPackage is a video origination and just-in-time packaging service that reliably prepares and
+  protects video for delivery over the internet, creating multiple output formats from a single video input.
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
@@ -11,13 +11,13 @@ tags:
 - Media
 url: https://raw.githubusercontent.com/api-evangelist/amazon-mediapackage/refs/heads/main/apis.yml
 created: '2026-03-16'
-modified: '2026-04-19'
+modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
 - aid: amazon-mediapackage:mediapackage-api
   name: Amazon MediaPackage API
-  description: AWS Elemental MediaPackage is a video origination and just-in-time packaging service that reliably prepares and protects video for delivery over the internet, creating multiple output 
-    formats from a single video input.
+  description: AWS Elemental MediaPackage is a video origination and just-in-time packaging service that reliably prepares
+    and protects video for delivery over the internet, creating multiple output formats from a single video input.
   humanURL: https://aws.amazon.com/mediapackage/
   baseURL: http://mediapackage.{region}.amazonaws.com
   tags:
@@ -35,6 +35,8 @@ apis:
     url: https://aws.amazon.com/mediapackage/pricing/
   - type: FAQ
     url: https://aws.amazon.com/mediapackage/faqs/
+  - type: NaftikoCapability
+    url: capabilities/amazon-mediapackage.yaml
 common:
 - type: Portal
   url: https://aws.amazon.com/mediapackage/
@@ -62,8 +64,6 @@ common:
   url: rules/amazon-mediapackage-spectral-rules.yml
 - type: Vocabulary
   url: vocabulary/amazon-mediapackage-vocabulary.yaml
-- type: NaftikoCapability
-  url: capabilities/amazon-mediapackage-media-workflow.yaml
 - type: Features
   data:
   - name: Just-in-Time Packaging
@@ -99,14 +99,14 @@ common:
 - type: Integrations
   url: https://aws.amazon.com/partners/
 integrations:
-  - name: Partner Programs
-  - name: Resources
-  - name: Success Stories
-  - name: Work with an AWS Partner
-  - name: AWS Marketplace
-  - name: AWS Partner Central
-  - name: Partner Paths
-  - name: co-sell with AWS
+- name: Partner Programs
+- name: Resources
+- name: Success Stories
+- name: Work with an AWS Partner
+- name: AWS Marketplace
+- name: AWS Partner Central
+- name: Partner Paths
+- name: co-sell with AWS
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
