@@ -3,7 +3,7 @@ name: Amazon MediaPackage
 description: AWS Elemental MediaPackage is a video origination and just-in-time packaging service that reliably prepares and
   protects video for delivery over the internet, creating multiple output formats from a single video input.
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
 - AWS
 - Broadcasting
