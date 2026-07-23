@@ -1,0 +1,886 @@
+openapi: 3.0.0
+info:
+  version: 2017-10-12
+  x-release: v4
+  title: AWS Elemental MediaPackage Channels Harvest Jobs API
+  description: AWS Elemental MediaPackage
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: mediapackage
+  x-aws-signingName: mediapackage
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/mediapackage-2017-10-12.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://mediapackage.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The MediaPackage multi-region endpoint
+- url: https://mediapackage.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The MediaPackage multi-region endpoint
+- url: http://mediapackage.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The MediaPackage endpoint for China (Beijing) and China (Ningxia)
+- url: https://mediapackage.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The MediaPackage endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: Harvest Jobs
+paths:
+  /harvest_jobs:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: CreateHarvestJob
+      description: Creates a new HarvestJob record.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateHarvestJobResponse'
+              examples:
+                CreateHarvestJob200Example:
+                  summary: Default CreateHarvestJob 200 response
+                  x-microcks-default: true
+                  value:
+                    Arn: arn:aws:service:us-east-1:123456789012:resource/example
+                    ChannelId: id-abc123
+                    CreatedAt: example-value
+                    EndTime: example-value
+                    Id: id-abc123
+        '480':
+          description: UnprocessableEntityException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnprocessableEntityException'
+              examples:
+                CreateHarvestJob480Example:
+                  summary: Default CreateHarvestJob 480 response
+                  x-microcks-default: true
+                  value: {}
+        '481':
+          description: InternalServerErrorException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorException'
+              examples:
+                CreateHarvestJob481Example:
+                  summary: Default CreateHarvestJob 481 response
+                  x-microcks-default: true
+                  value: {}
+        '482':
+          description: ForbiddenException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenException'
+              examples:
+                CreateHarvestJob482Example:
+                  summary: Default CreateHarvestJob 482 response
+                  x-microcks-default: true
+                  value: {}
+        '483':
+          description: NotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundException'
+              examples:
+                CreateHarvestJob483Example:
+                  summary: Default CreateHarvestJob 483 response
+                  x-microcks-default: true
+                  value: {}
+        '484':
+          description: ServiceUnavailableException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceUnavailableException'
+              examples:
+                CreateHarvestJob484Example:
+                  summary: Default CreateHarvestJob 484 response
+                  x-microcks-default: true
+                  value: {}
+        '485':
+          description: TooManyRequestsException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TooManyRequestsException'
+              examples:
+                CreateHarvestJob485Example:
+                  summary: Default CreateHarvestJob 485 response
+                  x-microcks-default: true
+                  value: {}
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - endTime
+              - id
+              - originEndpointId
+              - s3Destination
+              - startTime
+              properties:
+                endTime:
+                  description: 'The end of the time-window which will be harvested
+
+                    '
+                  type: string
+                id:
+                  description: 'The ID of the HarvestJob. The ID must be unique within the region
+
+                    and it cannot be changed after the HarvestJob is submitted
+
+                    '
+                  type: string
+                originEndpointId:
+                  description: 'The ID of the OriginEndpoint that the HarvestJob will harvest from.
+
+                    This cannot be changed after the HarvestJob is submitted.
+
+                    '
+                  type: string
+                s3Destination:
+                  description: 'Configuration parameters for where in an S3 bucket to place the harvested content
+
+                    '
+                  type: object
+                  properties:
+                    BucketName:
+                      allOf:
+                      - $ref: '#/components/schemas/__string'
+                      - xml:
+                          name: bucketName
+                        description: 'The name of an S3 bucket within which harvested content will be exported
+
+                          '
+                    ManifestKey:
+                      allOf:
+                      - $ref: '#/components/schemas/__string'
+                      - xml:
+                          name: manifestKey
+                        description: 'The key in the specified S3 bucket where the harvested top-level manifest will be placed.
+
+                          '
+                    RoleArn:
+                      allOf:
+                      - $ref: '#/components/schemas/__string'
+                      - xml:
+                          name: roleArn
+                        description: 'The IAM role used to write to the specified S3 bucket
+
+                          '
+                startTime:
+                  description: 'The start of the time-window which will be harvested
+
+                    '
+                  type: string
+      summary: Amazon MediaPackage Create Harvest Job
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Harvest Jobs
+    get:
+      operationId: ListHarvestJobs
+      description: Returns a collection of HarvestJob records.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListHarvestJobsResponse'
+              examples:
+                ListHarvestJobs200Example:
+                  summary: Default ListHarvestJobs 200 response
+                  x-microcks-default: true
+                  value:
+                    HarvestJobs: example-value
+                    NextToken: example-value
+        '480':
+          description: UnprocessableEntityException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnprocessableEntityException'
+              examples:
+                ListHarvestJobs480Example:
+                  summary: Default ListHarvestJobs 480 response
+                  x-microcks-default: true
+                  value: {}
+        '481':
+          description: InternalServerErrorException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorException'
+              examples:
+                ListHarvestJobs481Example:
+                  summary: Default ListHarvestJobs 481 response
+                  x-microcks-default: true
+                  value: {}
+        '482':
+          description: ForbiddenException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenException'
+              examples:
+                ListHarvestJobs482Example:
+                  summary: Default ListHarvestJobs 482 response
+                  x-microcks-default: true
+                  value: {}
+        '483':
+          description: NotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundException'
+              examples:
+                ListHarvestJobs483Example:
+                  summary: Default ListHarvestJobs 483 response
+                  x-microcks-default: true
+                  value: {}
+        '484':
+          description: ServiceUnavailableException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceUnavailableException'
+              examples:
+                ListHarvestJobs484Example:
+                  summary: Default ListHarvestJobs 484 response
+                  x-microcks-default: true
+                  value: {}
+        '485':
+          description: TooManyRequestsException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TooManyRequestsException'
+              examples:
+                ListHarvestJobs485Example:
+                  summary: Default ListHarvestJobs 485 response
+                  x-microcks-default: true
+                  value: {}
+      parameters:
+      - name: includeChannelId
+        in: query
+        required: false
+        description: When specified, the request will return only HarvestJobs associated with the given Channel ID.
+        schema:
+          type: string
+      - name: includeStatus
+        in: query
+        required: false
+        description: When specified, the request will return only HarvestJobs in the given status.
+        schema:
+          type: string
+      - name: maxResults
+        in: query
+        required: false
+        description: The upper bound on the number of records to return.
+        schema:
+          type: integer
+          minimum: 1
+          maximum: 1000
+      - name: nextToken
+        in: query
+        required: false
+        description: A token used to resume pagination from the end of a previous request.
+        schema:
+          type: string
+      - name: MaxResults
+        in: query
+        schema:
+          type: string
+        description: Pagination limit
+        required: false
+      - name: NextToken
+        in: query
+        schema:
+          type: string
+        description: Pagination token
+        required: false
+      summary: Amazon MediaPackage List Harvest Jobs
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Harvest Jobs
+  /harvest_jobs/{id}:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    get:
+      operationId: DescribeHarvestJob
+      description: Gets details about an existing HarvestJob.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DescribeHarvestJobResponse'
+              examples:
+                DescribeHarvestJob200Example:
+                  summary: Default DescribeHarvestJob 200 response
+                  x-microcks-default: true
+                  value:
+                    Arn: arn:aws:service:us-east-1:123456789012:resource/example
+                    ChannelId: id-abc123
+                    CreatedAt: example-value
+                    EndTime: example-value
+                    Id: id-abc123
+        '480':
+          description: UnprocessableEntityException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnprocessableEntityException'
+              examples:
+                DescribeHarvestJob480Example:
+                  summary: Default DescribeHarvestJob 480 response
+                  x-microcks-default: true
+                  value: {}
+        '481':
+          description: InternalServerErrorException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerErrorException'
+              examples:
+                DescribeHarvestJob481Example:
+                  summary: Default DescribeHarvestJob 481 response
+                  x-microcks-default: true
+                  value: {}
+        '482':
+          description: ForbiddenException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenException'
+              examples:
+                DescribeHarvestJob482Example:
+                  summary: Default DescribeHarvestJob 482 response
+                  x-microcks-default: true
+                  value: {}
+        '483':
+          description: NotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundException'
+              examples:
+                DescribeHarvestJob483Example:
+                  summary: Default DescribeHarvestJob 483 response
+                  x-microcks-default: true
+                  value: {}
+        '484':
+          description: ServiceUnavailableException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceUnavailableException'
+              examples:
+                DescribeHarvestJob484Example:
+                  summary: Default DescribeHarvestJob 484 response
+                  x-microcks-default: true
+                  value: {}
+        '485':
+          description: TooManyRequestsException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TooManyRequestsException'
+              examples:
+                DescribeHarvestJob485Example:
+                  summary: Default DescribeHarvestJob 485 response
+                  x-microcks-default: true
+                  value: {}
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: The ID of the HarvestJob.
+        schema:
+          type: string
+      summary: Amazon MediaPackage Describe Harvest Job
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Harvest Jobs
+components:
+  schemas:
+    InternalServerErrorException: {}
+    HarvestJob:
+      type: object
+      properties:
+        Arn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: arn
+            description: 'The Amazon Resource Name (ARN) assigned to the HarvestJob.
+
+              '
+        ChannelId:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: channelId
+            description: 'The ID of the Channel that the HarvestJob will harvest from.
+
+              '
+        CreatedAt:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: createdAt
+            description: 'The date and time the HarvestJob was submitted.
+
+              '
+        EndTime:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: endTime
+            description: 'The end of the time-window which will be harvested.
+
+              '
+        Id:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: id
+            description: 'The ID of the HarvestJob. The ID must be unique within the region
+
+              and it cannot be changed after the HarvestJob is submitted.
+
+              '
+        OriginEndpointId:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: originEndpointId
+            description: 'The ID of the OriginEndpoint that the HarvestJob will harvest from.
+
+              This cannot be changed after the HarvestJob is submitted.
+
+              '
+        S3Destination:
+          allOf:
+          - $ref: '#/components/schemas/S3Destination'
+          - xml:
+              name: s3Destination
+        StartTime:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: startTime
+            description: 'The start of the time-window which will be harvested.
+
+              '
+        Status:
+          allOf:
+          - $ref: '#/components/schemas/Status'
+          - xml:
+              name: status
+            description: 'The current status of the HarvestJob. Consider setting up a CloudWatch Event to listen for
+
+              HarvestJobs as they succeed or fail. In the event of failure, the CloudWatch Event will
+
+              include an explanation of why the HarvestJob failed.
+
+              '
+      description: A HarvestJob resource configuration
+    TooManyRequestsException: {}
+    DescribeHarvestJobResponse:
+      type: object
+      properties:
+        Arn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: arn
+            description: 'The Amazon Resource Name (ARN) assigned to the HarvestJob.
+
+              '
+        ChannelId:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: channelId
+            description: 'The ID of the Channel that the HarvestJob will harvest from.
+
+              '
+        CreatedAt:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: createdAt
+            description: 'The date and time the HarvestJob was submitted.
+
+              '
+        EndTime:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: endTime
+            description: 'The end of the time-window which will be harvested.
+
+              '
+        Id:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: id
+            description: 'The ID of the HarvestJob. The ID must be unique within the region
+
+              and it cannot be changed after the HarvestJob is submitted.
+
+              '
+        OriginEndpointId:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: originEndpointId
+            description: 'The ID of the OriginEndpoint that the HarvestJob will harvest from.
+
+              This cannot be changed after the HarvestJob is submitted.
+
+              '
+        S3Destination:
+          allOf:
+          - $ref: '#/components/schemas/S3Destination'
+          - xml:
+              name: s3Destination
+        StartTime:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: startTime
+            description: 'The start of the time-window which will be harvested.
+
+              '
+        Status:
+          allOf:
+          - $ref: '#/components/schemas/Status'
+          - xml:
+              name: status
+            description: 'The current status of the HarvestJob. Consider setting up a CloudWatch Event to listen for
+
+              HarvestJobs as they succeed or fail. In the event of failure, the CloudWatch Event will
+
+              include an explanation of why the HarvestJob failed.
+
+              '
+    ListHarvestJobsResponse:
+      type: object
+      properties:
+        HarvestJobs:
+          allOf:
+          - $ref: '#/components/schemas/__listOfHarvestJob'
+          - xml:
+              name: harvestJobs
+            description: A list of HarvestJob records.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: nextToken
+            description: A token that can be used to resume pagination from the end of the collection.
+    Status:
+      enum:
+      - IN_PROGRESS
+      - SUCCEEDED
+      - FAILED
+      type: string
+    UnprocessableEntityException: {}
+    S3Destination:
+      required:
+      - ManifestKey
+      - BucketName
+      - RoleArn
+      type: object
+      properties:
+        BucketName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: bucketName
+            description: 'The name of an S3 bucket within which harvested content will be exported
+
+              '
+        ManifestKey:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: manifestKey
+            description: 'The key in the specified S3 bucket where the harvested top-level manifest will be placed.
+
+              '
+        RoleArn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: roleArn
+            description: 'The IAM role used to write to the specified S3 bucket
+
+              '
+      description: 'Configuration parameters for where in an S3 bucket to place the harvested content
+
+        '
+    __listOfHarvestJob:
+      type: array
+      items:
+        $ref: '#/components/schemas/HarvestJob'
+    ServiceUnavailableException: {}
+    ForbiddenException: {}
+    NotFoundException: {}
+    CreateHarvestJobResponse:
+      type: object
+      properties:
+        Arn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: arn
+            description: 'The Amazon Resource Name (ARN) assigned to the HarvestJob.
+
+              '
+        ChannelId:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: channelId
+            description: 'The ID of the Channel that the HarvestJob will harvest from.
+
+              '
+        CreatedAt:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: createdAt
+            description: 'The date and time the HarvestJob was submitted.
+
+              '
+        EndTime:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: endTime
+            description: 'The end of the time-window which will be harvested.
+
+              '
+        Id:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: id
+            description: 'The ID of the HarvestJob. The ID must be unique within the region
+
+              and it cannot be changed after the HarvestJob is submitted.
+
+              '
+        OriginEndpointId:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: originEndpointId
+            description: 'The ID of the OriginEndpoint that the HarvestJob will harvest from.
+
+              This cannot be changed after the HarvestJob is submitted.
+
+              '
+        S3Destination:
+          allOf:
+          - $ref: '#/components/schemas/S3Destination'
+          - xml:
+              name: s3Destination
+        StartTime:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: startTime
+            description: 'The start of the time-window which will be harvested.
+
+              '
+        Status:
+          allOf:
+          - $ref: '#/components/schemas/Status'
+          - xml:
+              name: status
+            description: 'The current status of the HarvestJob. Consider setting up a CloudWatch Event to listen for
+
+              HarvestJobs as they succeed or fail. In the event of failure, the CloudWatch Event will
+
+              include an explanation of why the HarvestJob failed.
+
+              '
+    __string:
+      type: string
+  parameters:
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/mediapackage/
+x-hasEquivalentPaths: true
