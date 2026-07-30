@@ -3,7 +3,20 @@ name: Amazon MediaPackage
 description: AWS Elemental MediaPackage is a video origination and just-in-time packaging service that reliably prepares and
   protects video for delivery over the internet, creating multiple output formats from a single video input.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/amazon-mediapackage.png
 tags:
 - AWS
 - Broadcasting
@@ -14,21 +27,78 @@ created: '2026-03-16'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-- aid: amazon-mediapackage:mediapackage-api
-  name: Amazon MediaPackage API
-  description: AWS Elemental MediaPackage is a video origination and just-in-time packaging service that reliably prepares
-    and protects video for delivery over the internet, creating multiple output formats from a single video input.
+- aid: amazon-mediapackage:amazon-mediapackage-channels-api
+  name: Amazon MediaPackage Channels API
+  description: The Channels API from Amazon MediaPackage — 5 operation(s) for channels.
   humanURL: https://aws.amazon.com/mediapackage/
   baseURL: http://mediapackage.{region}.amazonaws.com
   tags:
-  - Broadcasting
-  - Media Processing
-  - Media
+  - Channels
   properties:
+  - type: OpenAPI
+    url: openapi/amazon-mediapackage-channels-api-openapi.yml
   - type: Documentation
     url: https://docs.aws.amazon.com/mediapackage/
+  - type: GettingStarted
+    url: https://aws.amazon.com/mediapackage/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/mediapackage/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/mediapackage/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-mediapackage.yaml
+- aid: amazon-mediapackage:amazon-mediapackage-harvest-jobs-api
+  name: Amazon MediaPackage Harvest Jobs API
+  description: The Harvest Jobs API from Amazon MediaPackage — 2 operation(s) for harvest jobs.
+  humanURL: https://aws.amazon.com/mediapackage/
+  baseURL: http://mediapackage.{region}.amazonaws.com
+  tags:
+  - Harvest Jobs
+  properties:
   - type: OpenAPI
-    url: openapi/amazon-mediapackage-openapi-original.yml
+    url: openapi/amazon-mediapackage-harvest-jobs-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/mediapackage/
+  - type: GettingStarted
+    url: https://aws.amazon.com/mediapackage/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/mediapackage/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/mediapackage/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-mediapackage.yaml
+- aid: amazon-mediapackage:amazon-mediapackage-origin-endpoints-api
+  name: Amazon MediaPackage Origin Endpoints API
+  description: The Origin Endpoints API from Amazon MediaPackage — 2 operation(s) for origin endpoints.
+  humanURL: https://aws.amazon.com/mediapackage/
+  baseURL: http://mediapackage.{region}.amazonaws.com
+  tags:
+  - Origin Endpoints
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-mediapackage-origin-endpoints-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/mediapackage/
+  - type: GettingStarted
+    url: https://aws.amazon.com/mediapackage/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/mediapackage/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/mediapackage/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-mediapackage.yaml
+- aid: amazon-mediapackage:amazon-mediapackage-tags-api
+  name: Amazon MediaPackage Tags API
+  description: The Tags API from Amazon MediaPackage — 2 operation(s) for tags.
+  humanURL: https://aws.amazon.com/mediapackage/
+  baseURL: http://mediapackage.{region}.amazonaws.com
+  tags:
+  - Tags
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-mediapackage-tags-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/mediapackage/
   - type: GettingStarted
     url: https://aws.amazon.com/mediapackage/getting-started/
   - type: Pricing
@@ -38,6 +108,8 @@ apis:
   - type: X-NaftikoCapability
     url: capabilities/amazon-mediapackage.yaml
 common:
+- type: PostmanWorkspace
+  url: https://www.postman.com/kinlaneapi/amazon-mediapackage/overview
 - type: AgenticAccess
   url: agentic-access/amazon-mediapackage-agentic-access.yml
 - type: TrustCenter
