@@ -45,8 +45,6 @@ apis:
     url: https://aws.amazon.com/mediapackage/pricing/
   - type: FAQ
     url: https://aws.amazon.com/mediapackage/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-mediapackage.yaml
 - aid: amazon-mediapackage:amazon-mediapackage-harvest-jobs-api
   name: Amazon MediaPackage Harvest Jobs API
   description: The Harvest Jobs API from Amazon MediaPackage — 2 operation(s) for harvest jobs.
@@ -65,8 +63,6 @@ apis:
     url: https://aws.amazon.com/mediapackage/pricing/
   - type: FAQ
     url: https://aws.amazon.com/mediapackage/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-mediapackage.yaml
 - aid: amazon-mediapackage:amazon-mediapackage-origin-endpoints-api
   name: Amazon MediaPackage Origin Endpoints API
   description: The Origin Endpoints API from Amazon MediaPackage — 2 operation(s) for origin endpoints.
@@ -85,8 +81,6 @@ apis:
     url: https://aws.amazon.com/mediapackage/pricing/
   - type: FAQ
     url: https://aws.amazon.com/mediapackage/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-mediapackage.yaml
 - aid: amazon-mediapackage:amazon-mediapackage-tags-api
   name: Amazon MediaPackage Tags API
   description: The Tags API from Amazon MediaPackage — 2 operation(s) for tags.
@@ -105,8 +99,6 @@ apis:
     url: https://aws.amazon.com/mediapackage/pricing/
   - type: FAQ
     url: https://aws.amazon.com/mediapackage/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-mediapackage.yaml
 common:
 - type: PostmanWorkspace
   url: https://www.postman.com/kinlaneapi/amazon-mediapackage/overview
