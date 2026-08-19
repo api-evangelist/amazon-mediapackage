@@ -1,0 +1,199 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AWS Elemental MediaPackage Channels Harvest Jobs API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Harvest Jobs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon MediaPackage List Harvest Jobs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://mediapackage.{region}.amazonaws.com/harvest_jobs",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "includeChannelId",
+                "value": "",
+                "type": "query",
+                "description": "When specified, the request will return only HarvestJobs associated with the given Channel ID."
+              },
+              {
+                "name": "includeStatus",
+                "value": "",
+                "type": "query",
+                "description": "When specified, the request will return only HarvestJobs in the given status."
+              },
+              {
+                "name": "maxResults",
+                "value": "",
+                "type": "query",
+                "description": "The upper bound on the number of records to return."
+              },
+              {
+                "name": "nextToken",
+                "value": "",
+                "type": "query",
+                "description": "A token used to resume pagination from the end of a previous request."
+              },
+              {
+                "name": "MaxResults",
+                "value": "",
+                "type": "query",
+                "description": "Pagination limit"
+              },
+              {
+                "name": "NextToken",
+                "value": "",
+                "type": "query",
+                "description": "Pagination token"
+              }
+            ]
+          },
+          "docs": "Returns a collection of HarvestJob records."
+        },
+        {
+          "info": {
+            "name": "Amazon MediaPackage Create Harvest Job",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://mediapackage.{region}.amazonaws.com/harvest_jobs",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new HarvestJob record."
+        },
+        {
+          "info": {
+            "name": "Amazon MediaPackage Describe Harvest Job",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://mediapackage.{region}.amazonaws.com/harvest_jobs/:id",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the HarvestJob."
+              }
+            ]
+          },
+          "docs": "Gets details about an existing HarvestJob."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

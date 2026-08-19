@@ -1,0 +1,446 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AWS Elemental MediaPackage Channels API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Channels",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon MediaPackage Configure Logs",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://mediapackage.{region}.amazonaws.com/channels/:id/configure_logs",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the channel to log subscription."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Changes the Channel's properities to configure log subscription"
+        },
+        {
+          "info": {
+            "name": "Amazon MediaPackage List Channels",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://mediapackage.{region}.amazonaws.com/channels",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "maxResults",
+                "value": "",
+                "type": "query",
+                "description": "Upper bound on number of records to return."
+              },
+              {
+                "name": "nextToken",
+                "value": "",
+                "type": "query",
+                "description": "A token used to resume pagination from the end of a previous request."
+              },
+              {
+                "name": "MaxResults",
+                "value": "",
+                "type": "query",
+                "description": "Pagination limit"
+              },
+              {
+                "name": "NextToken",
+                "value": "",
+                "type": "query",
+                "description": "Pagination token"
+              }
+            ]
+          },
+          "docs": "Returns a collection of Channels."
+        },
+        {
+          "info": {
+            "name": "Amazon MediaPackage Create Channel",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://mediapackage.{region}.amazonaws.com/channels",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new Channel."
+        },
+        {
+          "info": {
+            "name": "Amazon MediaPackage Describe Channel",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://mediapackage.{region}.amazonaws.com/channels/:id",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of a Channel."
+              }
+            ]
+          },
+          "docs": "Gets details about a Channel."
+        },
+        {
+          "info": {
+            "name": "Amazon MediaPackage Update Channel",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://mediapackage.{region}.amazonaws.com/channels/:id",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Channel to update."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates an existing Channel."
+        },
+        {
+          "info": {
+            "name": "Amazon MediaPackage Delete Channel",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://mediapackage.{region}.amazonaws.com/channels/:id",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Channel to delete."
+              }
+            ]
+          },
+          "docs": "Deletes an existing Channel."
+        },
+        {
+          "info": {
+            "name": "Amazon MediaPackage Rotate Channel Credentials",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://mediapackage.{region}.amazonaws.com/channels/:id/credentials",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the channel to update."
+              }
+            ]
+          },
+          "docs": "Changes the Channel's first IngestEndpoint's username and password. WARNING - This API is deprecated. Please use RotateIngestEndpointCredentials instead"
+        },
+        {
+          "info": {
+            "name": "Amazon MediaPackage Rotate Ingest Endpoint Credentials",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://mediapackage.{region}.amazonaws.com/channels/:id/ingest_endpoints/:ingest_endpoint_id/credentials",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the channel the IngestEndpoint is on."
+              },
+              {
+                "name": "ingest_endpoint_id",
+                "value": "",
+                "type": "path",
+                "description": "The id of the IngestEndpoint whose credentials should be rotated"
+              }
+            ]
+          },
+          "docs": "Rotate the IngestEndpoint's username and password, as specified by the IngestEndpoint's id."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

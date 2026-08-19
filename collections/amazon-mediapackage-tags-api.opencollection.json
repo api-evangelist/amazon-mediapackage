@@ -1,0 +1,180 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AWS Elemental MediaPackage Channels Tags API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Tags",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon MediaPackage List Tags for Resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://mediapackage.{region}.amazonaws.com/tags/:resource-arn",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "resource-arn",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Amazon MediaPackage List Tags for Resource"
+        },
+        {
+          "info": {
+            "name": "Amazon MediaPackage Tag Resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://mediapackage.{region}.amazonaws.com/tags/:resource-arn",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "resource-arn",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Amazon MediaPackage Tag Resource"
+        },
+        {
+          "info": {
+            "name": "Amazon MediaPackage Untag Resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://mediapackage.{region}.amazonaws.com/tags/:resource-arn#tagKeys",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "resource-arn",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "tagKeys",
+                "value": "",
+                "type": "query",
+                "description": "The key(s) of tag to be deleted"
+              }
+            ]
+          },
+          "docs": "Amazon MediaPackage Untag Resource"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

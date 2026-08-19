@@ -1,0 +1,295 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AWS Elemental MediaPackage Channels Origin Endpoints API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Origin Endpoints",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon MediaPackage List Origin Endpoints",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://mediapackage.{region}.amazonaws.com/origin_endpoints",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "channelId",
+                "value": "",
+                "type": "query",
+                "description": "When specified, the request will return only OriginEndpoints associated with the given Channel ID."
+              },
+              {
+                "name": "maxResults",
+                "value": "",
+                "type": "query",
+                "description": "The upper bound on the number of records to return."
+              },
+              {
+                "name": "nextToken",
+                "value": "",
+                "type": "query",
+                "description": "A token used to resume pagination from the end of a previous request."
+              },
+              {
+                "name": "MaxResults",
+                "value": "",
+                "type": "query",
+                "description": "Pagination limit"
+              },
+              {
+                "name": "NextToken",
+                "value": "",
+                "type": "query",
+                "description": "Pagination token"
+              }
+            ]
+          },
+          "docs": "Returns a collection of OriginEndpoint records."
+        },
+        {
+          "info": {
+            "name": "Amazon MediaPackage Create Origin Endpoint",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://mediapackage.{region}.amazonaws.com/origin_endpoints",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new OriginEndpoint record."
+        },
+        {
+          "info": {
+            "name": "Amazon MediaPackage Describe Origin Endpoint",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://mediapackage.{region}.amazonaws.com/origin_endpoints/:id",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the OriginEndpoint."
+              }
+            ]
+          },
+          "docs": "Gets details about an existing OriginEndpoint."
+        },
+        {
+          "info": {
+            "name": "Amazon MediaPackage Update Origin Endpoint",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://mediapackage.{region}.amazonaws.com/origin_endpoints/:id",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the OriginEndpoint to update."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates an existing OriginEndpoint."
+        },
+        {
+          "info": {
+            "name": "Amazon MediaPackage Delete Origin Endpoint",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://mediapackage.{region}.amazonaws.com/origin_endpoints/:id",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the OriginEndpoint to delete."
+              }
+            ]
+          },
+          "docs": "Deletes an existing OriginEndpoint."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
