@@ -1,0 +1,35 @@
+slug: amazon-mediapackage
+provider: Amazon MediaPackage
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Media, Entertainment & Telecom Content
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 2
+edges:
+- tag: Channels
+  spec_file: amazon-mediapackage-channels-api-openapi.yml
+  capability_id: BC-3740.20
+  capability_id_l1: BC-3740
+  capability_name: OTT & Streaming Delivery
+  confidence: 0.8
+  evidence: '''Create Channel'' / ''Rotate Ingest Endpoint Credentials'', schemas IngestEndpoint, HlsIngest;
+    vendor is ''a video origination and just-in-time packaging service'''
+  reason: Channels define the ingest/origination point of a streaming packaging service, matching 'Operation
+    of streaming origin, packaging, and live streaming'.
+- tag: Origin Endpoints
+  spec_file: amazon-mediapackage-origin-endpoints-api-openapi.yml
+  capability_id: BC-3740.20
+  capability_id_l1: BC-3740
+  capability_name: OTT & Streaming Delivery
+  confidence: 0.8
+  evidence: '''Create Origin Endpoint'' with schemas HlsManifestCreateOrUpdateParameters, DashEncryption,
+    CmafEncryptionMethod, PresetSpeke20Video'
+  reason: Origin endpoints publish packaged HLS/DASH/CMAF manifests from the origin for internet delivery
+    — streaming origin and packaging operation (DRM/SPEKE settings are a secondary aspect).
