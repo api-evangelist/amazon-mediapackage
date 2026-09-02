@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
   title: AWS Elemental MediaPackage Channels Harvest Jobs API
   description: AWS Elemental MediaPackage
@@ -521,7 +521,6 @@ paths:
       - Harvest Jobs
 components:
   schemas:
-    InternalServerErrorException: {}
     HarvestJob:
       type: object
       properties:
@@ -603,109 +602,6 @@ components:
 
               '
       description: A HarvestJob resource configuration
-    TooManyRequestsException: {}
-    DescribeHarvestJobResponse:
-      type: object
-      properties:
-        Arn:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: arn
-            description: 'The Amazon Resource Name (ARN) assigned to the HarvestJob.
-
-              '
-        ChannelId:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: channelId
-            description: 'The ID of the Channel that the HarvestJob will harvest from.
-
-              '
-        CreatedAt:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: createdAt
-            description: 'The date and time the HarvestJob was submitted.
-
-              '
-        EndTime:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: endTime
-            description: 'The end of the time-window which will be harvested.
-
-              '
-        Id:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: id
-            description: 'The ID of the HarvestJob. The ID must be unique within the region
-
-              and it cannot be changed after the HarvestJob is submitted.
-
-              '
-        OriginEndpointId:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: originEndpointId
-            description: 'The ID of the OriginEndpoint that the HarvestJob will harvest from.
-
-              This cannot be changed after the HarvestJob is submitted.
-
-              '
-        S3Destination:
-          allOf:
-          - $ref: '#/components/schemas/S3Destination'
-          - xml:
-              name: s3Destination
-        StartTime:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: startTime
-            description: 'The start of the time-window which will be harvested.
-
-              '
-        Status:
-          allOf:
-          - $ref: '#/components/schemas/Status'
-          - xml:
-              name: status
-            description: 'The current status of the HarvestJob. Consider setting up a CloudWatch Event to listen for
-
-              HarvestJobs as they succeed or fail. In the event of failure, the CloudWatch Event will
-
-              include an explanation of why the HarvestJob failed.
-
-              '
-    ListHarvestJobsResponse:
-      type: object
-      properties:
-        HarvestJobs:
-          allOf:
-          - $ref: '#/components/schemas/__listOfHarvestJob'
-          - xml:
-              name: harvestJobs
-            description: A list of HarvestJob records.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: nextToken
-            description: A token that can be used to resume pagination from the end of the collection.
-    Status:
-      enum:
-      - IN_PROGRESS
-      - SUCCEEDED
-      - FAILED
-      type: string
-    UnprocessableEntityException: {}
     S3Destination:
       required:
       - ManifestKey
@@ -740,13 +636,13 @@ components:
       description: 'Configuration parameters for where in an S3 bucket to place the harvested content
 
         '
+    ForbiddenException: {}
+    TooManyRequestsException: {}
+    UnprocessableEntityException: {}
     __listOfHarvestJob:
       type: array
       items:
         $ref: '#/components/schemas/HarvestJob'
-    ServiceUnavailableException: {}
-    ForbiddenException: {}
-    NotFoundException: {}
     CreateHarvestJobResponse:
       type: object
       properties:
@@ -829,7 +725,129 @@ components:
               '
     __string:
       type: string
+    ListHarvestJobsResponse:
+      type: object
+      properties:
+        HarvestJobs:
+          allOf:
+          - $ref: '#/components/schemas/__listOfHarvestJob'
+          - xml:
+              name: harvestJobs
+            description: A list of HarvestJob records.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: nextToken
+            description: A token that can be used to resume pagination from the end of the collection.
+    DescribeHarvestJobResponse:
+      type: object
+      properties:
+        Arn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: arn
+            description: 'The Amazon Resource Name (ARN) assigned to the HarvestJob.
+
+              '
+        ChannelId:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: channelId
+            description: 'The ID of the Channel that the HarvestJob will harvest from.
+
+              '
+        CreatedAt:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: createdAt
+            description: 'The date and time the HarvestJob was submitted.
+
+              '
+        EndTime:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: endTime
+            description: 'The end of the time-window which will be harvested.
+
+              '
+        Id:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: id
+            description: 'The ID of the HarvestJob. The ID must be unique within the region
+
+              and it cannot be changed after the HarvestJob is submitted.
+
+              '
+        OriginEndpointId:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: originEndpointId
+            description: 'The ID of the OriginEndpoint that the HarvestJob will harvest from.
+
+              This cannot be changed after the HarvestJob is submitted.
+
+              '
+        S3Destination:
+          allOf:
+          - $ref: '#/components/schemas/S3Destination'
+          - xml:
+              name: s3Destination
+        StartTime:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: startTime
+            description: 'The start of the time-window which will be harvested.
+
+              '
+        Status:
+          allOf:
+          - $ref: '#/components/schemas/Status'
+          - xml:
+              name: status
+            description: 'The current status of the HarvestJob. Consider setting up a CloudWatch Event to listen for
+
+              HarvestJobs as they succeed or fail. In the event of failure, the CloudWatch Event will
+
+              include an explanation of why the HarvestJob failed.
+
+              '
+    InternalServerErrorException: {}
+    Status:
+      enum:
+      - IN_PROGRESS
+      - SUCCEEDED
+      - FAILED
+      type: string
+    NotFoundException: {}
+    ServiceUnavailableException: {}
   parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Credential:
       name: X-Amz-Credential
       in: header
@@ -848,26 +866,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Security-Token:
       name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
