@@ -1,7 +1,8 @@
 aid: amazon-mediapackage
 name: Amazon MediaPackage
-description: AWS Elemental MediaPackage is a video origination and just-in-time packaging service that reliably prepares and
-  protects video for delivery over the internet, creating multiple output formats from a single video input.
+description: AWS Elemental MediaPackage is a video origination and just-in-time packaging service that
+  reliably prepares and protects video for delivery over the internet, creating multiple output formats
+  from a single video input.
 type: Index
 deliveryModel:
   model: saas
@@ -37,7 +38,7 @@ tags:
 - Media
 url: https://raw.githubusercontent.com/api-evangelist/amazon-mediapackage/refs/heads/main/apis.yml
 created: '2026-03-16'
-modified: '2026-05-19'
+modified: '2026-09-16'
 specificationVersion: '0.23'
 apis:
 - aid: amazon-mediapackage:amazon-mediapackage-channels-api
@@ -113,6 +114,8 @@ apis:
   - type: FAQ
     url: https://aws.amazon.com/mediapackage/faqs/
 common:
+- type: Website
+  url: https://amazon.com
 - type: CapabilityMap
   url: capabilities/amazon-mediapackage-capability-edges.yml
   name: Amazon MediaPackage Business Capability Map
