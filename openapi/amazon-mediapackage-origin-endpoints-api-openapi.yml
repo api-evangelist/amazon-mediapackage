@@ -1,8 +1,8 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: 2017-10-12
   x-release: v4
-  title: AWS Elemental MediaPackage Channels Origin Endpoints API
+  title: AWS Elemental MediaPackage Origin Endpoints API
   description: AWS Elemental MediaPackage
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -24,6 +24,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/mediapackage-2017-10-12.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -1331,381 +1332,6 @@ paths:
       - Origin Endpoints
 components:
   schemas:
-    PlaylistType:
-      enum:
-      - NONE
-      - EVENT
-      - VOD
-      type: string
-    DashEncryption:
-      required:
-      - SpekeKeyProvider
-      type: object
-      properties:
-        KeyRotationIntervalSeconds:
-          allOf:
-          - $ref: '#/components/schemas/__integer'
-          - xml:
-              name: keyRotationIntervalSeconds
-            description: Time (in seconds) between each encryption key rotation.
-        SpekeKeyProvider:
-          allOf:
-          - $ref: '#/components/schemas/SpekeKeyProvider'
-          - xml:
-              name: spekeKeyProvider
-      description: A Dynamic Adaptive Streaming over HTTP (DASH) encryption configuration.
-    CreateOriginEndpointResponse:
-      type: object
-      properties:
-        Arn:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: arn
-            description: The Amazon Resource Name (ARN) assigned to the OriginEndpoint.
-        Authorization:
-          allOf:
-          - $ref: '#/components/schemas/Authorization'
-          - xml:
-              name: authorization
-        ChannelId:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: channelId
-            description: The ID of the Channel the OriginEndpoint is associated with.
-        CmafPackage:
-          allOf:
-          - $ref: '#/components/schemas/CmafPackage'
-          - xml:
-              name: cmafPackage
-        CreatedAt:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: createdAt
-            description: The date and time the OriginEndpoint was created.
-        DashPackage:
-          allOf:
-          - $ref: '#/components/schemas/DashPackage'
-          - xml:
-              name: dashPackage
-        Description:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: description
-            description: A short text description of the OriginEndpoint.
-        HlsPackage:
-          allOf:
-          - $ref: '#/components/schemas/HlsPackage'
-          - xml:
-              name: hlsPackage
-        Id:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: id
-            description: The ID of the OriginEndpoint.
-        ManifestName:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: manifestName
-            description: A short string appended to the end of the OriginEndpoint URL.
-        MssPackage:
-          allOf:
-          - $ref: '#/components/schemas/MssPackage'
-          - xml:
-              name: mssPackage
-        Origination:
-          allOf:
-          - $ref: '#/components/schemas/Origination'
-          - xml:
-              name: origination
-            description: 'Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint
-
-              may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be
-
-              requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
-
-              '
-        StartoverWindowSeconds:
-          allOf:
-          - $ref: '#/components/schemas/__integer'
-          - xml:
-              name: startoverWindowSeconds
-            description: 'Maximum duration (seconds) of content to retain for startover playback.
-
-              If not specified, startover playback will be disabled for the OriginEndpoint.
-
-              '
-        Tags:
-          allOf:
-          - $ref: '#/components/schemas/Tags'
-          - xml:
-              name: tags
-        TimeDelaySeconds:
-          allOf:
-          - $ref: '#/components/schemas/__integer'
-          - xml:
-              name: timeDelaySeconds
-            description: 'Amount of delay (seconds) to enforce on the playback of live content.
-
-              If not specified, there will be no time delay in effect for the OriginEndpoint.
-
-              '
-        Url:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: url
-            description: The URL of the packaged OriginEndpoint for consumption.
-        Whitelist:
-          allOf:
-          - $ref: '#/components/schemas/__listOf__string'
-          - xml:
-              name: whitelist
-            description: A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.
-    AdMarkers:
-      enum:
-      - NONE
-      - SCTE35_ENHANCED
-      - PASSTHROUGH
-      - DATERANGE
-      type: string
-    CmafEncryptionMethod:
-      enum:
-      - SAMPLE_AES
-      - AES_CTR
-      type: string
-      description: The encryption method to use.
-    DescribeOriginEndpointResponse:
-      type: object
-      properties:
-        Arn:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: arn
-            description: The Amazon Resource Name (ARN) assigned to the OriginEndpoint.
-        Authorization:
-          allOf:
-          - $ref: '#/components/schemas/Authorization'
-          - xml:
-              name: authorization
-        ChannelId:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: channelId
-            description: The ID of the Channel the OriginEndpoint is associated with.
-        CmafPackage:
-          allOf:
-          - $ref: '#/components/schemas/CmafPackage'
-          - xml:
-              name: cmafPackage
-        CreatedAt:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: createdAt
-            description: The date and time the OriginEndpoint was created.
-        DashPackage:
-          allOf:
-          - $ref: '#/components/schemas/DashPackage'
-          - xml:
-              name: dashPackage
-        Description:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: description
-            description: A short text description of the OriginEndpoint.
-        HlsPackage:
-          allOf:
-          - $ref: '#/components/schemas/HlsPackage'
-          - xml:
-              name: hlsPackage
-        Id:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: id
-            description: The ID of the OriginEndpoint.
-        ManifestName:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: manifestName
-            description: A short string appended to the end of the OriginEndpoint URL.
-        MssPackage:
-          allOf:
-          - $ref: '#/components/schemas/MssPackage'
-          - xml:
-              name: mssPackage
-        Origination:
-          allOf:
-          - $ref: '#/components/schemas/Origination'
-          - xml:
-              name: origination
-            description: 'Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint
-
-              may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be
-
-              requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
-
-              '
-        StartoverWindowSeconds:
-          allOf:
-          - $ref: '#/components/schemas/__integer'
-          - xml:
-              name: startoverWindowSeconds
-            description: 'Maximum duration (seconds) of content to retain for startover playback.
-
-              If not specified, startover playback will be disabled for the OriginEndpoint.
-
-              '
-        Tags:
-          allOf:
-          - $ref: '#/components/schemas/Tags'
-          - xml:
-              name: tags
-        TimeDelaySeconds:
-          allOf:
-          - $ref: '#/components/schemas/__integer'
-          - xml:
-              name: timeDelaySeconds
-            description: 'Amount of delay (seconds) to enforce on the playback of live content.
-
-              If not specified, there will be no time delay in effect for the OriginEndpoint.
-
-              '
-        Url:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: url
-            description: The URL of the packaged OriginEndpoint for consumption.
-        Whitelist:
-          allOf:
-          - $ref: '#/components/schemas/__listOf__string'
-          - xml:
-              name: whitelist
-            description: A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.
-    UtcTiming:
-      enum:
-      - NONE
-      - HTTP-HEAD
-      - HTTP-ISO
-      - HTTP-XSDATE
-      type: string
-    HlsManifestCreateOrUpdateParameters:
-      required:
-      - Id
-      type: object
-      properties:
-        AdMarkers:
-          allOf:
-          - $ref: '#/components/schemas/AdMarkers'
-          - xml:
-              name: adMarkers
-            description: "This setting controls how ad markers are included in the packaged OriginEndpoint.\n\"NONE\" will omit all SCTE-35 ad markers from the output.\n\"PASSTHROUGH\" causes the manifest to contain a copy of the SCTE-35 ad\nmarkers (comments) taken directly from the input HTTP Live Streaming (HLS) manifest.\n\"SCTE35_ENHANCED\" generates ad markers and blackout tags based on SCTE-35\nmessages in the input source.\n\"DATERANGE\" inserts EXT-X-DATERANGE tags to signal ad and program transition events \nin HLS and CMAF manifests. For this option, you must set a programDateTimeIntervalSeconds value \nthat is greater than 0.\n"
-        AdTriggers:
-          allOf:
-          - $ref: '#/components/schemas/AdTriggers'
-          - xml:
-              name: adTriggers
-        AdsOnDeliveryRestrictions:
-          allOf:
-          - $ref: '#/components/schemas/AdsOnDeliveryRestrictions'
-          - xml:
-              name: adsOnDeliveryRestrictions
-        Id:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: id
-            description: The ID of the manifest. The ID must be unique within the OriginEndpoint and it cannot be changed after it is created.
-        IncludeIframeOnlyStream:
-          allOf:
-          - $ref: '#/components/schemas/__boolean'
-          - xml:
-              name: includeIframeOnlyStream
-            description: When enabled, an I-Frame only stream will be included in the output.
-        ManifestName:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: manifestName
-            description: An optional short string appended to the end of the OriginEndpoint URL. If not specified, defaults to the manifestName for the OriginEndpoint.
-        PlaylistType:
-          allOf:
-          - $ref: '#/components/schemas/PlaylistType'
-          - xml:
-              name: playlistType
-            description: 'The HTTP Live Streaming (HLS) playlist type.
-
-              When either "EVENT" or "VOD" is specified, a corresponding EXT-X-PLAYLIST-TYPE
-
-              entry will be included in the media playlist.
-
-              '
-        PlaylistWindowSeconds:
-          allOf:
-          - $ref: '#/components/schemas/__integer'
-          - xml:
-              name: playlistWindowSeconds
-            description: Time window (in seconds) contained in each parent manifest.
-        ProgramDateTimeIntervalSeconds:
-          allOf:
-          - $ref: '#/components/schemas/__integer'
-          - xml:
-              name: programDateTimeIntervalSeconds
-            description: 'The interval (in seconds) between each EXT-X-PROGRAM-DATE-TIME tag
-
-              inserted into manifests. Additionally, when an interval is specified
-
-              ID3Timed Metadata messages will be generated every 5 seconds using the
-
-              ingest time of the content.
-
-              If the interval is not specified, or set to 0, then
-
-              no EXT-X-PROGRAM-DATE-TIME tags will be inserted into manifests and no
-
-              ID3Timed Metadata messages will be generated. Note that irrespective
-
-              of this parameter, if any ID3 Timed Metadata is found in HTTP Live Streaming (HLS) input,
-
-              it will be passed through to HLS output.
-
-              '
-      description: A HTTP Live Streaming (HLS) manifest configuration.
-    EncryptionMethod:
-      enum:
-      - AES_128
-      - SAMPLE_AES
-      type: string
-    EncryptionContractConfiguration:
-      required:
-      - PresetSpeke20Audio
-      - PresetSpeke20Video
-      type: object
-      properties:
-        PresetSpeke20Audio:
-          allOf:
-          - $ref: '#/components/schemas/PresetSpeke20Audio'
-          - xml:
-              name: presetSpeke20Audio
-            description: A collection of audio encryption presets.
-        PresetSpeke20Video:
-          allOf:
-          - $ref: '#/components/schemas/PresetSpeke20Video'
-          - xml:
-              name: presetSpeke20Video
-            description: A collection of video encryption presets.
-      description: "Use encryptionContractConfiguration to configure one or more content encryption keys for your endpoints that use SPEKE 2.0. \nThe encryption contract defines which content keys are used to encrypt the audio and video tracks in your stream. \nTo configure the encryption contract, specify which audio and video encryption presets to use.\nNote the following considerations when using encryptionContractConfiguration:\nencryptionContractConfiguration can be used for DASH or CMAF endpoints that use SPEKE 2.0. SPEKE 2.0 relies on the CPIX 2.3 specification.\nYou must disable key rotation for this endpoint by setting keyRotationIntervalSeconds to 0.\n"
     PresetSpeke20Audio:
       enum:
       - PRESET-AUDIO-1
@@ -1714,8 +1340,34 @@ components:
       - SHARED
       - UNENCRYPTED
       type: string
-    TooManyRequestsException: {}
-    ForbiddenException: {}
+    StreamOrder:
+      enum:
+      - ORIGINAL
+      - VIDEO_BITRATE_ASCENDING
+      - VIDEO_BITRATE_DESCENDING
+      type: string
+    MssEncryption:
+      required:
+      - SpekeKeyProvider
+      type: object
+      properties:
+        SpekeKeyProvider:
+          allOf:
+          - $ref: '#/components/schemas/SpekeKeyProvider'
+          - xml:
+              name: spekeKeyProvider
+      description: A Microsoft Smooth Streaming (MSS) encryption configuration.
+    Origination:
+      enum:
+      - ALLOW
+      - DENY
+      type: string
+    EncryptionMethod:
+      enum:
+      - AES_128
+      - SAMPLE_AES
+      type: string
+    UnprocessableEntityException: {}
     PresetSpeke20Video:
       enum:
       - PRESET-VIDEO-1
@@ -1729,150 +1381,69 @@ components:
       - SHARED
       - UNENCRYPTED
       type: string
-    ListOriginEndpointsResponse:
-      type: object
-      properties:
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: nextToken
-            description: A token that can be used to resume pagination from the end of the collection.
-        OriginEndpoints:
-          allOf:
-          - $ref: '#/components/schemas/__listOfOriginEndpoint'
-          - xml:
-              name: originEndpoints
-            description: A list of OriginEndpoint records.
-    UpdateOriginEndpointResponse:
-      type: object
-      properties:
-        Arn:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: arn
-            description: The Amazon Resource Name (ARN) assigned to the OriginEndpoint.
-        Authorization:
-          allOf:
-          - $ref: '#/components/schemas/Authorization'
-          - xml:
-              name: authorization
-        ChannelId:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: channelId
-            description: The ID of the Channel the OriginEndpoint is associated with.
-        CmafPackage:
-          allOf:
-          - $ref: '#/components/schemas/CmafPackage'
-          - xml:
-              name: cmafPackage
-        CreatedAt:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: createdAt
-            description: The date and time the OriginEndpoint was created.
-        DashPackage:
-          allOf:
-          - $ref: '#/components/schemas/DashPackage'
-          - xml:
-              name: dashPackage
-        Description:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: description
-            description: A short text description of the OriginEndpoint.
-        HlsPackage:
-          allOf:
-          - $ref: '#/components/schemas/HlsPackage'
-          - xml:
-              name: hlsPackage
-        Id:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: id
-            description: The ID of the OriginEndpoint.
-        ManifestName:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: manifestName
-            description: A short string appended to the end of the OriginEndpoint URL.
-        MssPackage:
-          allOf:
-          - $ref: '#/components/schemas/MssPackage'
-          - xml:
-              name: mssPackage
-        Origination:
-          allOf:
-          - $ref: '#/components/schemas/Origination'
-          - xml:
-              name: origination
-            description: 'Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint
-
-              may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be
-
-              requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
-
-              '
-        StartoverWindowSeconds:
-          allOf:
-          - $ref: '#/components/schemas/__integer'
-          - xml:
-              name: startoverWindowSeconds
-            description: 'Maximum duration (seconds) of content to retain for startover playback.
-
-              If not specified, startover playback will be disabled for the OriginEndpoint.
-
-              '
-        Tags:
-          allOf:
-          - $ref: '#/components/schemas/Tags'
-          - xml:
-              name: tags
-        TimeDelaySeconds:
-          allOf:
-          - $ref: '#/components/schemas/__integer'
-          - xml:
-              name: timeDelaySeconds
-            description: 'Amount of delay (seconds) to enforce on the playback of live content.
-
-              If not specified, there will be no time delay in effect for the OriginEndpoint.
-
-              '
-        Url:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: url
-            description: The URL of the packaged OriginEndpoint for consumption.
-        Whitelist:
-          allOf:
-          - $ref: '#/components/schemas/__listOf__string'
-          - xml:
-              name: whitelist
-            description: A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.
-    MssEncryption:
+    Authorization:
       required:
-      - SpekeKeyProvider
+      - SecretsRoleArn
+      - CdnIdentifierSecret
       type: object
       properties:
-        SpekeKeyProvider:
+        CdnIdentifierSecret:
           allOf:
-          - $ref: '#/components/schemas/SpekeKeyProvider'
+          - $ref: '#/components/schemas/__string'
           - xml:
-              name: spekeKeyProvider
-      description: A Microsoft Smooth Streaming (MSS) encryption configuration.
+              name: cdnIdentifierSecret
+            description: 'The Amazon Resource Name (ARN) for the secret in Secrets Manager that your Content Distribution Network (CDN) uses for authorization to access your endpoint.
+
+              '
+        SecretsRoleArn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: secretsRoleArn
+            description: 'The Amazon Resource Name (ARN) for the IAM role that allows MediaPackage to communicate with AWS Secrets Manager.
+
+              '
+      description: CDN Authorization credentials
     __listOfHlsManifestCreateOrUpdateParameters:
       type: array
       items:
         $ref: '#/components/schemas/HlsManifestCreateOrUpdateParameters'
-    UnprocessableEntityException: {}
+    CmafPackage:
+      type: object
+      properties:
+        Encryption:
+          allOf:
+          - $ref: '#/components/schemas/CmafEncryption'
+          - xml:
+              name: encryption
+        HlsManifests:
+          allOf:
+          - $ref: '#/components/schemas/__listOfHlsManifest'
+          - xml:
+              name: hlsManifests
+            description: A list of HLS manifest configurations
+        SegmentDurationSeconds:
+          allOf:
+          - $ref: '#/components/schemas/__integer'
+          - xml:
+              name: segmentDurationSeconds
+            description: 'Duration (in seconds) of each segment. Actual segments will be
+
+              rounded to the nearest multiple of the source segment duration.
+
+              '
+        SegmentPrefix:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: segmentPrefix
+            description: An optional custom string that is prepended to the name of each segment. If not specified, it defaults to the ChannelId.
+        StreamSelection:
+          allOf:
+          - $ref: '#/components/schemas/StreamSelection'
+          - xml:
+              name: streamSelection
+      description: A Common Media Application Format (CMAF) packaging configuration.
     AdsOnDeliveryRestrictions:
       enum:
       - NONE
@@ -1897,21 +1468,12 @@ components:
         and are always treated as ads if specified in AdTriggers.
 
         '
-    __listOf__string:
-      type: array
-      items:
-        $ref: '#/components/schemas/__string'
-    __PeriodTriggersElement:
+    ManifestLayout:
       enum:
-      - ADS
+      - FULL
+      - COMPACT
       type: string
-    StreamOrder:
-      enum:
-      - ORIGINAL
-      - VIDEO_BITRATE_ASCENDING
-      - VIDEO_BITRATE_DESCENDING
-      type: string
-    HlsEncryption:
+    CmafEncryption:
       required:
       - SpekeKeyProvider
       type: object
@@ -1921,35 +1483,41 @@ components:
           - $ref: '#/components/schemas/__string'
           - xml:
               name: constantInitializationVector
-            description: 'A constant initialization vector for encryption (optional).
-
-              When not specified the initialization vector will be periodically rotated.
-
-              '
+            description: An optional 128-bit, 16-byte hex value represented by a 32-character string, used in conjunction with the key for encrypting blocks. If you don't specify a value, then MediaPackage creates the constant initialization vector (IV).
         EncryptionMethod:
           allOf:
-          - $ref: '#/components/schemas/EncryptionMethod'
+          - $ref: '#/components/schemas/CmafEncryptionMethod'
           - xml:
               name: encryptionMethod
-            description: The encryption method to use.
         KeyRotationIntervalSeconds:
           allOf:
           - $ref: '#/components/schemas/__integer'
           - xml:
               name: keyRotationIntervalSeconds
-            description: Interval (in seconds) between each encryption key rotation.
-        RepeatExtXKey:
-          allOf:
-          - $ref: '#/components/schemas/__boolean'
-          - xml:
-              name: repeatExtXKey
-            description: When enabled, the EXT-X-KEY tag will be repeated in output manifests.
+            description: Time (in seconds) between each encryption key rotation.
         SpekeKeyProvider:
           allOf:
           - $ref: '#/components/schemas/SpekeKeyProvider'
           - xml:
               name: spekeKeyProvider
-      description: An HTTP Live Streaming (HLS) encryption configuration.
+      description: A Common Media Application Format (CMAF) encryption configuration.
+    __listOf__PeriodTriggersElement:
+      type: array
+      items:
+        $ref: '#/components/schemas/__PeriodTriggersElement'
+    __PeriodTriggersElement:
+      enum:
+      - ADS
+      type: string
+    __boolean:
+      type: boolean
+    AdMarkers:
+      enum:
+      - NONE
+      - SCTE35_ENHANCED
+      - PASSTHROUGH
+      - DATERANGE
+      type: string
     DashPackage:
       type: object
       properties:
@@ -2058,83 +1626,9 @@ components:
               name: utcTimingUri
             description: Specifies the value attribute of the UTCTiming field when utcTiming is set to HTTP-ISO, HTTP-HEAD or HTTP-XSDATE
       description: A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
-    StreamSelection:
-      type: object
-      properties:
-        MaxVideoBitsPerSecond:
-          allOf:
-          - $ref: '#/components/schemas/__integer'
-          - xml:
-              name: maxVideoBitsPerSecond
-            description: The maximum video bitrate (bps) to include in output.
-        MinVideoBitsPerSecond:
-          allOf:
-          - $ref: '#/components/schemas/__integer'
-          - xml:
-              name: minVideoBitsPerSecond
-            description: The minimum video bitrate (bps) to include in output.
-        StreamOrder:
-          allOf:
-          - $ref: '#/components/schemas/StreamOrder'
-          - xml:
-              name: streamOrder
-            description: A directive that determines the order of streams in the output.
-      description: A StreamSelection configuration.
-    Origination:
-      enum:
-      - ALLOW
-      - DENY
-      type: string
-    CmafPackage:
-      type: object
-      properties:
-        Encryption:
-          allOf:
-          - $ref: '#/components/schemas/CmafEncryption'
-          - xml:
-              name: encryption
-        HlsManifests:
-          allOf:
-          - $ref: '#/components/schemas/__listOfHlsManifest'
-          - xml:
-              name: hlsManifests
-            description: A list of HLS manifest configurations
-        SegmentDurationSeconds:
-          allOf:
-          - $ref: '#/components/schemas/__integer'
-          - xml:
-              name: segmentDurationSeconds
-            description: 'Duration (in seconds) of each segment. Actual segments will be
-
-              rounded to the nearest multiple of the source segment duration.
-
-              '
-        SegmentPrefix:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: segmentPrefix
-            description: An optional custom string that is prepended to the name of each segment. If not specified, it defaults to the ChannelId.
-        StreamSelection:
-          allOf:
-          - $ref: '#/components/schemas/StreamSelection'
-          - xml:
-              name: streamSelection
-      description: A Common Media Application Format (CMAF) packaging configuration.
-    __listOfOriginEndpoint:
-      type: array
-      items:
-        $ref: '#/components/schemas/OriginEndpoint'
-    __listOfHlsManifest:
-      type: array
-      items:
-        $ref: '#/components/schemas/HlsManifest'
-    Tags:
-      type: object
-      description: A collection of tags associated with a resource
-      additionalProperties:
-        $ref: '#/components/schemas/__string'
-    HlsPackage:
+    HlsManifestCreateOrUpdateParameters:
+      required:
+      - Id
       type: object
       properties:
         AdMarkers:
@@ -2153,23 +1647,24 @@ components:
           - $ref: '#/components/schemas/AdsOnDeliveryRestrictions'
           - xml:
               name: adsOnDeliveryRestrictions
-        Encryption:
+        Id:
           allOf:
-          - $ref: '#/components/schemas/HlsEncryption'
+          - $ref: '#/components/schemas/__string'
           - xml:
-              name: encryption
-        IncludeDvbSubtitles:
-          allOf:
-          - $ref: '#/components/schemas/__boolean'
-          - xml:
-              name: includeDvbSubtitles
-            description: When enabled, MediaPackage passes through digital video broadcasting (DVB) subtitles into the output.
+              name: id
+            description: The ID of the manifest. The ID must be unique within the OriginEndpoint and it cannot be changed after it is created.
         IncludeIframeOnlyStream:
           allOf:
           - $ref: '#/components/schemas/__boolean'
           - xml:
               name: includeIframeOnlyStream
             description: When enabled, an I-Frame only stream will be included in the output.
+        ManifestName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: manifestName
+            description: An optional short string appended to the end of the OriginEndpoint URL. If not specified, defaults to the manifestName for the OriginEndpoint.
         PlaylistType:
           allOf:
           - $ref: '#/components/schemas/PlaylistType'
@@ -2212,164 +1707,7 @@ components:
               it will be passed through to HLS output.
 
               '
-        SegmentDurationSeconds:
-          allOf:
-          - $ref: '#/components/schemas/__integer'
-          - xml:
-              name: segmentDurationSeconds
-            description: 'Duration (in seconds) of each fragment. Actual fragments will be
-
-              rounded to the nearest multiple of the source fragment duration.
-
-              '
-        StreamSelection:
-          allOf:
-          - $ref: '#/components/schemas/StreamSelection'
-          - xml:
-              name: streamSelection
-        UseAudioRenditionGroup:
-          allOf:
-          - $ref: '#/components/schemas/__boolean'
-          - xml:
-              name: useAudioRenditionGroup
-            description: When enabled, audio streams will be placed in rendition groups in the output.
-      description: An HTTP Live Streaming (HLS) packaging configuration.
-    Profile:
-      enum:
-      - NONE
-      - HBBTV_1_5
-      - HYBRIDCAST
-      - DVB_DASH_2014
-      type: string
-    SpekeKeyProvider:
-      required:
-      - ResourceId
-      - SystemIds
-      - Url
-      - RoleArn
-      type: object
-      properties:
-        CertificateArn:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: certificateArn
-            description: 'An Amazon Resource Name (ARN) of a Certificate Manager certificate
-
-              that MediaPackage will use for enforcing secure end-to-end data
-
-              transfer with the key provider service.
-
-              '
-        EncryptionContractConfiguration:
-          allOf:
-          - $ref: '#/components/schemas/EncryptionContractConfiguration'
-          - xml:
-              name: encryptionContractConfiguration
-        ResourceId:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: resourceId
-            description: The resource ID to include in key requests.
-        RoleArn:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: roleArn
-            description: 'An Amazon Resource Name (ARN) of an IAM role that AWS Elemental
-
-              MediaPackage will assume when accessing the key provider service.
-
-              '
-        SystemIds:
-          allOf:
-          - $ref: '#/components/schemas/__listOf__string'
-          - xml:
-              name: systemIds
-            description: The system IDs to include in key requests.
-        Url:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: url
-            description: The URL of the external key provider service.
-      description: A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
-    SegmentTemplateFormat:
-      enum:
-      - NUMBER_WITH_TIMELINE
-      - TIME_WITH_TIMELINE
-      - NUMBER_WITH_DURATION
-      type: string
-    __AdTriggersElement:
-      enum:
-      - SPLICE_INSERT
-      - BREAK
-      - PROVIDER_ADVERTISEMENT
-      - DISTRIBUTOR_ADVERTISEMENT
-      - PROVIDER_PLACEMENT_OPPORTUNITY
-      - DISTRIBUTOR_PLACEMENT_OPPORTUNITY
-      - PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY
-      - DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY
-      type: string
-    __string:
-      type: string
-    __listOf__PeriodTriggersElement:
-      type: array
-      items:
-        $ref: '#/components/schemas/__PeriodTriggersElement'
-    Authorization:
-      required:
-      - SecretsRoleArn
-      - CdnIdentifierSecret
-      type: object
-      properties:
-        CdnIdentifierSecret:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: cdnIdentifierSecret
-            description: 'The Amazon Resource Name (ARN) for the secret in Secrets Manager that your Content Distribution Network (CDN) uses for authorization to access your endpoint.
-
-              '
-        SecretsRoleArn:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: secretsRoleArn
-            description: 'The Amazon Resource Name (ARN) for the IAM role that allows MediaPackage to communicate with AWS Secrets Manager.
-
-              '
-      description: CDN Authorization credentials
-    __integer:
-      type: integer
-    InternalServerErrorException: {}
-    MssPackage:
-      type: object
-      properties:
-        Encryption:
-          allOf:
-          - $ref: '#/components/schemas/MssEncryption'
-          - xml:
-              name: encryption
-        ManifestWindowSeconds:
-          allOf:
-          - $ref: '#/components/schemas/__integer'
-          - xml:
-              name: manifestWindowSeconds
-            description: The time window (in seconds) contained in each manifest.
-        SegmentDurationSeconds:
-          allOf:
-          - $ref: '#/components/schemas/__integer'
-          - xml:
-              name: segmentDurationSeconds
-            description: The duration (in seconds) of each segment.
-        StreamSelection:
-          allOf:
-          - $ref: '#/components/schemas/StreamSelection'
-          - xml:
-              name: streamSelection
-      description: A Microsoft Smooth Streaming (MSS) packaging configuration.
+      description: A HTTP Live Streaming (HLS) manifest configuration.
     OriginEndpoint:
       type: object
       properties:
@@ -2484,21 +1822,119 @@ components:
               name: whitelist
             description: A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.
       description: An OriginEndpoint resource configuration.
-    __boolean:
-      type: boolean
-    NotFoundException: {}
-    AdTriggers:
-      type: array
-      description: 'A list of SCTE-35 message types that are treated as ad markers in the output.  If empty, no
+    DescribeOriginEndpointResponse:
+      type: object
+      properties:
+        Arn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: arn
+            description: The Amazon Resource Name (ARN) assigned to the OriginEndpoint.
+        Authorization:
+          allOf:
+          - $ref: '#/components/schemas/Authorization'
+          - xml:
+              name: authorization
+        ChannelId:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: channelId
+            description: The ID of the Channel the OriginEndpoint is associated with.
+        CmafPackage:
+          allOf:
+          - $ref: '#/components/schemas/CmafPackage'
+          - xml:
+              name: cmafPackage
+        CreatedAt:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: createdAt
+            description: The date and time the OriginEndpoint was created.
+        DashPackage:
+          allOf:
+          - $ref: '#/components/schemas/DashPackage'
+          - xml:
+              name: dashPackage
+        Description:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: description
+            description: A short text description of the OriginEndpoint.
+        HlsPackage:
+          allOf:
+          - $ref: '#/components/schemas/HlsPackage'
+          - xml:
+              name: hlsPackage
+        Id:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: id
+            description: The ID of the OriginEndpoint.
+        ManifestName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: manifestName
+            description: A short string appended to the end of the OriginEndpoint URL.
+        MssPackage:
+          allOf:
+          - $ref: '#/components/schemas/MssPackage'
+          - xml:
+              name: mssPackage
+        Origination:
+          allOf:
+          - $ref: '#/components/schemas/Origination'
+          - xml:
+              name: origination
+            description: 'Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint
 
-        ad markers are output.  Specify multiple items to create ad markers for all of the included
+              may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be
 
-        message types.
+              requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
 
-        '
-      items:
-        $ref: '#/components/schemas/__AdTriggersElement'
-    ServiceUnavailableException: {}
+              '
+        StartoverWindowSeconds:
+          allOf:
+          - $ref: '#/components/schemas/__integer'
+          - xml:
+              name: startoverWindowSeconds
+            description: 'Maximum duration (seconds) of content to retain for startover playback.
+
+              If not specified, startover playback will be disabled for the OriginEndpoint.
+
+              '
+        Tags:
+          allOf:
+          - $ref: '#/components/schemas/Tags'
+          - xml:
+              name: tags
+        TimeDelaySeconds:
+          allOf:
+          - $ref: '#/components/schemas/__integer'
+          - xml:
+              name: timeDelaySeconds
+            description: 'Amount of delay (seconds) to enforce on the playback of live content.
+
+              If not specified, there will be no time delay in effect for the OriginEndpoint.
+
+              '
+        Url:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: url
+            description: The URL of the packaged OriginEndpoint for consumption.
+        Whitelist:
+          allOf:
+          - $ref: '#/components/schemas/__listOf__string'
+          - xml:
+              name: whitelist
+            description: A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.
     HlsManifest:
       required:
       - Id
@@ -2587,15 +2023,534 @@ components:
           - xml:
               name: adsOnDeliveryRestrictions
       description: A HTTP Live Streaming (HLS) manifest configuration.
-    DeleteOriginEndpointResponse:
-      type: object
-      properties: {}
-    ManifestLayout:
+    NotFoundException: {}
+    __AdTriggersElement:
       enum:
-      - FULL
-      - COMPACT
+      - SPLICE_INSERT
+      - BREAK
+      - PROVIDER_ADVERTISEMENT
+      - DISTRIBUTOR_ADVERTISEMENT
+      - PROVIDER_PLACEMENT_OPPORTUNITY
+      - DISTRIBUTOR_PLACEMENT_OPPORTUNITY
+      - PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY
+      - DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY
       type: string
-    CmafEncryption:
+    CreateOriginEndpointResponse:
+      type: object
+      properties:
+        Arn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: arn
+            description: The Amazon Resource Name (ARN) assigned to the OriginEndpoint.
+        Authorization:
+          allOf:
+          - $ref: '#/components/schemas/Authorization'
+          - xml:
+              name: authorization
+        ChannelId:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: channelId
+            description: The ID of the Channel the OriginEndpoint is associated with.
+        CmafPackage:
+          allOf:
+          - $ref: '#/components/schemas/CmafPackage'
+          - xml:
+              name: cmafPackage
+        CreatedAt:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: createdAt
+            description: The date and time the OriginEndpoint was created.
+        DashPackage:
+          allOf:
+          - $ref: '#/components/schemas/DashPackage'
+          - xml:
+              name: dashPackage
+        Description:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: description
+            description: A short text description of the OriginEndpoint.
+        HlsPackage:
+          allOf:
+          - $ref: '#/components/schemas/HlsPackage'
+          - xml:
+              name: hlsPackage
+        Id:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: id
+            description: The ID of the OriginEndpoint.
+        ManifestName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: manifestName
+            description: A short string appended to the end of the OriginEndpoint URL.
+        MssPackage:
+          allOf:
+          - $ref: '#/components/schemas/MssPackage'
+          - xml:
+              name: mssPackage
+        Origination:
+          allOf:
+          - $ref: '#/components/schemas/Origination'
+          - xml:
+              name: origination
+            description: 'Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint
+
+              may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be
+
+              requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
+
+              '
+        StartoverWindowSeconds:
+          allOf:
+          - $ref: '#/components/schemas/__integer'
+          - xml:
+              name: startoverWindowSeconds
+            description: 'Maximum duration (seconds) of content to retain for startover playback.
+
+              If not specified, startover playback will be disabled for the OriginEndpoint.
+
+              '
+        Tags:
+          allOf:
+          - $ref: '#/components/schemas/Tags'
+          - xml:
+              name: tags
+        TimeDelaySeconds:
+          allOf:
+          - $ref: '#/components/schemas/__integer'
+          - xml:
+              name: timeDelaySeconds
+            description: 'Amount of delay (seconds) to enforce on the playback of live content.
+
+              If not specified, there will be no time delay in effect for the OriginEndpoint.
+
+              '
+        Url:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: url
+            description: The URL of the packaged OriginEndpoint for consumption.
+        Whitelist:
+          allOf:
+          - $ref: '#/components/schemas/__listOf__string'
+          - xml:
+              name: whitelist
+            description: A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.
+    AdTriggers:
+      type: array
+      description: 'A list of SCTE-35 message types that are treated as ad markers in the output.  If empty, no
+
+        ad markers are output.  Specify multiple items to create ad markers for all of the included
+
+        message types.
+
+        '
+      items:
+        $ref: '#/components/schemas/__AdTriggersElement'
+    EncryptionContractConfiguration:
+      required:
+      - PresetSpeke20Audio
+      - PresetSpeke20Video
+      type: object
+      properties:
+        PresetSpeke20Audio:
+          allOf:
+          - $ref: '#/components/schemas/PresetSpeke20Audio'
+          - xml:
+              name: presetSpeke20Audio
+            description: A collection of audio encryption presets.
+        PresetSpeke20Video:
+          allOf:
+          - $ref: '#/components/schemas/PresetSpeke20Video'
+          - xml:
+              name: presetSpeke20Video
+            description: A collection of video encryption presets.
+      description: "Use encryptionContractConfiguration to configure one or more content encryption keys for your endpoints that use SPEKE 2.0. \nThe encryption contract defines which content keys are used to encrypt the audio and video tracks in your stream. \nTo configure the encryption contract, specify which audio and video encryption presets to use.\nNote the following considerations when using encryptionContractConfiguration:\nencryptionContractConfiguration can be used for DASH or CMAF endpoints that use SPEKE 2.0. SPEKE 2.0 relies on the CPIX 2.3 specification.\nYou must disable key rotation for this endpoint by setting keyRotationIntervalSeconds to 0.\n"
+    MssPackage:
+      type: object
+      properties:
+        Encryption:
+          allOf:
+          - $ref: '#/components/schemas/MssEncryption'
+          - xml:
+              name: encryption
+        ManifestWindowSeconds:
+          allOf:
+          - $ref: '#/components/schemas/__integer'
+          - xml:
+              name: manifestWindowSeconds
+            description: The time window (in seconds) contained in each manifest.
+        SegmentDurationSeconds:
+          allOf:
+          - $ref: '#/components/schemas/__integer'
+          - xml:
+              name: segmentDurationSeconds
+            description: The duration (in seconds) of each segment.
+        StreamSelection:
+          allOf:
+          - $ref: '#/components/schemas/StreamSelection'
+          - xml:
+              name: streamSelection
+      description: A Microsoft Smooth Streaming (MSS) packaging configuration.
+    __listOf__string:
+      type: array
+      items:
+        $ref: '#/components/schemas/__string'
+    UtcTiming:
+      enum:
+      - NONE
+      - HTTP-HEAD
+      - HTTP-ISO
+      - HTTP-XSDATE
+      type: string
+    CmafEncryptionMethod:
+      enum:
+      - SAMPLE_AES
+      - AES_CTR
+      type: string
+      description: The encryption method to use.
+    ListOriginEndpointsResponse:
+      type: object
+      properties:
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: nextToken
+            description: A token that can be used to resume pagination from the end of the collection.
+        OriginEndpoints:
+          allOf:
+          - $ref: '#/components/schemas/__listOfOriginEndpoint'
+          - xml:
+              name: originEndpoints
+            description: A list of OriginEndpoint records.
+    ServiceUnavailableException: {}
+    PlaylistType:
+      enum:
+      - NONE
+      - EVENT
+      - VOD
+      type: string
+    StreamSelection:
+      type: object
+      properties:
+        MaxVideoBitsPerSecond:
+          allOf:
+          - $ref: '#/components/schemas/__integer'
+          - xml:
+              name: maxVideoBitsPerSecond
+            description: The maximum video bitrate (bps) to include in output.
+        MinVideoBitsPerSecond:
+          allOf:
+          - $ref: '#/components/schemas/__integer'
+          - xml:
+              name: minVideoBitsPerSecond
+            description: The minimum video bitrate (bps) to include in output.
+        StreamOrder:
+          allOf:
+          - $ref: '#/components/schemas/StreamOrder'
+          - xml:
+              name: streamOrder
+            description: A directive that determines the order of streams in the output.
+      description: A StreamSelection configuration.
+    Tags:
+      type: object
+      description: A collection of tags associated with a resource
+      additionalProperties:
+        $ref: '#/components/schemas/__string'
+    __listOfOriginEndpoint:
+      type: array
+      items:
+        $ref: '#/components/schemas/OriginEndpoint'
+    __string:
+      type: string
+    Profile:
+      enum:
+      - NONE
+      - HBBTV_1_5
+      - HYBRIDCAST
+      - DVB_DASH_2014
+      type: string
+    SpekeKeyProvider:
+      required:
+      - ResourceId
+      - SystemIds
+      - Url
+      - RoleArn
+      type: object
+      properties:
+        CertificateArn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: certificateArn
+            description: 'An Amazon Resource Name (ARN) of a Certificate Manager certificate
+
+              that MediaPackage will use for enforcing secure end-to-end data
+
+              transfer with the key provider service.
+
+              '
+        EncryptionContractConfiguration:
+          allOf:
+          - $ref: '#/components/schemas/EncryptionContractConfiguration'
+          - xml:
+              name: encryptionContractConfiguration
+        ResourceId:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: resourceId
+            description: The resource ID to include in key requests.
+        RoleArn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: roleArn
+            description: 'An Amazon Resource Name (ARN) of an IAM role that AWS Elemental
+
+              MediaPackage will assume when accessing the key provider service.
+
+              '
+        SystemIds:
+          allOf:
+          - $ref: '#/components/schemas/__listOf__string'
+          - xml:
+              name: systemIds
+            description: The system IDs to include in key requests.
+        Url:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: url
+            description: The URL of the external key provider service.
+      description: A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
+    UpdateOriginEndpointResponse:
+      type: object
+      properties:
+        Arn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: arn
+            description: The Amazon Resource Name (ARN) assigned to the OriginEndpoint.
+        Authorization:
+          allOf:
+          - $ref: '#/components/schemas/Authorization'
+          - xml:
+              name: authorization
+        ChannelId:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: channelId
+            description: The ID of the Channel the OriginEndpoint is associated with.
+        CmafPackage:
+          allOf:
+          - $ref: '#/components/schemas/CmafPackage'
+          - xml:
+              name: cmafPackage
+        CreatedAt:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: createdAt
+            description: The date and time the OriginEndpoint was created.
+        DashPackage:
+          allOf:
+          - $ref: '#/components/schemas/DashPackage'
+          - xml:
+              name: dashPackage
+        Description:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: description
+            description: A short text description of the OriginEndpoint.
+        HlsPackage:
+          allOf:
+          - $ref: '#/components/schemas/HlsPackage'
+          - xml:
+              name: hlsPackage
+        Id:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: id
+            description: The ID of the OriginEndpoint.
+        ManifestName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: manifestName
+            description: A short string appended to the end of the OriginEndpoint URL.
+        MssPackage:
+          allOf:
+          - $ref: '#/components/schemas/MssPackage'
+          - xml:
+              name: mssPackage
+        Origination:
+          allOf:
+          - $ref: '#/components/schemas/Origination'
+          - xml:
+              name: origination
+            description: 'Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint
+
+              may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be
+
+              requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
+
+              '
+        StartoverWindowSeconds:
+          allOf:
+          - $ref: '#/components/schemas/__integer'
+          - xml:
+              name: startoverWindowSeconds
+            description: 'Maximum duration (seconds) of content to retain for startover playback.
+
+              If not specified, startover playback will be disabled for the OriginEndpoint.
+
+              '
+        Tags:
+          allOf:
+          - $ref: '#/components/schemas/Tags'
+          - xml:
+              name: tags
+        TimeDelaySeconds:
+          allOf:
+          - $ref: '#/components/schemas/__integer'
+          - xml:
+              name: timeDelaySeconds
+            description: 'Amount of delay (seconds) to enforce on the playback of live content.
+
+              If not specified, there will be no time delay in effect for the OriginEndpoint.
+
+              '
+        Url:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: url
+            description: The URL of the packaged OriginEndpoint for consumption.
+        Whitelist:
+          allOf:
+          - $ref: '#/components/schemas/__listOf__string'
+          - xml:
+              name: whitelist
+            description: A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.
+    HlsPackage:
+      type: object
+      properties:
+        AdMarkers:
+          allOf:
+          - $ref: '#/components/schemas/AdMarkers'
+          - xml:
+              name: adMarkers
+            description: "This setting controls how ad markers are included in the packaged OriginEndpoint.\n\"NONE\" will omit all SCTE-35 ad markers from the output.\n\"PASSTHROUGH\" causes the manifest to contain a copy of the SCTE-35 ad\nmarkers (comments) taken directly from the input HTTP Live Streaming (HLS) manifest.\n\"SCTE35_ENHANCED\" generates ad markers and blackout tags based on SCTE-35\nmessages in the input source.\n\"DATERANGE\" inserts EXT-X-DATERANGE tags to signal ad and program transition events \nin HLS and CMAF manifests. For this option, you must set a programDateTimeIntervalSeconds value \nthat is greater than 0.\n"
+        AdTriggers:
+          allOf:
+          - $ref: '#/components/schemas/AdTriggers'
+          - xml:
+              name: adTriggers
+        AdsOnDeliveryRestrictions:
+          allOf:
+          - $ref: '#/components/schemas/AdsOnDeliveryRestrictions'
+          - xml:
+              name: adsOnDeliveryRestrictions
+        Encryption:
+          allOf:
+          - $ref: '#/components/schemas/HlsEncryption'
+          - xml:
+              name: encryption
+        IncludeDvbSubtitles:
+          allOf:
+          - $ref: '#/components/schemas/__boolean'
+          - xml:
+              name: includeDvbSubtitles
+            description: When enabled, MediaPackage passes through digital video broadcasting (DVB) subtitles into the output.
+        IncludeIframeOnlyStream:
+          allOf:
+          - $ref: '#/components/schemas/__boolean'
+          - xml:
+              name: includeIframeOnlyStream
+            description: When enabled, an I-Frame only stream will be included in the output.
+        PlaylistType:
+          allOf:
+          - $ref: '#/components/schemas/PlaylistType'
+          - xml:
+              name: playlistType
+            description: 'The HTTP Live Streaming (HLS) playlist type.
+
+              When either "EVENT" or "VOD" is specified, a corresponding EXT-X-PLAYLIST-TYPE
+
+              entry will be included in the media playlist.
+
+              '
+        PlaylistWindowSeconds:
+          allOf:
+          - $ref: '#/components/schemas/__integer'
+          - xml:
+              name: playlistWindowSeconds
+            description: Time window (in seconds) contained in each parent manifest.
+        ProgramDateTimeIntervalSeconds:
+          allOf:
+          - $ref: '#/components/schemas/__integer'
+          - xml:
+              name: programDateTimeIntervalSeconds
+            description: 'The interval (in seconds) between each EXT-X-PROGRAM-DATE-TIME tag
+
+              inserted into manifests. Additionally, when an interval is specified
+
+              ID3Timed Metadata messages will be generated every 5 seconds using the
+
+              ingest time of the content.
+
+              If the interval is not specified, or set to 0, then
+
+              no EXT-X-PROGRAM-DATE-TIME tags will be inserted into manifests and no
+
+              ID3Timed Metadata messages will be generated. Note that irrespective
+
+              of this parameter, if any ID3 Timed Metadata is found in HTTP Live Streaming (HLS) input,
+
+              it will be passed through to HLS output.
+
+              '
+        SegmentDurationSeconds:
+          allOf:
+          - $ref: '#/components/schemas/__integer'
+          - xml:
+              name: segmentDurationSeconds
+            description: 'Duration (in seconds) of each fragment. Actual fragments will be
+
+              rounded to the nearest multiple of the source fragment duration.
+
+              '
+        StreamSelection:
+          allOf:
+          - $ref: '#/components/schemas/StreamSelection'
+          - xml:
+              name: streamSelection
+        UseAudioRenditionGroup:
+          allOf:
+          - $ref: '#/components/schemas/__boolean'
+          - xml:
+              name: useAudioRenditionGroup
+            description: When enabled, audio streams will be placed in rendition groups in the output.
+      description: An HTTP Live Streaming (HLS) packaging configuration.
+    HlsEncryption:
       required:
       - SpekeKeyProvider
       type: object
@@ -2605,12 +2560,44 @@ components:
           - $ref: '#/components/schemas/__string'
           - xml:
               name: constantInitializationVector
-            description: An optional 128-bit, 16-byte hex value represented by a 32-character string, used in conjunction with the key for encrypting blocks. If you don't specify a value, then MediaPackage creates the constant initialization vector (IV).
+            description: 'A constant initialization vector for encryption (optional).
+
+              When not specified the initialization vector will be periodically rotated.
+
+              '
         EncryptionMethod:
           allOf:
-          - $ref: '#/components/schemas/CmafEncryptionMethod'
+          - $ref: '#/components/schemas/EncryptionMethod'
           - xml:
               name: encryptionMethod
+            description: The encryption method to use.
+        KeyRotationIntervalSeconds:
+          allOf:
+          - $ref: '#/components/schemas/__integer'
+          - xml:
+              name: keyRotationIntervalSeconds
+            description: Interval (in seconds) between each encryption key rotation.
+        RepeatExtXKey:
+          allOf:
+          - $ref: '#/components/schemas/__boolean'
+          - xml:
+              name: repeatExtXKey
+            description: When enabled, the EXT-X-KEY tag will be repeated in output manifests.
+        SpekeKeyProvider:
+          allOf:
+          - $ref: '#/components/schemas/SpekeKeyProvider'
+          - xml:
+              name: spekeKeyProvider
+      description: An HTTP Live Streaming (HLS) encryption configuration.
+    ForbiddenException: {}
+    DeleteOriginEndpointResponse:
+      type: object
+      properties: {}
+    DashEncryption:
+      required:
+      - SpekeKeyProvider
+      type: object
+      properties:
         KeyRotationIntervalSeconds:
           allOf:
           - $ref: '#/components/schemas/__integer'
@@ -2622,34 +2609,30 @@ components:
           - $ref: '#/components/schemas/SpekeKeyProvider'
           - xml:
               name: spekeKeyProvider
-      description: A Common Media Application Format (CMAF) encryption configuration.
+      description: A Dynamic Adaptive Streaming over HTTP (DASH) encryption configuration.
+    __listOfHlsManifest:
+      type: array
+      items:
+        $ref: '#/components/schemas/HlsManifest'
+    SegmentTemplateFormat:
+      enum:
+      - NUMBER_WITH_TIMELINE
+      - TIME_WITH_TIMELINE
+      - NUMBER_WITH_DURATION
+      type: string
+    TooManyRequestsException: {}
+    InternalServerErrorException: {}
+    __integer:
+      type: integer
   parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
       required: false
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
       in: header
       schema:
         type: string
@@ -2662,6 +2645,24 @@ components:
       required: false
     X-Amz-Security-Token:
       name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string

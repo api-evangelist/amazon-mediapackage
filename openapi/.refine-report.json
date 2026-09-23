@@ -1,10 +1,7 @@
 {
   "provider": "amazon-mediapackage",
   "sources": [
-    "amazon-mediapackage-channels-api-openapi.yml",
-    "amazon-mediapackage-harvest-jobs-api-openapi.yml",
-    "amazon-mediapackage-origin-endpoints-api-openapi.yml",
-    "amazon-mediapackage-tags-api-openapi.yml"
+    "_original/amazon-mediapackage-openapi-original.yml"
   ],
   "outputs": [
     "amazon-mediapackage-channels-api-openapi.yml",
@@ -16,7 +13,37 @@
   "errors": [],
   "warnings": [],
   "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "amazon-mediapackage-openapi-original.yml: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "amazon-mediapackage-openapi-original.yml: tagged paths PUT /channels/{id}/configure_logs -> Channels",
+    "amazon-mediapackage-openapi-original.yml: tagged paths POST /channels -> Channels",
+    "amazon-mediapackage-openapi-original.yml: tagged paths GET /channels -> Channels",
+    "amazon-mediapackage-openapi-original.yml: tagged paths POST /harvest_jobs -> Harvest Jobs",
+    "amazon-mediapackage-openapi-original.yml: tagged paths GET /harvest_jobs -> Harvest Jobs",
+    "amazon-mediapackage-openapi-original.yml: tagged paths POST /origin_endpoints -> Origin Endpoints",
+    "amazon-mediapackage-openapi-original.yml: tagged paths GET /origin_endpoints -> Origin Endpoints",
+    "amazon-mediapackage-openapi-original.yml: tagged paths DELETE /channels/{id} -> Channels",
+    "amazon-mediapackage-openapi-original.yml: tagged paths GET /channels/{id} -> Channels",
+    "amazon-mediapackage-openapi-original.yml: tagged paths PUT /channels/{id} -> Channels",
+    "amazon-mediapackage-openapi-original.yml: tagged paths DELETE /origin_endpoints/{id} -> Origin Endpoints",
+    "amazon-mediapackage-openapi-original.yml: tagged paths GET /origin_endpoints/{id} -> Origin Endpoints",
+    "amazon-mediapackage-openapi-original.yml: tagged paths PUT /origin_endpoints/{id} -> Origin Endpoints",
+    "amazon-mediapackage-openapi-original.yml: tagged paths GET /harvest_jobs/{id} -> Harvest Jobs",
+    "amazon-mediapackage-openapi-original.yml: tagged paths GET /tags/{resource-arn} -> Tags",
+    "amazon-mediapackage-openapi-original.yml: tagged paths POST /tags/{resource-arn} -> Tags",
+    "amazon-mediapackage-openapi-original.yml: tagged paths PUT /channels/{id}/credentials -> Channels",
+    "amazon-mediapackage-openapi-original.yml: tagged paths PUT /channels/{id}/ingest_endpoints/{ingest_endpoint_id}/credentials -> Channels",
+    "amazon-mediapackage-openapi-original.yml: tagged paths DELETE /tags/{resource-arn}#tagKeys -> Tags",
+    "amazon-mediapackage-openapi-original.yml: declared missing tag: Channels",
+    "amazon-mediapackage-openapi-original.yml: declared missing tag: Harvest Jobs",
+    "amazon-mediapackage-openapi-original.yml: declared missing tag: Origin Endpoints",
+    "amazon-mediapackage-openapi-original.yml: declared missing tag: Tags",
     "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "amazon-mediapackage-channels-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-mediapackage-harvest-jobs-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-mediapackage-origin-endpoints-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-mediapackage-tags-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
