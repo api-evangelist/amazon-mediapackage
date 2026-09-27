@@ -115,7 +115,7 @@ apis:
     url: https://aws.amazon.com/mediapackage/faqs/
 common:
 - type: Website
-  url: https://amazon.com
+  url: https://aws.amazon.com/mediapackage/
 - type: CapabilityMap
   url: capabilities/amazon-mediapackage-capability-edges.yml
   name: Amazon MediaPackage Business Capability Map
@@ -203,5 +203,5 @@ integrations:
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
-x-parent: aws
+x-parent: amazon-web-services
 x-relationship: product
