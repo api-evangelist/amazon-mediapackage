@@ -1027,7 +1027,104 @@ paths:
       tags:
       - Channels
 components:
+  parameters:
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
+    InternalServerErrorException: {}
+    UnprocessableEntityException: {}
+    CreateChannelResponse:
+      type: object
+      properties:
+        Arn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: arn
+            description: The Amazon Resource Name (ARN) assigned to the Channel.
+        CreatedAt:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: createdAt
+            description: The date and time the Channel was created.
+        Description:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: description
+            description: A short text description of the Channel.
+        EgressAccessLogs:
+          allOf:
+          - $ref: '#/components/schemas/EgressAccessLogs'
+          - xml:
+              name: egressAccessLogs
+        HlsIngest:
+          allOf:
+          - $ref: '#/components/schemas/HlsIngest'
+          - xml:
+              name: hlsIngest
+        Id:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: id
+            description: The ID of the Channel.
+        IngressAccessLogs:
+          allOf:
+          - $ref: '#/components/schemas/IngressAccessLogs'
+          - xml:
+              name: ingressAccessLogs
+        Tags:
+          allOf:
+          - $ref: '#/components/schemas/Tags'
+          - xml:
+              name: tags
+    Tags:
+      type: object
+      description: A collection of tags associated with a resource
+      additionalProperties:
+        $ref: '#/components/schemas/__string'
     IngressAccessLogs:
       type: object
       properties:
@@ -1038,10 +1135,7 @@ components:
               name: logGroupName
             description: Customize the log group name.
       description: Configure ingress access logging.
-    __listOfChannel:
-      type: array
-      items:
-        $ref: '#/components/schemas/Channel'
+    NotFoundException: {}
     IngestEndpoint:
       type: object
       properties:
@@ -1070,284 +1164,7 @@ components:
               name: username
             description: The system generated username for ingest authentication.
       description: An endpoint for ingesting source content for a Channel.
-    HlsIngest:
-      type: object
-      properties:
-        IngestEndpoints:
-          allOf:
-          - $ref: '#/components/schemas/__listOfIngestEndpoint'
-          - xml:
-              name: ingestEndpoints
-            description: A list of endpoints to which the source stream should be sent.
-      description: An HTTP Live Streaming (HLS) ingest resource configuration.
-    ConfigureLogsResponse:
-      type: object
-      properties:
-        Arn:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: arn
-            description: The Amazon Resource Name (ARN) assigned to the Channel.
-        CreatedAt:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: createdAt
-            description: The date and time the Channel was created.
-        Description:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: description
-            description: A short text description of the Channel.
-        EgressAccessLogs:
-          allOf:
-          - $ref: '#/components/schemas/EgressAccessLogs'
-          - xml:
-              name: egressAccessLogs
-        HlsIngest:
-          allOf:
-          - $ref: '#/components/schemas/HlsIngest'
-          - xml:
-              name: hlsIngest
-        Id:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: id
-            description: The ID of the Channel.
-        IngressAccessLogs:
-          allOf:
-          - $ref: '#/components/schemas/IngressAccessLogs'
-          - xml:
-              name: ingressAccessLogs
-        Tags:
-          allOf:
-          - $ref: '#/components/schemas/Tags'
-          - xml:
-              name: tags
-    ListChannelsResponse:
-      type: object
-      properties:
-        Channels:
-          allOf:
-          - $ref: '#/components/schemas/__listOfChannel'
-          - xml:
-              name: channels
-            description: A list of Channel records.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: nextToken
-            description: A token that can be used to resume pagination from the end of the collection.
     UpdateChannelResponse:
-      type: object
-      properties:
-        Arn:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: arn
-            description: The Amazon Resource Name (ARN) assigned to the Channel.
-        CreatedAt:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: createdAt
-            description: The date and time the Channel was created.
-        Description:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: description
-            description: A short text description of the Channel.
-        EgressAccessLogs:
-          allOf:
-          - $ref: '#/components/schemas/EgressAccessLogs'
-          - xml:
-              name: egressAccessLogs
-        HlsIngest:
-          allOf:
-          - $ref: '#/components/schemas/HlsIngest'
-          - xml:
-              name: hlsIngest
-        Id:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: id
-            description: The ID of the Channel.
-        IngressAccessLogs:
-          allOf:
-          - $ref: '#/components/schemas/IngressAccessLogs'
-          - xml:
-              name: ingressAccessLogs
-        Tags:
-          allOf:
-          - $ref: '#/components/schemas/Tags'
-          - xml:
-              name: tags
-    ForbiddenException: {}
-    InternalServerErrorException: {}
-    RotateChannelCredentialsResponse:
-      deprecated: true
-      type: object
-      properties:
-        Arn:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: arn
-            description: The Amazon Resource Name (ARN) assigned to the Channel.
-        CreatedAt:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: createdAt
-            description: The date and time the Channel was created.
-        Description:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: description
-            description: A short text description of the Channel.
-        EgressAccessLogs:
-          allOf:
-          - $ref: '#/components/schemas/EgressAccessLogs'
-          - xml:
-              name: egressAccessLogs
-        HlsIngest:
-          allOf:
-          - $ref: '#/components/schemas/HlsIngest'
-          - xml:
-              name: hlsIngest
-        Id:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: id
-            description: The ID of the Channel.
-        IngressAccessLogs:
-          allOf:
-          - $ref: '#/components/schemas/IngressAccessLogs'
-          - xml:
-              name: ingressAccessLogs
-        Tags:
-          allOf:
-          - $ref: '#/components/schemas/Tags'
-          - xml:
-              name: tags
-    EgressAccessLogs:
-      type: object
-      properties:
-        LogGroupName:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: logGroupName
-            description: Customize the log group name.
-      description: Configure egress access logging.
-    Channel:
-      type: object
-      properties:
-        Arn:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: arn
-            description: The Amazon Resource Name (ARN) assigned to the Channel.
-        CreatedAt:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: createdAt
-            description: The date and time the Channel was created.
-        Description:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: description
-            description: A short text description of the Channel.
-        EgressAccessLogs:
-          allOf:
-          - $ref: '#/components/schemas/EgressAccessLogs'
-          - xml:
-              name: egressAccessLogs
-        HlsIngest:
-          allOf:
-          - $ref: '#/components/schemas/HlsIngest'
-          - xml:
-              name: hlsIngest
-        Id:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: id
-            description: The ID of the Channel.
-        IngressAccessLogs:
-          allOf:
-          - $ref: '#/components/schemas/IngressAccessLogs'
-          - xml:
-              name: ingressAccessLogs
-        Tags:
-          allOf:
-          - $ref: '#/components/schemas/Tags'
-          - xml:
-              name: tags
-      description: A Channel resource configuration.
-    __string:
-      type: string
-    TooManyRequestsException: {}
-    DescribeChannelResponse:
-      type: object
-      properties:
-        Arn:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: arn
-            description: The Amazon Resource Name (ARN) assigned to the Channel.
-        CreatedAt:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: createdAt
-            description: The date and time the Channel was created.
-        Description:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: description
-            description: A short text description of the Channel.
-        EgressAccessLogs:
-          allOf:
-          - $ref: '#/components/schemas/EgressAccessLogs'
-          - xml:
-              name: egressAccessLogs
-        HlsIngest:
-          allOf:
-          - $ref: '#/components/schemas/HlsIngest'
-          - xml:
-              name: hlsIngest
-        Id:
-          allOf:
-          - $ref: '#/components/schemas/__string'
-          - xml:
-              name: id
-            description: The ID of the Channel.
-        IngressAccessLogs:
-          allOf:
-          - $ref: '#/components/schemas/IngressAccessLogs'
-          - xml:
-              name: ingressAccessLogs
-        Tags:
-          allOf:
-          - $ref: '#/components/schemas/Tags'
-          - xml:
-              name: tags
-    CreateChannelResponse:
       type: object
       properties:
         Arn:
@@ -1397,17 +1214,19 @@ components:
     DeleteChannelResponse:
       type: object
       properties: {}
-    __listOfIngestEndpoint:
-      type: array
-      items:
-        $ref: '#/components/schemas/IngestEndpoint'
-    Tags:
+    EgressAccessLogs:
       type: object
-      description: A collection of tags associated with a resource
-      additionalProperties:
-        $ref: '#/components/schemas/__string'
-    ServiceUnavailableException: {}
-    NotFoundException: {}
+      properties:
+        LogGroupName:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: logGroupName
+            description: Customize the log group name.
+      description: Configure egress access logging.
+    TooManyRequestsException: {}
+    __string:
+      type: string
     RotateIngestEndpointCredentialsResponse:
       type: object
       properties:
@@ -1455,50 +1274,231 @@ components:
           - $ref: '#/components/schemas/Tags'
           - xml:
               name: tags
-    UnprocessableEntityException: {}
-  parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
+    HlsIngest:
+      type: object
+      properties:
+        IngestEndpoints:
+          allOf:
+          - $ref: '#/components/schemas/__listOfIngestEndpoint'
+          - xml:
+              name: ingestEndpoints
+            description: A list of endpoints to which the source stream should be sent.
+      description: An HTTP Live Streaming (HLS) ingest resource configuration.
+    ListChannelsResponse:
+      type: object
+      properties:
+        Channels:
+          allOf:
+          - $ref: '#/components/schemas/__listOfChannel'
+          - xml:
+              name: channels
+            description: A list of Channel records.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: nextToken
+            description: A token that can be used to resume pagination from the end of the collection.
+    ServiceUnavailableException: {}
+    RotateChannelCredentialsResponse:
+      deprecated: true
+      type: object
+      properties:
+        Arn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: arn
+            description: The Amazon Resource Name (ARN) assigned to the Channel.
+        CreatedAt:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: createdAt
+            description: The date and time the Channel was created.
+        Description:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: description
+            description: A short text description of the Channel.
+        EgressAccessLogs:
+          allOf:
+          - $ref: '#/components/schemas/EgressAccessLogs'
+          - xml:
+              name: egressAccessLogs
+        HlsIngest:
+          allOf:
+          - $ref: '#/components/schemas/HlsIngest'
+          - xml:
+              name: hlsIngest
+        Id:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: id
+            description: The ID of the Channel.
+        IngressAccessLogs:
+          allOf:
+          - $ref: '#/components/schemas/IngressAccessLogs'
+          - xml:
+              name: ingressAccessLogs
+        Tags:
+          allOf:
+          - $ref: '#/components/schemas/Tags'
+          - xml:
+              name: tags
+    Channel:
+      type: object
+      properties:
+        Arn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: arn
+            description: The Amazon Resource Name (ARN) assigned to the Channel.
+        CreatedAt:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: createdAt
+            description: The date and time the Channel was created.
+        Description:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: description
+            description: A short text description of the Channel.
+        EgressAccessLogs:
+          allOf:
+          - $ref: '#/components/schemas/EgressAccessLogs'
+          - xml:
+              name: egressAccessLogs
+        HlsIngest:
+          allOf:
+          - $ref: '#/components/schemas/HlsIngest'
+          - xml:
+              name: hlsIngest
+        Id:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: id
+            description: The ID of the Channel.
+        IngressAccessLogs:
+          allOf:
+          - $ref: '#/components/schemas/IngressAccessLogs'
+          - xml:
+              name: ingressAccessLogs
+        Tags:
+          allOf:
+          - $ref: '#/components/schemas/Tags'
+          - xml:
+              name: tags
+      description: A Channel resource configuration.
+    ForbiddenException: {}
+    DescribeChannelResponse:
+      type: object
+      properties:
+        Arn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: arn
+            description: The Amazon Resource Name (ARN) assigned to the Channel.
+        CreatedAt:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: createdAt
+            description: The date and time the Channel was created.
+        Description:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: description
+            description: A short text description of the Channel.
+        EgressAccessLogs:
+          allOf:
+          - $ref: '#/components/schemas/EgressAccessLogs'
+          - xml:
+              name: egressAccessLogs
+        HlsIngest:
+          allOf:
+          - $ref: '#/components/schemas/HlsIngest'
+          - xml:
+              name: hlsIngest
+        Id:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: id
+            description: The ID of the Channel.
+        IngressAccessLogs:
+          allOf:
+          - $ref: '#/components/schemas/IngressAccessLogs'
+          - xml:
+              name: ingressAccessLogs
+        Tags:
+          allOf:
+          - $ref: '#/components/schemas/Tags'
+          - xml:
+              name: tags
+    __listOfChannel:
+      type: array
+      items:
+        $ref: '#/components/schemas/Channel'
+    ConfigureLogsResponse:
+      type: object
+      properties:
+        Arn:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: arn
+            description: The Amazon Resource Name (ARN) assigned to the Channel.
+        CreatedAt:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: createdAt
+            description: The date and time the Channel was created.
+        Description:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: description
+            description: A short text description of the Channel.
+        EgressAccessLogs:
+          allOf:
+          - $ref: '#/components/schemas/EgressAccessLogs'
+          - xml:
+              name: egressAccessLogs
+        HlsIngest:
+          allOf:
+          - $ref: '#/components/schemas/HlsIngest'
+          - xml:
+              name: hlsIngest
+        Id:
+          allOf:
+          - $ref: '#/components/schemas/__string'
+          - xml:
+              name: id
+            description: The ID of the Channel.
+        IngressAccessLogs:
+          allOf:
+          - $ref: '#/components/schemas/IngressAccessLogs'
+          - xml:
+              name: ingressAccessLogs
+        Tags:
+          allOf:
+          - $ref: '#/components/schemas/Tags'
+          - xml:
+              name: tags
+    __listOfIngestEndpoint:
+      type: array
+      items:
+        $ref: '#/components/schemas/IngestEndpoint'
   securitySchemes:
     hmac:
       type: apiKey
