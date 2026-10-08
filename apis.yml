@@ -114,6 +114,12 @@ apis:
   - type: FAQ
     url: https://aws.amazon.com/mediapackage/faqs/
 common:
+- type: Plans
+  url: plans/amazon-mediapackage-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/amazon-mediapackage-rate-limits.yml
+- type: FinOps
+  url: finops/amazon-mediapackage-finops.yml
 - type: Website
   url: https://aws.amazon.com/mediapackage/
 - type: CapabilityMap
