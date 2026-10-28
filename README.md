@@ -1,4 +1,4 @@
-# Amazon MediaPackage (amazon-mediapackage)
+# Amazon MediaPackage
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,128 +66,245 @@
 
 AWS Elemental MediaPackage is a video origination and just-in-time packaging service that reliably prepares and protects video for delivery over the internet, creating multiple output formats from a single video input.
 
-**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/amazon-mediapackage/refs/heads/main/apis.yml)
+**Areas:** AWS · Broadcasting · Media Processing · Media
 
-**Run:** [Capabilities Using Naftiko](https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=company-api-evangelist&utm_content=repo)
+## Amazon MediaPackage on APIs.io
 
-## Tags:
+Everything profiled for Amazon MediaPackage is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/amazon-mediapackage/](https://apis.io/providers/amazon-mediapackage/)** — or go straight to one of the APIs or properties below.
 
- - AWS, Broadcasting, Media Processing, Media
+### APIs (4)
 
-## Timestamps
+- [Amazon MediaPackage Channels API](https://apis.io/apis/amazon-mediapackage/amazon-mediapackage-channels-api/) — The Channels API from Amazon MediaPackage — 5 operation(s) for channels.
+- [Amazon MediaPackage Harvest Jobs API](https://apis.io/apis/amazon-mediapackage/amazon-mediapackage-harvest-jobs-api/) — The Harvest Jobs API from Amazon MediaPackage — 2 operation(s) for harvest jobs.
+- [Amazon MediaPackage Origin Endpoints API](https://apis.io/apis/amazon-mediapackage/amazon-mediapackage-origin-endpoints-api/) — The Origin Endpoints API from Amazon MediaPackage — 2 operation(s) for origin endpoints.
+- [Amazon MediaPackage Tags API](https://apis.io/apis/amazon-mediapackage/amazon-mediapackage-tags-api/) — The Tags API from Amazon MediaPackage — 2 operation(s) for tags.
 
-- **Created:** 2026-03-16
-- **Modified:** 2026-04-19
+### Published properties
 
-## APIs
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-### Amazon MediaPackage API
-AWS Elemental MediaPackage is a video origination and just-in-time packaging service that reliably prepares and protects video for delivery over the internet, creating multiple output formats from a single video input.
+#### Agentic access (1)
 
-**Human URL:** [https://aws.amazon.com/mediapackage/](https://aws.amazon.com/mediapackage/)
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Tags:
+- [Amazon Mediapackage Agentic Access](https://apis.io/agentic-access/amazon-mediapackage/amazon-mediapackage-agentic-access/)
 
- - Broadcasting, Media Processing, Media
+#### JSON Schema (76)
 
-#### Properties
+The data models the API reads and writes.
 
+- [AdMarkers](https://apis.io/schemas/amazon-mediapackage/mediapackage-api-ad-markers/)
+- [AdTriggers](https://apis.io/schemas/amazon-mediapackage/mediapackage-api-ad-triggers/)
+- [AdsOnDeliveryRestrictions](https://apis.io/schemas/amazon-mediapackage/mediapackage-api-ads-on-delivery-restrictions/)
+- [Authorization](https://apis.io/schemas/amazon-mediapackage/mediapackage-api-authorization/)
+- [Channel](https://apis.io/schemas/amazon-mediapackage/mediapackage-api-channel/)
+- [CmafEncryption](https://apis.io/schemas/amazon-mediapackage/mediapackage-api-cmaf-encryption/)
+- [CmafEncryptionMethod](https://apis.io/schemas/amazon-mediapackage/mediapackage-api-cmaf-encryption-method/)
+- [CmafPackage](https://apis.io/schemas/amazon-mediapackage/mediapackage-api-cmaf-package/)
+- [CmafPackageCreateOrUpdateParameters](https://apis.io/schemas/amazon-mediapackage/mediapackage-api-cmaf-package-create-or-update-parameters/)
+- [ConfigureLogsRequest](https://apis.io/schemas/amazon-mediapackage/mediapackage-api-configure-logs-request/)
+- [ConfigureLogsResponse](https://apis.io/schemas/amazon-mediapackage/mediapackage-api-configure-logs-response/)
+- [CreateChannelRequest](https://apis.io/schemas/amazon-mediapackage/mediapackage-api-create-channel-request/)
+- [CreateChannelResponse](https://apis.io/schemas/amazon-mediapackage/mediapackage-api-create-channel-response/)
+- [CreateHarvestJobRequest](https://apis.io/schemas/amazon-mediapackage/mediapackage-api-create-harvest-job-request/)
+- [CreateHarvestJobResponse](https://apis.io/schemas/amazon-mediapackage/mediapackage-api-create-harvest-job-response/)
+- [CreateOriginEndpointRequest](https://apis.io/schemas/amazon-mediapackage/mediapackage-api-create-origin-endpoint-request/)
+- [CreateOriginEndpointResponse](https://apis.io/schemas/amazon-mediapackage/mediapackage-api-create-origin-endpoint-response/)
+- [DashEncryption](https://apis.io/schemas/amazon-mediapackage/mediapackage-api-dash-encryption/)
+- [DashPackage](https://apis.io/schemas/amazon-mediapackage/mediapackage-api-dash-package/)
+- [DeleteChannelRequest](https://apis.io/schemas/amazon-mediapackage/mediapackage-api-delete-channel-request/)
+- [DeleteChannelResponse](https://apis.io/schemas/amazon-mediapackage/mediapackage-api-delete-channel-response/)
+- [DeleteOriginEndpointRequest](https://apis.io/schemas/amazon-mediapackage/mediapackage-api-delete-origin-endpoint-request/)
+- [DeleteOriginEndpointResponse](https://apis.io/schemas/amazon-mediapackage/mediapackage-api-delete-origin-endpoint-response/)
+- [DescribeChannelRequest](https://apis.io/schemas/amazon-mediapackage/mediapackage-api-describe-channel-request/)
+- [DescribeChannelResponse](https://apis.io/schemas/amazon-mediapackage/mediapackage-api-describe-channel-response/)
+- …and 51 more published on APIs.io
+
+#### JSON Structure (76)
+
+Data models expressed in JSON Structure.
+
+- [Mediapackage Api Ad Markers Structure](https://apis.io/json-structure/amazon-mediapackage/mediapackage-api-ad-markers-structure/)
+- [Mediapackage Api Ad Triggers Structure](https://apis.io/json-structure/amazon-mediapackage/mediapackage-api-ad-triggers-structure/)
+- [Mediapackage Api Ads On Delivery Restrictions Structure](https://apis.io/json-structure/amazon-mediapackage/mediapackage-api-ads-on-delivery-restrictions-structure/)
+- [Mediapackage Api Authorization Structure](https://apis.io/json-structure/amazon-mediapackage/mediapackage-api-authorization-structure/)
+- [Mediapackage Api Channel Structure](https://apis.io/json-structure/amazon-mediapackage/mediapackage-api-channel-structure/)
+- [Mediapackage Api Cmaf Encryption Method Structure](https://apis.io/json-structure/amazon-mediapackage/mediapackage-api-cmaf-encryption-method-structure/)
+- [Mediapackage Api Cmaf Encryption Structure](https://apis.io/json-structure/amazon-mediapackage/mediapackage-api-cmaf-encryption-structure/)
+- [Mediapackage Api Cmaf Package Create Or Update Parameters Structure](https://apis.io/json-structure/amazon-mediapackage/mediapackage-api-cmaf-package-create-or-update-parameters-structure/)
+- [Mediapackage Api Cmaf Package Structure](https://apis.io/json-structure/amazon-mediapackage/mediapackage-api-cmaf-package-structure/)
+- [Mediapackage Api Configure Logs Request Structure](https://apis.io/json-structure/amazon-mediapackage/mediapackage-api-configure-logs-request-structure/)
+- [Mediapackage Api Configure Logs Response Structure](https://apis.io/json-structure/amazon-mediapackage/mediapackage-api-configure-logs-response-structure/)
+- [Mediapackage Api Create Channel Request Structure](https://apis.io/json-structure/amazon-mediapackage/mediapackage-api-create-channel-request-structure/)
+- [Mediapackage Api Create Channel Response Structure](https://apis.io/json-structure/amazon-mediapackage/mediapackage-api-create-channel-response-structure/)
+- [Mediapackage Api Create Harvest Job Request Structure](https://apis.io/json-structure/amazon-mediapackage/mediapackage-api-create-harvest-job-request-structure/)
+- [Mediapackage Api Create Harvest Job Response Structure](https://apis.io/json-structure/amazon-mediapackage/mediapackage-api-create-harvest-job-response-structure/)
+- [Mediapackage Api Create Origin Endpoint Request Structure](https://apis.io/json-structure/amazon-mediapackage/mediapackage-api-create-origin-endpoint-request-structure/)
+- [Mediapackage Api Create Origin Endpoint Response Structure](https://apis.io/json-structure/amazon-mediapackage/mediapackage-api-create-origin-endpoint-response-structure/)
+- [Mediapackage Api Dash Encryption Structure](https://apis.io/json-structure/amazon-mediapackage/mediapackage-api-dash-encryption-structure/)
+- [Mediapackage Api Dash Package Structure](https://apis.io/json-structure/amazon-mediapackage/mediapackage-api-dash-package-structure/)
+- [Mediapackage Api Delete Channel Request Structure](https://apis.io/json-structure/amazon-mediapackage/mediapackage-api-delete-channel-request-structure/)
+- [Mediapackage Api Delete Channel Response Structure](https://apis.io/json-structure/amazon-mediapackage/mediapackage-api-delete-channel-response-structure/)
+- [Mediapackage Api Delete Origin Endpoint Request Structure](https://apis.io/json-structure/amazon-mediapackage/mediapackage-api-delete-origin-endpoint-request-structure/)
+- [Mediapackage Api Delete Origin Endpoint Response Structure](https://apis.io/json-structure/amazon-mediapackage/mediapackage-api-delete-origin-endpoint-response-structure/)
+- [Mediapackage Api Describe Channel Request Structure](https://apis.io/json-structure/amazon-mediapackage/mediapackage-api-describe-channel-request-structure/)
+- [Mediapackage Api Describe Channel Response Structure](https://apis.io/json-structure/amazon-mediapackage/mediapackage-api-describe-channel-response-structure/)
+- …and 51 more published on APIs.io
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Amazon Mediapackage Mediapackage Api Context](https://apis.io/jsonld/amazon-mediapackage/amazon-mediapackage-mediapackage-api-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [Amazon Mediapackage Vocabulary](https://apis.io/vocabularies/amazon-mediapackage/amazon-mediapackage-vocabulary/)
+
+#### Examples (76)
+
+Example requests and responses.
+
+- [Mediapackage Api Ad Markers Example](https://apis.io/examples/amazon-mediapackage/mediapackage-api-ad-markers-example/)
+- [Mediapackage Api Ad Triggers Example](https://apis.io/examples/amazon-mediapackage/mediapackage-api-ad-triggers-example/)
+- [Mediapackage Api Ads On Delivery Restrictions Example](https://apis.io/examples/amazon-mediapackage/mediapackage-api-ads-on-delivery-restrictions-example/)
+- [Mediapackage Api Authorization Example](https://apis.io/examples/amazon-mediapackage/mediapackage-api-authorization-example/)
+- [Mediapackage Api Channel Example](https://apis.io/examples/amazon-mediapackage/mediapackage-api-channel-example/)
+- [Mediapackage Api Cmaf Encryption Example](https://apis.io/examples/amazon-mediapackage/mediapackage-api-cmaf-encryption-example/)
+- [Mediapackage Api Cmaf Encryption Method Example](https://apis.io/examples/amazon-mediapackage/mediapackage-api-cmaf-encryption-method-example/)
+- [Mediapackage Api Cmaf Package Create Or Update Parameters Example](https://apis.io/examples/amazon-mediapackage/mediapackage-api-cmaf-package-create-or-update-parameters-example/)
+- [Mediapackage Api Cmaf Package Example](https://apis.io/examples/amazon-mediapackage/mediapackage-api-cmaf-package-example/)
+- [Mediapackage Api Configure Logs Request Example](https://apis.io/examples/amazon-mediapackage/mediapackage-api-configure-logs-request-example/)
+- [Mediapackage Api Configure Logs Response Example](https://apis.io/examples/amazon-mediapackage/mediapackage-api-configure-logs-response-example/)
+- [Mediapackage Api Create Channel Request Example](https://apis.io/examples/amazon-mediapackage/mediapackage-api-create-channel-request-example/)
+- [Mediapackage Api Create Channel Response Example](https://apis.io/examples/amazon-mediapackage/mediapackage-api-create-channel-response-example/)
+- [Mediapackage Api Create Harvest Job Request Example](https://apis.io/examples/amazon-mediapackage/mediapackage-api-create-harvest-job-request-example/)
+- [Mediapackage Api Create Harvest Job Response Example](https://apis.io/examples/amazon-mediapackage/mediapackage-api-create-harvest-job-response-example/)
+- [Mediapackage Api Create Origin Endpoint Request Example](https://apis.io/examples/amazon-mediapackage/mediapackage-api-create-origin-endpoint-request-example/)
+- [Mediapackage Api Create Origin Endpoint Response Example](https://apis.io/examples/amazon-mediapackage/mediapackage-api-create-origin-endpoint-response-example/)
+- [Mediapackage Api Dash Encryption Example](https://apis.io/examples/amazon-mediapackage/mediapackage-api-dash-encryption-example/)
+- [Mediapackage Api Dash Package Example](https://apis.io/examples/amazon-mediapackage/mediapackage-api-dash-package-example/)
+- [Mediapackage Api Delete Channel Request Example](https://apis.io/examples/amazon-mediapackage/mediapackage-api-delete-channel-request-example/)
+- [Mediapackage Api Delete Channel Response Example](https://apis.io/examples/amazon-mediapackage/mediapackage-api-delete-channel-response-example/)
+- [Mediapackage Api Delete Origin Endpoint Request Example](https://apis.io/examples/amazon-mediapackage/mediapackage-api-delete-origin-endpoint-request-example/)
+- [Mediapackage Api Delete Origin Endpoint Response Example](https://apis.io/examples/amazon-mediapackage/mediapackage-api-delete-origin-endpoint-response-example/)
+- [Mediapackage Api Describe Channel Request Example](https://apis.io/examples/amazon-mediapackage/mediapackage-api-describe-channel-request-example/)
+- [Mediapackage Api Describe Channel Response Example](https://apis.io/examples/amazon-mediapackage/mediapackage-api-describe-channel-response-example/)
+- …and 51 more published on APIs.io
+
+#### Collections (8)
+
+Postman and Open Collection request collections.
+
+- [AWS Elemental MediaPackage Channels API](https://apis.io/collections/amazon-mediapackage/open-amazon-mediapackage-channels-api/)
+- [AWS Elemental MediaPackage Channels Harvest Jobs API](https://apis.io/collections/amazon-mediapackage/open-amazon-mediapackage-harvest-jobs-api/)
+- [AWS Elemental MediaPackage Channels Origin Endpoints API](https://apis.io/collections/amazon-mediapackage/open-amazon-mediapackage-origin-endpoints-api/)
+- [AWS Elemental MediaPackage Channels Tags API](https://apis.io/collections/amazon-mediapackage/open-amazon-mediapackage-tags-api/)
+- [AWS Elemental MediaPackage Channels API](https://apis.io/collections/amazon-mediapackage/postman-amazon-mediapackage-channels-api/)
+- [AWS Elemental MediaPackage Channels Harvest Jobs API](https://apis.io/collections/amazon-mediapackage/postman-amazon-mediapackage-harvest-jobs-api/)
+- [AWS Elemental MediaPackage Channels Origin Endpoints API](https://apis.io/collections/amazon-mediapackage/postman-amazon-mediapackage-origin-endpoints-api/)
+- [AWS Elemental MediaPackage Channels Tags API](https://apis.io/collections/amazon-mediapackage/postman-amazon-mediapackage-tags-api/)
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [Amazon MediaPackage — jsonschema rules](https://apis.io/rules/amazon-mediapackage/amazon-mediapackage-jsonschema-spectral-rules/)
+- [Amazon MediaPackage API Rules](https://apis.io/rules/amazon-mediapackage/amazon-mediapackage-spectral-rules/)
+
+#### Security (4)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Amazon Mediapackage Authentication](https://apis.io/security/amazon-mediapackage/amazon-mediapackage-authentication/)
+- [Amazon Mediapackage Domain Security](https://apis.io/security/amazon-mediapackage/amazon-mediapackage-domain-security/)
+- [Amazon Mediapackage Trust Center](https://apis.io/security/amazon-mediapackage/amazon-mediapackage-trust-center/)
+- [Amazon Mediapackage Vulnerability Disclosure](https://apis.io/security/amazon-mediapackage/amazon-mediapackage-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Amazon Mediapackage Plans Pricing](https://apis.io/plans/amazon-mediapackage/amazon-mediapackage-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Amazon Mediapackage Rate Limits](https://apis.io/rate-limits/amazon-mediapackage/amazon-mediapackage-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Amazon Mediapackage Finops](https://apis.io/finops/amazon-mediapackage/amazon-mediapackage-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://aws.amazon.com/mediapackage/)
 - [Documentation](https://docs.aws.amazon.com/mediapackage/)
-- [OpenAPI](openapi/amazon-mediapackage-openapi-original.yml)
-- [GettingStarted](https://aws.amazon.com/mediapackage/getting-started/)
-- [Pricing](https://aws.amazon.com/mediapackage/pricing/)
-- [FAQ](https://aws.amazon.com/mediapackage/faqs/)
-
-## Common Properties
-
-- [Portal](https://aws.amazon.com/mediapackage/)
-- [Documentation](https://docs.aws.amazon.com/mediapackage/)
-- [TermsOfService](https://aws.amazon.com/service-terms/)
-- [PrivacyPolicy](https://aws.amazon.com/privacy/)
 - [Support](https://aws.amazon.com/premiumsupport/)
 - [Blog](https://aws.amazon.com/blogs/media/)
-- [GitHubOrganization](https://github.com/aws)
-- [Console](https://console.aws.amazon.com/mediapackage/)
-- [SignUp](https://portal.aws.amazon.com/billing/signup)
-- [StatusPage](https://health.aws.amazon.com/health/status)
-- [Contact](https://aws.amazon.com/contact-us/)
+- [Terms of service](https://aws.amazon.com/service-terms/)
+- [Privacy policy](https://aws.amazon.com/privacy/)
+- [GitHub](https://github.com/aws)
+- [Status](https://health.aws.amazon.com/health/status)
 
-## Features
+## API Evangelist rating
 
-| Name | Description |
-|------|-------------|
-| Just-in-Time Packaging | Package live video into HLS, DASH, CMAF, and Microsoft Smooth Streaming formats on demand. |
-| Content Protection | Integrated DRM support with PlayReady, Widevine, FairPlay, and SPEKE standard. |
-| Time-Shifted Viewing | Enable start-over, catch-up TV, and pause live TV with configurable time windows. |
-| CDN Integration | Direct integration with CloudFront for scalable content delivery. |
-| Harvest Jobs | Clip and archive live stream segments to S3 for VOD asset creation. |
+**Kin Score 55.0** — strong · rubric 0.25.0 · scored 2026-10-23
 
-## Use Cases
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 60.5 |
+| Contract governance | 27.3 |
+| Operational transparency | 36.8 |
+| Developer ergonomics | 58.3 |
+| Access clarity | 60.5 |
 
-| Name | Description |
-|------|-------------|
-| Live OTT Streaming | Package live video for over-the-top delivery to mobile and connected devices. |
-| Time-Shifted Television | Enable catch-up TV and start-over viewing experiences. |
-| Multi-DRM Content Protection | Protect premium content with multiple DRM systems simultaneously. |
-| Live Clipping | Create VOD clips from live streams for highlights and replays. |
+**Agent readiness 30.2** — agent-ready
 
-## Integrations
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | verified |
+| OpenAPI Examples | verified |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
 
-| Name | Description |
-|------|-------------|
-| AWS Elemental MediaLive | Receive live encoded streams from MediaLive for packaging. |
-| Amazon CloudFront | Distribute packaged content globally via CloudFront CDN. |
-| Amazon S3 | Store harvested clips and VOD assets in S3. |
-| AWS Key Management Service | Manage DRM encryption keys with AWS KMS integration. |
+**Regulatory alignment 35.3** — Horizontal (data, software, accessibility, platform)
 
-## Artifacts
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/amazon-mediapackage/](https://apis.io/providers/amazon-mediapackage/).
 
-Machine-readable API specifications organized by format.
+## How this profile is made
 
-### OpenAPI
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
 
-- [Amazon MediaPackage OpenAPI](openapi/amazon-mediapackage-openapi-original.yml)
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Amazon MediaPackage: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
 
-### JSON Schema
+## Open an issue
 
-- 76 schema files in [json-schema/](json-schema/)
-
-### JSON Structure
-
-- 76 structure files in [json-structure/](json-structure/)
-
-### JSON-LD
-
-- [Amazon MediaPackage API Context](json-ld/amazon-mediapackage-mediapackage-api-context.jsonld)
-
-### Examples
-
-- 76 example files in [examples/](examples/)
-
-## Capabilities
-
-Naftiko capabilities organized as shared per-API definitions composed into customer-facing workflows.
-
-### Shared Per-API Definitions
-
-- [Amazon MediaPackage](capabilities/shared/mediapackage.yaml) — 19 operations for media processing
-
-### Workflow Capabilities
-
-| Workflow | APIs Combined | Tools | Persona |
-|----------|--------------|-------|---------|
-| [Amazon MediaPackage Workflow](capabilities/amazon-mediapackage-media-workflow.yaml) | Amazon MediaPackage | 8 | Broadcast Engineer |
-
-## Vocabulary
-
-- [Amazon MediaPackage Vocabulary](vocabulary/amazon-mediapackage-vocabulary.yaml) — Unified taxonomy mapping resources, actions, workflows, and personas across operational (OpenAPI) and capability (Naftiko) dimensions
-
-## Rules
-
-- [Amazon MediaPackage Spectral Rules](rules/amazon-mediapackage-spectral-rules.yml) — 20 rules across 8 categories enforcing Amazon MediaPackage API conventions
-
-## Maintainers
-
-**FN:** Kin Lane
-
-**Email:** kin@apievangelist.com
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/amazon-mediapackage/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
