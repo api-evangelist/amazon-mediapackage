@@ -1,0 +1,84 @@
+# Pricing transcribed from the provider's own page — see provenance. Numbers are quoted, not derived.
+generated: '2026-10-28'
+method: searched
+source: https://aws.amazon.com/mediapackage/pricing/
+sources:
+- https://aws.amazon.com/mediapackage/pricing/
+provenance:
+  tool: engine/economics/harvest_pricing.py
+  run: 20261028T161713
+  grounding: every price_text was found verbatim in the fetched page text
+audience: developer-api
+pricing_basis: usage-other
+delivery:
+  delivery: managed
+  method: page
+  read: '2026-10-28'
+published: true
+note: Main pricing tables render via unresolved price tokens; numeric rates ($0.030/GB ingest, $0.050/GB
+  origination, $0.200/GB Dynamic Multiview) appear only in the worked pricing examples for US East (N.
+  Virginia). Free tier of 100 GB data transfer out per month mentioned.
+plan_count: 4
+currency: USD
+plans:
+- name: Live Ingest (US East N. Virginia, per pricing example)
+  price_text: $0.030
+  price: 0.03
+  currency: USD
+  period: per-use
+  unit: per GB
+- name: Live/VOD Origination and Packaging (US East N. Virginia, per pricing example)
+  price_text: $0.050
+  price: 0.05
+  currency: USD
+  period: per-use
+  unit: per GB
+- name: Dynamic Multiview Origination and Packaging (per pricing example)
+  price_text: $0.200
+  price: 0.2
+  currency: USD
+  period: per-use
+  unit: per GB
+- name: Discounted Pricing (annual commitment)
+  price_text: Contact Us for discounted pricing options
+  period: none
+  included_quota: typically 10 TB/month or higher for packaging and origination usage
+x-canonical:
+  generated: '2026-11-01'
+  vocabulary: engine/economics/plans-canonical.yml
+  models:
+  - hybrid
+  units:
+  - data
+  plans:
+  - name: Live Ingest (US East N. Virginia, per pricing example)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - data
+    periods:
+    - other
+  - name: Live/VOD Origination and Packaging (US East N. Virginia, per pricing example)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - data
+    periods:
+    - other
+  - name: Dynamic Multiview Origination and Packaging (per pricing example)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - data
+    periods:
+    - other
+  - name: Discounted Pricing (annual commitment)
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods:
+    - none
