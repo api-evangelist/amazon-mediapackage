@@ -44,7 +44,7 @@ plans:
   period: none
   included_quota: typically 10 TB/month or higher for packaging and origination usage
 x-canonical:
-  generated: '2026-11-02'
+  generated: '2026-11-06'
   vocabulary: engine/economics/plans-canonical.yml
   models:
   - hybrid
