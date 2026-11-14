@@ -5,10 +5,19 @@ artifacts:
   agentic-access/amazon-mediapackage-agentic-access.yml:
     method: generated
     evidence: declared in the artifact
+  ai-preferences/amazon-mediapackage-ai-preferences.yml:
+    method: harvested
+    evidence: declared in the artifact
   authentication/amazon-mediapackage-authentication.yml:
     method: derived
     evidence: declared in the artifact
   capabilities/amazon-mediapackage-capability-edges.yml:
+    method: unknown
+    evidence: no authorship recorded
+  certification/observations-2026-11-11.jsonl:
+    method: unknown
+    evidence: no authorship recorded
+  certification/status.yml:
     method: unknown
     evidence: no authorship recorded
   collections/amazon-mediapackage-channels-api.opencollection.json:
@@ -35,6 +44,24 @@ artifacts:
   collections/amazon-mediapackage-tags-api.postman_collection.json:
     method: derived
     evidence: openapi/amazon-mediapackage-tags-api
+  conformance/amazon-mediapackage-conformance.yml:
+    method: derived
+    evidence: declared in the artifact
+  conventions/amazon-mediapackage-conventions.yml:
+    method: derived
+    evidence: declared in the artifact
+  data-license/amazon-mediapackage-data-license.yml:
+    method: harvested
+    evidence: declared in the artifact
+  data-model/amazon-mediapackage-data-model.yml:
+    method: derived
+    evidence: declared in the artifact
+  eligibility/amazon-mediapackage-eligibility.yml:
+    method: harvested
+    evidence: declared in the artifact
+  errors/amazon-mediapackage-problem-types.yml:
+    method: derived
+    evidence: declared in the artifact
   examples/mediapackage-api-ad-markers-example.json:
     method: unknown
     evidence: no authorship recorded
@@ -269,13 +296,187 @@ artifacts:
   front-door-ai/2026-09-17.yml:
     method: unknown
     evidence: no authorship recorded
+  hosts/amazon-mediapackage-hosts.yml:
+    method: derived
+    evidence: declared in the artifact
   integrations/_index.yml:
     method: generated
     evidence: carries an API Evangelist house phrase
   integrations/amazon-mediapackage-integration-edges.yml:
     method: unknown
     evidence: no authorship recorded
+  json-ld/amazon-mediapackage-context.jsonld:
+    method: unknown
+    evidence: no authorship recorded
   json-ld/amazon-mediapackage-mediapackage-api-context.jsonld:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediapackage-configure-logs-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediapackage-create-asset-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediapackage-create-asset-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediapackage-create-channel-group-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediapackage-create-channel-group-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediapackage-create-harvest-job-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediapackage-create-origin-endpoint-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediapackage-create-packaging-configuration-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediapackage-create-packaging-configuration-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediapackage-create-packaging-group-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediapackage-create-packaging-group-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediapackage-delete-asset-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediapackage-delete-origin-endpoint-policy-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediapackage-delete-packaging-configuration-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediapackage-describe-asset-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediapackage-describe-harvest-job-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediapackage-describe-packaging-configuration-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediapackage-describe-packaging-group-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediapackage-get-channel-group-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediapackage-get-channel-policy-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediapackage-get-channel-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediapackage-get-harvest-job-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediapackage-get-origin-endpoint-policy-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediapackage-get-origin-endpoint-policy-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediapackage-get-origin-endpoint-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediapackage-list-assets-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediapackage-list-assets-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediapackage-list-channel-groups-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediapackage-list-packaging-configurations-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediapackage-list-packaging-configurations-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediapackage-list-packaging-groups-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediapackage-list-packaging-groups-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediapackage-list-tags-for-resource-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediapackage-list-tags-for-resource-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediapackage-mediapackagev2-create-channel-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediapackage-mediapackagev2-create-channel-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediapackage-mediapackagev2-create-harvest-job-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediapackage-mediapackagev2-create-harvest-job-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediapackage-mediapackagev2-create-origin-endpoint-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediapackage-mediapackagev2-create-origin-endpoint-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediapackage-mediapackagev2-list-harvest-jobs-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediapackage-mediapackagev2-update-channel-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediapackage-mediapackagev2-update-channel-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediapackage-mediapackagev2-update-origin-endpoint-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediapackage-mediapackagev2-update-origin-endpoint-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediapackage-put-channel-policy-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediapackage-put-origin-endpoint-policy-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediapackage-reset-channel-state-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediapackage-reset-channel-state-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediapackage-reset-origin-endpoint-state-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediapackage-reset-origin-endpoint-state-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediapackage-tag-resource-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediapackage-untag-resource-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediapackage-update-channel-group-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediapackage-update-channel-group-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-mediapackage-update-packaging-group-response-schema.json:
     method: unknown
     evidence: no authorship recorded
   json-schema/mediapackage-api-ad-markers-schema.json:
@@ -737,7 +938,7 @@ artifacts:
   kin/checks-2026-10-23T222754.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
-  kin/checks-2026-11-02T082323.yml:
+  kin/checks-2026-11-06T143934.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
   kin/score-2026-09-23T000603.yml:
@@ -806,22 +1007,57 @@ artifacts:
   kin/score-2026-11-02T082323.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
-  openapi/_original/amazon-mediapackage-openapi-original.yml:
-    method: harvested
-    evidence: found in openapi/_original/; the fetch URL and bytes were not recorded, so byte-identity
-      to the provider's source is unverified
+  kin/score-2026-11-06T143934.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  lifecycle/amazon-mediapackage-lifecycle.yml:
+    method: searched
+    evidence: declared in the artifact
+  llms/amazon-mediapackage-llms-provenance.yml:
+    method: unknown
+    evidence: no authorship recorded
+  llms/amazon-mediapackage-llms.txt:
+    method: unknown
+    evidence: no authorship recorded
+  mcp/amazon-mediapackage-mcp.yml:
+    method: derived
+    evidence: declared in the artifact
+  openapi/amazon-mediapackage-assets-api-openapi.yml:
+    method: unknown
+    evidence: no authorship recorded
+  openapi/amazon-mediapackage-channelgroup-api-openapi.yml:
+    method: unknown
+    evidence: no authorship recorded
   openapi/amazon-mediapackage-channels-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
+    method: unknown
+    evidence: no authorship recorded
   openapi/amazon-mediapackage-harvest-jobs-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
+    method: unknown
+    evidence: no authorship recorded
+  openapi/amazon-mediapackage-operations-api-openapi.yml:
+    method: unknown
+    evidence: no authorship recorded
   openapi/amazon-mediapackage-origin-endpoints-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
+    method: unknown
+    evidence: no authorship recorded
+  openapi/amazon-mediapackage-packaging-configurations-api-openapi.yml:
+    method: unknown
+    evidence: no authorship recorded
+  openapi/amazon-mediapackage-packaging-groups-api-openapi.yml:
+    method: unknown
+    evidence: no authorship recorded
+  openapi/amazon-mediapackage-policy-api-openapi.yml:
+    method: unknown
+    evidence: no authorship recorded
   openapi/amazon-mediapackage-tags-api-openapi.yml:
+    method: harvested
+    evidence: declared in the artifact
+  packages/amazon-mediapackage-packages.yml:
+    method: searched
+    evidence: declared in the artifact
+  patterns/amazon-mediapackage-patterns.yml:
     method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
+    evidence: declared in the artifact
   plans/amazon-mediapackage-plans-pricing.yml:
     method: searched
     evidence: declared in the artifact
@@ -837,10 +1073,16 @@ artifacts:
   postman/amazon-mediapackage-tags-api.postman_collection.json:
     method: derived
     evidence: openapi/amazon-mediapackage-tags-api
+  privacy/amazon-mediapackage-privacy-policy.yml:
+    method: harvested
+    evidence: declared in the artifact
   rate-limits/amazon-mediapackage-rate-limits.yml:
     method: generated
     evidence: declared in the artifact
   rules/amazon-mediapackage-jsonschema-spectral-rules.yml:
+    method: generated
+    evidence: declared in the artifact
+  rules/amazon-mediapackage-rules.yml:
     method: generated
     evidence: declared in the artifact
   rules/amazon-mediapackage-spectral-rules.yml:
@@ -859,8 +1101,35 @@ artifacts:
     method: generated
     evidence: declared in the artifact
   smithy/mediapackage-2017-10-12.json:
+    method: harvested
+    evidence: byte-identical to https://raw.githubusercontent.com/aws/api-models-aws/3cd98287b471c106254abd89279cc87308d38bfd/models/mediapackage/service/2017-10-12/mediapackage-2017-10-12.json
+      (sha256 4d43c7b611ea, fetched 2026-11-11T21:12:47+00:00)
+  smithy/mediapackage-vod-2018-11-07.json:
+    method: harvested
+    evidence: byte-identical to https://raw.githubusercontent.com/aws/api-models-aws/3cd98287b471c106254abd89279cc87308d38bfd/models/mediapackage-vod/service/2018-11-07/mediapackage-vod-2018-11-07.json
+      (sha256 4ee5951cc62b, fetched 2026-11-11T21:12:48+00:00)
+  smithy/mediapackagev2-2022-12-25.json:
+    method: harvested
+    evidence: byte-identical to https://raw.githubusercontent.com/aws/api-models-aws/3cd98287b471c106254abd89279cc87308d38bfd/models/mediapackagev2/service/2022-12-25/mediapackagev2-2022-12-25.json
+      (sha256 ac2aa64b88f6, fetched 2026-11-11T21:12:49+00:00)
+  terms/amazon-mediapackage-terms-of-service.yml:
+    method: harvested
+    evidence: declared in the artifact
+  vendors/amazon-mediapackage-vendors.yml:
     method: unknown
     evidence: no authorship recorded
   vocabulary/amazon-mediapackage-vocabulary.yaml:
+    method: unknown
+    evidence: no authorship recorded
+  vocabulary/amazon-mediapackage-vocabulary.yml:
+    method: derived
+    evidence: declared in the artifact
+  well-known/amazon-mediapackage-midway-auth-openid-configuration.json:
+    method: unknown
+    evidence: no authorship recorded
+  well-known/amazon-mediapackage-security.txt:
+    method: unknown
+    evidence: no authorship recorded
+  well-known/amazon-mediapackage-well-known.yml:
     method: unknown
     evidence: no authorship recorded

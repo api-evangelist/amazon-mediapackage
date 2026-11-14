@@ -2,6 +2,7 @@
 generated: '2026-10-28'
 method: searched
 source: https://aws.amazon.com/mediapackage/pricing/
+name: Amazon MediaPackage API Plans
 sources:
 - https://aws.amazon.com/mediapackage/pricing/
 provenance:
@@ -44,7 +45,7 @@ plans:
   period: none
   included_quota: typically 10 TB/month or higher for packaging and origination usage
 x-canonical:
-  generated: '2026-11-06'
+  generated: '2026-11-13'
   vocabulary: engine/economics/plans-canonical.yml
   models:
   - hybrid

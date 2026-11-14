@@ -1,9 +1,12 @@
 aid: amazon-mediapackage
+
 name: Amazon MediaPackage
-description: AWS Elemental MediaPackage is a video origination and just-in-time packaging service that
-  reliably prepares and protects video for delivery over the internet, creating multiple output formats
-  from a single video input.
+
+description: AWS Elemental MediaPackage is a video origination and just-in-time packaging service that reliably prepares and protects video for
+  delivery over the internet, creating multiple output formats from a single video input.
+
 type: Index
+
 deliveryModel:
   model: saas
   open_source: false
@@ -16,6 +19,7 @@ deliveryModel:
   - pricing
   generated: '2026-08-28'
   method: derived
+
 accessModel:
   pricing: paid
   onboarding: unknown
@@ -28,9 +32,10 @@ accessModel:
   - plans
   - authentication
   - security
-  generated: '2026-11-06'
+  generated: '2026-11-13'
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/amazon-mediapackage.png
+
 tags:
 - Amazon Web Services
 - Broadcasting
@@ -41,84 +46,70 @@ tags_raw:
 - Broadcasting
 - Media Processing
 - Media
+
 url: https://raw.githubusercontent.com/api-evangelist/amazon-mediapackage/refs/heads/main/apis.yml
+
 created: '2026-03-16'
+
 modified: '2026-09-16'
+
 specificationVersion: '0.23'
-apis:
-- aid: amazon-mediapackage:amazon-mediapackage-channels-api
-  name: Amazon MediaPackage Channels API
-  description: The Channels API from Amazon MediaPackage — 5 operation(s) for channels.
-  humanURL: https://aws.amazon.com/mediapackage/
-  baseURL: http://mediapackage.{region}.amazonaws.com
-  tags:
-  - Channels
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-mediapackage-channels-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/mediapackage/
-  - type: GettingStarted
-    url: https://aws.amazon.com/mediapackage/getting-started/
-  - type: Pricing
-    url: https://aws.amazon.com/mediapackage/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/mediapackage/faqs/
-- aid: amazon-mediapackage:amazon-mediapackage-harvest-jobs-api
-  name: Amazon MediaPackage Harvest Jobs API
-  description: The Harvest Jobs API from Amazon MediaPackage — 2 operation(s) for harvest jobs.
-  humanURL: https://aws.amazon.com/mediapackage/
-  baseURL: http://mediapackage.{region}.amazonaws.com
-  tags:
-  - Harvest Jobs
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-mediapackage-harvest-jobs-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/mediapackage/
-  - type: GettingStarted
-    url: https://aws.amazon.com/mediapackage/getting-started/
-  - type: Pricing
-    url: https://aws.amazon.com/mediapackage/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/mediapackage/faqs/
-- aid: amazon-mediapackage:amazon-mediapackage-origin-endpoints-api
-  name: Amazon MediaPackage Origin Endpoints API
-  description: The Origin Endpoints API from Amazon MediaPackage — 2 operation(s) for origin endpoints.
-  humanURL: https://aws.amazon.com/mediapackage/
-  baseURL: http://mediapackage.{region}.amazonaws.com
-  tags:
-  - Origin Endpoints
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-mediapackage-origin-endpoints-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/mediapackage/
-  - type: GettingStarted
-    url: https://aws.amazon.com/mediapackage/getting-started/
-  - type: Pricing
-    url: https://aws.amazon.com/mediapackage/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/mediapackage/faqs/
-- aid: amazon-mediapackage:amazon-mediapackage-tags-api
-  name: Amazon MediaPackage Tags API
-  description: The Tags API from Amazon MediaPackage — 2 operation(s) for tags.
-  humanURL: https://aws.amazon.com/mediapackage/
-  baseURL: http://mediapackage.{region}.amazonaws.com
-  tags:
-  - Tags
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-mediapackage-tags-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/mediapackage/
-  - type: GettingStarted
-    url: https://aws.amazon.com/mediapackage/getting-started/
-  - type: Pricing
-    url: https://aws.amazon.com/mediapackage/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/mediapackage/faqs/
+
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
+
 common:
+- type: Idempotency
+  url: conventions/amazon-mediapackage-conventions.yml
+- type: Conventions
+  url: conventions/amazon-mediapackage-conventions.yml
+- type: Lifecycle
+  url: lifecycle/amazon-mediapackage-lifecycle.yml
+- type: Spectral
+  url: rules/amazon-mediapackage-spectral-rules.yml
+- type: Spectral
+  url: rules/amazon-mediapackage-rules.yml
+- type: Spectral
+  url: rules/amazon-mediapackage-jsonschema-spectral-rules.yml
+- type: JSONLD
+  url: json-ld/amazon-mediapackage-mediapackage-api-context.jsonld
+- type: JSONLD
+  url: json-ld/amazon-mediapackage-context.jsonld
+- type: Vocabulary
+  url: vocabulary/amazon-mediapackage-vocabulary.yml
+- type: DataModel
+  url: data-model/amazon-mediapackage-data-model.yml
+- type: Compliance
+  url: https://aws.amazon.com/compliance/
+- type: ErrorCatalog
+  url: errors/amazon-mediapackage-problem-types.yml
+- type: Conformance
+  url: conformance/amazon-mediapackage-conformance.yml
+- type: LLMsTxt
+  url: llms/amazon-mediapackage-llms.txt
+- type: SecurityTxt
+  url: well-known/amazon-mediapackage-security.txt
+- type: WellKnown
+  url: well-known/amazon-mediapackage-well-known.yml
+- type: Hosts
+  url: hosts/amazon-mediapackage-hosts.yml
+- type: Vendors
+  url: vendors/amazon-mediapackage-vendors.yml
+- type: SDKs
+  url: packages/amazon-mediapackage-packages.yml
+- type: Packages
+  url: packages/amazon-mediapackage-packages.yml
+- type: SignUp
+  url: https://signin.aws.amazon.com/signup?request_type=builderId
+- type: Security
+  url: https://aws.amazon.com/security/?nc2=h_dsc_aa_sec
+- type: Newsroom
+  url: https://aws.amazon.com/media/?nc2=h_sol_ind_med
+- type: ChangeLog
+  url: https://aws.amazon.com/about-aws/whats-new/media-services/
+- type: GettingStarted
+  url: https://developer.amazon.com/frustration-free-setup
 - type: Plans
   url: plans/amazon-mediapackage-plans-pricing.yml
 - type: RateLimits
@@ -202,6 +193,263 @@ common:
     description: Manage DRM encryption keys with AWS KMS integration.
 - type: Integrations
   url: https://aws.amazon.com/partners/
+- type: UsageTerms
+  url: terms/amazon-mediapackage-terms-of-service.yml
+- type: DataProcessing
+  url: privacy/amazon-mediapackage-privacy-policy.yml
+- type: Eligibility
+  url: eligibility/amazon-mediapackage-eligibility.yml
+- type: AIPreferences
+  url: ai-preferences/amazon-mediapackage-ai-preferences.yml
+- type: DataLicense
+  url: data-license/amazon-mediapackage-data-license.yml
+
+apis:
+- aid: amazon-mediapackage:amazon-mediapackage-channels-api
+  name: Amazon MediaPackage Channels API
+  description: The Channels API from Amazon MediaPackage — 5 operation(s) for channels.
+  humanURL: https://aws.amazon.com/mediapackage/
+  baseURL: http://mediapackage.{region}.amazonaws.com
+  tags:
+  - Channels
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-mediapackage-channels-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/mediapackage/
+  - type: GettingStarted
+    url: https://aws.amazon.com/mediapackage/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/mediapackage/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/mediapackage/faqs/
+  - type: JSONSchema
+    url: json-schema/amazon-mediapackage-get-channel-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-mediapackage-mediapackagev2-update-channel-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-mediapackage-mediapackagev2-create-channel-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-mediapackage-mediapackagev2-create-channel-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-mediapackage-mediapackagev2-update-channel-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-mediapackage-configure-logs-response-schema.json
+- aid: amazon-mediapackage:amazon-mediapackage-harvest-jobs-api
+  name: Amazon MediaPackage Harvest Jobs API
+  description: The Harvest Jobs API from Amazon MediaPackage — 2 operation(s) for harvest jobs.
+  humanURL: https://aws.amazon.com/mediapackage/
+  baseURL: http://mediapackage.{region}.amazonaws.com
+  tags:
+  - Harvest Jobs
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-mediapackage-harvest-jobs-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/mediapackage/
+  - type: GettingStarted
+    url: https://aws.amazon.com/mediapackage/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/mediapackage/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/mediapackage/faqs/
+  - type: JSONSchema
+    url: json-schema/amazon-mediapackage-mediapackagev2-create-harvest-job-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-mediapackage-get-harvest-job-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-mediapackage-create-harvest-job-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-mediapackage-describe-harvest-job-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-mediapackage-mediapackagev2-create-harvest-job-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-mediapackage-mediapackagev2-list-harvest-jobs-request-schema.json
+- aid: amazon-mediapackage:amazon-mediapackage-origin-endpoints-api
+  name: Amazon MediaPackage Origin Endpoints API
+  description: The Origin Endpoints API from Amazon MediaPackage — 2 operation(s) for origin endpoints.
+  humanURL: https://aws.amazon.com/mediapackage/
+  baseURL: http://mediapackage.{region}.amazonaws.com
+  tags:
+  - Origin Endpoints
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-mediapackage-origin-endpoints-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/mediapackage/
+  - type: GettingStarted
+    url: https://aws.amazon.com/mediapackage/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/mediapackage/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/mediapackage/faqs/
+  - type: JSONSchema
+    url: json-schema/amazon-mediapackage-mediapackagev2-create-origin-endpoint-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-mediapackage-get-origin-endpoint-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-mediapackage-mediapackagev2-update-origin-endpoint-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-mediapackage-mediapackagev2-create-origin-endpoint-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-mediapackage-mediapackagev2-update-origin-endpoint-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-mediapackage-create-origin-endpoint-response-schema.json
+- aid: amazon-mediapackage:amazon-mediapackage-tags-api
+  name: Amazon MediaPackage Tags API
+  description: The Tags API from Amazon MediaPackage — 2 operation(s) for tags.
+  humanURL: https://aws.amazon.com/mediapackage/
+  baseURL: http://mediapackage.{region}.amazonaws.com
+  tags:
+  - Tags
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-mediapackage-tags-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/mediapackage/
+  - type: GettingStarted
+    url: https://aws.amazon.com/mediapackage/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/mediapackage/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/mediapackage/faqs/
+  - type: JSONSchema
+    url: json-schema/amazon-mediapackage-untag-resource-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-mediapackage-tag-resource-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-mediapackage-list-tags-for-resource-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-mediapackage-list-tags-for-resource-request-schema.json
+- aid: amazon-mediapackage:amazon-mediapackage-assets-api
+  name: Amazon MediaPackage Mediapackage Assets API
+  description: The Mediapackage Assets API from Amazon MediaPackage — 2 operation(s) for mediapackage assets.
+  humanURL: https://aws.amazon.com/mediapackage/
+  baseURL: http://mediapackage.{region}.amazonaws.com
+  tags:
+  - Mediapackage Assets
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-mediapackage-assets-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-mediapackage-create-asset-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-mediapackage-describe-asset-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-mediapackage-create-asset-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-mediapackage-list-assets-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-mediapackage-list-assets-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-mediapackage-delete-asset-request-schema.json
+- aid: amazon-mediapackage:amazon-mediapackage-channelgroup-api
+  name: Amazon MediaPackage Mediapackage Channelgroup API
+  description: The Mediapackage Channelgroup API from Amazon MediaPackage — 2 operation(s) for mediapackage channelgroup.
+  humanURL: https://aws.amazon.com/mediapackage/
+  baseURL: http://mediapackage.{region}.amazonaws.com
+  tags:
+  - Mediapackage Channelgroup
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-mediapackage-channelgroup-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-mediapackage-create-channel-group-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-mediapackage-get-channel-group-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-mediapackage-update-channel-group-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-mediapackage-create-channel-group-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-mediapackage-update-channel-group-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-mediapackage-list-channel-groups-response-schema.json
+- aid: amazon-mediapackage:amazon-mediapackage-operations-api
+  name: Amazon MediaPackage Mediapackage Operations API
+  description: The Mediapackage Operations API from Amazon MediaPackage — 2 operation(s) for mediapackage operations.
+  humanURL: https://aws.amazon.com/mediapackage/
+  baseURL: http://mediapackage.{region}.amazonaws.com
+  tags:
+  - Mediapackage Operations
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-mediapackage-operations-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-mediapackage-reset-origin-endpoint-state-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-mediapackage-reset-channel-state-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-mediapackage-reset-origin-endpoint-state-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-mediapackage-reset-channel-state-request-schema.json
+- aid: amazon-mediapackage:amazon-mediapackage-packaging-configurations-api
+  name: Amazon MediaPackage Mediapackage Packaging Configurations API
+  description: The Mediapackage Packaging Configurations API from Amazon MediaPackage — 2 operation(s) for mediapackage packaging configurations.
+  humanURL: https://aws.amazon.com/mediapackage/
+  baseURL: http://mediapackage.{region}.amazonaws.com
+  tags:
+  - Mediapackage Packaging Configurations
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-mediapackage-packaging-configurations-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-mediapackage-create-packaging-configuration-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-mediapackage-describe-packaging-configuration-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-mediapackage-create-packaging-configuration-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-mediapackage-list-packaging-configurations-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-mediapackage-list-packaging-configurations-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-mediapackage-delete-packaging-configuration-request-schema.json
+- aid: amazon-mediapackage:amazon-mediapackage-packaging-groups-api
+  name: Amazon MediaPackage Mediapackage Packaging Groups API
+  description: The Mediapackage Packaging Groups API from Amazon MediaPackage — 2 operation(s) for mediapackage packaging groups.
+  humanURL: https://aws.amazon.com/mediapackage/
+  baseURL: http://mediapackage.{region}.amazonaws.com
+  tags:
+  - Mediapackage Packaging Groups
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-mediapackage-packaging-groups-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-mediapackage-describe-packaging-group-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-mediapackage-update-packaging-group-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-mediapackage-create-packaging-group-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-mediapackage-create-packaging-group-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-mediapackage-list-packaging-groups-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-mediapackage-list-packaging-groups-request-schema.json
+- aid: amazon-mediapackage:amazon-mediapackage-policy-api
+  name: Amazon MediaPackage Mediapackage Policy API
+  description: The Mediapackage Policy API from Amazon MediaPackage — 2 operation(s) for mediapackage policy.
+  humanURL: https://aws.amazon.com/mediapackage/
+  baseURL: http://mediapackage.{region}.amazonaws.com
+  tags:
+  - Mediapackage Policy
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-mediapackage-policy-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-mediapackage-put-origin-endpoint-policy-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-mediapackage-get-origin-endpoint-policy-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-mediapackage-delete-origin-endpoint-policy-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-mediapackage-get-origin-endpoint-policy-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-mediapackage-put-channel-policy-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-mediapackage-get-channel-policy-response-schema.json
+
 integrations:
 - name: Partner Programs
 - name: Resources
@@ -211,8 +459,12 @@ integrations:
 - name: AWS Partner Central
 - name: Partner Paths
 - name: co-sell with AWS
-maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
+
 x-parent: amazon-web-services
+
 x-relationship: product
+x-enrichment:
+  date: '2026-11-11'
+  status: enriched
+  artifacts_added: 3
+  pass: local-v6
